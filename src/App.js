@@ -1,5 +1,4 @@
 import './App.css';
-import { useState, useEffect } from 'react';
 import { NextUIProvider } from '@nextui-org/react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
@@ -8,11 +7,7 @@ import HomePage from './pages/homePage';
 import TeamPage from './pages/teamPage';
 import EventsPage from './pages/eventsPage';
 
-
-
 function App() {
-
-  
 
     return(
         

@@ -31,7 +31,7 @@ export default function HomePage() {
             image: Grey
         },
         {
-            name: 'Utkarsh Kohli',
+            name: 'Uttkarsh Kohli',
             batch: 'UG24',
             role: 'President & Co-Founder',
             image: Grey
