@@ -43,9 +43,9 @@ export default function HomePage() {
             image: Grey
         },
         {
-            name: 'Ananya Sarvani Sankara',
+            name: 'Abhay Madan',
             batch: 'UG24',
-            role: 'Co-Head of Newsletter',
+            role: 'Co-Head of Events',
             image: Grey
         },
     ]
@@ -75,6 +75,17 @@ export default function HomePage() {
                     </Text>
                     <Image width='80%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} />
 
+                    <Text css={{
+                        textAlign: 'center',
+                        fontWeight: '$semibold',
+                        width: '100%',
+                        fontSize: '$3xl',
+                        paddingBottom: '0px',
+                        paddingTop: '40px'
+                    }}>
+                        About Us
+                    </Text>
+                    
                     <Row css={{
                         // margin: '40px 0 40px 0',
                         justifyContent: 'space-center',
@@ -474,6 +485,17 @@ export default function HomePage() {
                     </Text>
                     <Image width='95%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} />
 
+                    <Text css={{
+                        textAlign: 'center',
+                        fontWeight: '$semibold',
+                        width: '100%',
+                        fontSize: '$2xl',
+                        paddingBottom: '20px',
+                        paddingTop: '40px'
+                    }}>
+                        About Us
+                    </Text>
+
                     <Col css={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -627,7 +649,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1060,
+                                top: 1160,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
@@ -865,156 +887,380 @@ export default function HomePage() {
             </div>
 
             <div className="mobile">
-  <Grid.Container css={{
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: '20px',
-    padding: '0',
-    flexDirection: 'column'
-  }}>
-    <Text css={{
-      fontSize: '$2xl',
-      padding: '0 5% 0 5%',
-      fontWeight: '$medium'
-    }}>
-      Ashoka Data Society
-    </Text>
-    <Text css={{
-      fontSize: '$xl',
-      padding: '0 5% 0 5%',
-    }}>
-      Official Website
-    </Text>
-    <Image width='100%' css={{ objectFit: 'cover', height: '300px', marginTop: 20, marginBottom: 20}} src={Grey} />
+                <Grid.Container css={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: '20px',
+                    padding: '0',
+                    flexDirection: 'column'
+                }}>
+                    <Text css={{
+                        fontSize: '$2xl',
+                        padding: '0 5% 0 5%',
+                        fontWeight: '$medium'
+                    }}>
+                        Ashoka Data Society
+                    </Text>
+                    <Text css={{
+                        fontSize: '$xl',
+                        padding: '0 5% 0 5%',
+                    }}>
+                        Official Website
+                    </Text>
+                    <Image width='95%' css={{ objectFit: 'cover', height: '300px', marginTop: 20, marginBottom: 20, borderRadius: 10 }} src={Grey} />
 
-    {events.map(event => (
-      <Card css={{ w: "90%", margin: '10px 0' }}>
-        <Card.Body css={{ p: 0 }}>
-          <Card.Image
-            src={event.image[0]}
-            width="100%"
-            height="200px"
-            objectFit="cover"
-            alt="Card example background"
-          />
-        </Card.Body>
-        <Card.Footer
-          isBlurred
-          css={{
-            position: "relative",
-            bgBlur: "#ffffff66",
-            borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-            bottom: 0,
-            zIndex: 1,
-            padding: '10px'
-          }}
-        >
-          <Text className="multiline-ellipsis" css={{
-            fontWeight: '$semibold',
-            fontSize: '$md',
-            marginBottom: 5
-          }}>
-            {event.name}
-          </Text>
-          <Text className="multiline-ellipsis" css={{
-            fontSize: '$sm',
-            marginBottom: 5
-          }}>
-            {event.date}
-          </Text>
-          <Button flat auto rounded color="primary">
-            <Text
-              css={{ color: "inherit", fontSize: '$sm' }}
-              weight="bold"
-              transform="uppercase"
-            >
-              KNOW MORE
-            </Text>
-          </Button>
-        </Card.Footer>
-      </Card>
-    ))}
+                    <Text css={{
+                        textAlign: 'center',
+                        fontWeight: '$semibold',
+                        width: '100%',
+                        fontSize: '$2xl',
+                        paddingBottom: '20px',
+                        paddingTop: '40px'
+                    }}>
+                        About Us
+                    </Text>
+                    
+                    <Col css={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        margin: '10px 0px'
+                    }}>
 
-    <Link href="/events" >
-      <Row css={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: '20px 0'
-      }}>
-        <Text css={{
-          fontSize: '$md',
-          fontWeight: '$semibold',
-          textAlign: 'center'
-        }}>
-          Explore All Events
-        </Text>
-        <BsArrowRight size={20} color='black' />
-      </Row>
-    </Link>
+                        <Grid css={{
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            jc: 'center',
+                            width: '300px',
+                            borderColor: '$gray300',
+                            borderRadius: 20,
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            shadow: '$sm',
+                            padding: '25px 0px 0px 0px',
+                            margin: '20px 10px'
+                        }}>
+                            <Container css={{
+                                position: 'absolute',
+                                top: 625,
+                                maxW: 'max-content',
+                                marginLeft: '75px'
+                            }}>
+                                <Text css={{
+                                    width: '',
+                                    textAlign: 'center',
+                                    // backgroundColor: '#3E5896',
+                                    backgroundColor: '$red300',
+                                    color: 'white',
+                                    borderRadius: 10,
+                                    padding: '5px 25px',
+                                    fontWeight: '$medium',
+                                    color: '$red800'
+                                }}
+                                >
+                                    VISION
+                                </Text>
+                            </Container>
+                            <Image
+                                src={Vision}
+                                width={50}
+                                height={50}
+                            />
+                            <Text css={{
+                                fontWeight: '$medium',
+                                fontSize: '$base',
+                                textAlign: 'center',
+                                padding: '5px 10px 0px 10px'
+                            }}>
+                                To build an active and bustling data analytics and data science community at Ashoka University.
+                                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum.
+                            </Text>
+                            <Text css={{
+                                height: 25,
+                                marginTop: '10px',
+                                backgroundColor: '$gray100',
+                                color: '$gray200',
+                                borderBottomLeftRadius: 20,
+                                borderBottomRightRadius: 20
+                            }}>
 
-    <Text css={{
-      textAlign: 'center',
-      fontWeight: '$semibold',
-      fontSize: '$xl',
-      paddingBottom: '10px'
-    }}>
-      Team
-    </Text>
+                            </Text>
+                        </Grid>
 
-    <Grid.Container
-      css={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '0px 10px'
-      }}
-    >
-      {team.map(member => (
-        <Grid css={{
-          flexDirection: 'column',
-          padding: '10px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center'
-        }}>
-          <Image width={120} height={120} src={member.image}
-            css={{
-              borderRadius: '50%',
-            }}
-          />
-          <Text
-            css={{
-              marginTop: 5,
-              fontSize: '$base',
-              fontWeight: '$medium'
-            }}
-          >
-            {member.name}
-          </Text>
-          <Text css={{ fontSize: '$sm' }}>
-            {member.role}
-          </Text>
-        </Grid>
-      ))}
-    </Grid.Container>
+                        <Grid css={{
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            jc: 'center',
+                            padding: '25px 0px 0px 0px',
+                            width: '300px',
+                            borderColor: '$gray300',
+                            borderRadius: 20,
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            shadow: '$sm',
+                            margin: '20px 10px'
+                        }}>
+                            <Container css={{
+                                position: 'absolute',
+                                top: 950,
+                                maxW: 'max-content',
+                                marginLeft: '67px'
+                            }}>
+                                <Text css={{
+                                    width: '',
+                                    textAlign: 'center',
+                                    // backgroundColor: '#3E5896',
+                                    backgroundColor: '$blue300',
+                                    color: 'white',
+                                    borderRadius: 10,
+                                    padding: '5px 25px',
+                                    fontWeight: '$medium',
+                                    color: '$blue800'
+                                }}
+                                >
+                                    MISSION
+                                </Text>
+                            </Container>
+                            <Image
+                                src={Mission}
+                                width={50}
+                                height={50}
+                            />
+                            <Text css={{
+                                fontWeight: '$medium',
+                                fontSize: '$base',
+                                textAlign: 'center',
+                                padding: '5px 10px 0px 10px'
+                            }}>
+                                To provide a platform for students to further in the field of data by exposing them to experienced professionals,
+                                introducing courses that urge them to upskill and conducting competitions for development.
+                            </Text>
+                            <Text css={{
+                                height: 25,
+                                marginTop: '10px',
+                                backgroundColor: '$gray100',
+                                color: '$gray200',
+                                borderBottomLeftRadius: 20,
+                                borderBottomRightRadius: 20
+                            }}>
 
-    <Link href="/team" >
-      <Row css={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: '20px 0'
-      }}>
-        <Text css={{
-          fontSize: '$md',
-          fontWeight: '$semibold',
-          textAlign: 'center'
-        }}>
-          All Team Members
-        </Text>
-        <BsArrowRight size={20} color='black' />
-      </Row>
-    </Link>
-  </Grid.Container>
-</div>
+                            </Text>
+                        </Grid>
+
+
+                        <Grid css={{
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            jc: 'center',
+                            padding: '25px 0px 0px 0px',
+                            width: '300px',
+                            borderColor: '$gray300',
+                            borderRadius: 20,
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            shadow: '$sm',
+                            margin: '20px 10px'
+                        }}>
+                            <Container css={{
+                                position: 'absolute',
+                                top: 1275,
+                                maxW: 'max-content',
+                                marginLeft: '64px'
+                            }}>
+                                <Text css={{
+                                    width: '',
+                                    textAlign: 'center',
+                                    // backgroundColor: '#3E5896',
+                                    backgroundColor: '$gray300',
+                                    color: 'white',
+                                    borderRadius: 10,
+                                    padding: '5px 25px',
+                                    fontWeight: '$semibold',
+                                    color: 'black'
+                                }}
+                                >
+                                    OVERVIEW
+                                </Text>
+                            </Container>
+                            <Image
+                                src={Overview}
+                                width={50}
+                                height={50}
+                            />
+                            <Text css={{
+                                fontWeight: '$medium',
+                                fontSize: '$base',
+                                textAlign: 'center',
+                                padding: '5px 10px 0px 10px'
+                            }}>
+
+                                Presided over by Uttkarsh Kohli and Vrinda Bhola, the club functions smoothly and the work of each department is well coordinated.
+                                Departments include Marketing, Events, Newsletter, Technology
+
+                            </Text>
+
+                            <Text css={{
+                                height: 25,
+                                marginTop: '10px',
+                                backgroundColor: '$gray100',
+                                color: '$gray200',
+                                borderBottomLeftRadius: 20,
+                                borderBottomRightRadius: 20
+                            }}>
+
+                            </Text>
+                        </Grid>
+
+                    </Col>
+
+                    <Text css={{
+                        textAlign: 'center',
+                        fontWeight: '$semibold',
+                        width: '100%',
+                        fontSize: '$2xl',
+                        paddingBottom: '20px',
+                        paddingTop: '40px'
+                    }}>
+                        Featured Events
+                    </Text>
+
+                    {events.map(event => (
+                        <Card css={{ w: "90%", margin: '10px 0', maxW: '300px', h: '400px' }}>
+                            <Card.Body css={{ p: 0 }}>
+                                <Card.Image
+                                    src={event.image[0]}
+                                    width="100%"
+                                    height="100%"
+                                    objectFit="cover"
+                                    alt="Card example background"
+                                />
+                            </Card.Body>
+                            <Card.Footer
+                                isBlurred
+                                css={{
+                                    position: "absolute",
+                                    bgBlur: "#ffffff66",
+                                    borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+                                    bottom: 0,
+                                    zIndex: 1,
+                                    padding: '10px'
+                                }}
+                            >
+                                <Col css={{
+                                    w: '100%',
+                                    jc: 'center',
+                                    alignItems: 'center',
+                                    display: 'flex',
+                                    flexDirection: 'column'
+                                }}>
+                                    <Text className="multiline-ellipsis" css={{
+                                        fontWeight: '$semibold',
+                                        fontSize: '$md',
+                                        marginBottom: 5
+                                    }}>
+                                        {event.name}
+                                    </Text>
+                                    <Text className="multiline-ellipsis" css={{
+                                        fontSize: '$sm',
+                                        marginBottom: 5
+                                    }}>
+                                        {event.date}
+                                    </Text>
+                                    <Button flat auto rounded color="primary">
+                                        <Text
+                                            css={{ color: "inherit", fontSize: '$sm' }}
+                                            weight="bold"
+                                            transform="uppercase"
+                                        >
+                                            KNOW MORE
+                                        </Text>
+                                    </Button>
+                                </Col>
+                            </Card.Footer>
+                        </Card>
+                    ))}
+
+                    <Link href="/events" >
+                        <Row css={{
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            margin: '20px 0'
+                        }}>
+                            <Text css={{
+                                fontSize: '$md',
+                                fontWeight: '$semibold',
+                                textAlign: 'center'
+                            }}>
+                                Explore All Events
+                            </Text>
+                            <BsArrowRight size={20} color='black' />
+                        </Row>
+                    </Link>
+
+                    <Text css={{
+                        textAlign: 'center',
+                        fontWeight: '$semibold',
+                        fontSize: '$xl',
+                        paddingBottom: '10px'
+                    }}>
+                        Team
+                    </Text>
+
+                    <Grid.Container
+                        css={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '0px 10px'
+                        }}
+                    >
+                        {team.map(member => (
+                            <Grid css={{
+                                flexDirection: 'column',
+                                padding: '10px',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                textAlign: 'center'
+                            }}>
+                                <Image width={120} height={120} src={member.image}
+                                    css={{
+                                        borderRadius: '50%',
+                                    }}
+                                />
+                                <Text
+                                    css={{
+                                        marginTop: 5,
+                                        fontSize: '$base',
+                                        fontWeight: '$medium'
+                                    }}
+                                >
+                                    {member.name}
+                                </Text>
+                                <Text css={{ fontSize: '$sm' }}>
+                                    {member.role}
+                                </Text>
+                            </Grid>
+                        ))}
+                    </Grid.Container>
+
+                    <Link href="/team" >
+                        <Row css={{
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            margin: '20px 0'
+                        }}>
+                            <Text css={{
+                                fontSize: '$md',
+                                fontWeight: '$semibold',
+                                textAlign: 'center'
+                            }}>
+                                All Team Members
+                            </Text>
+                            <BsArrowRight size={20} color='black' />
+                        </Row>
+                    </Link>
+                </Grid.Container>
+            </div>
 
         </div>
     )

@@ -39,18 +39,21 @@ export default function TeamPage() {
                         flexDirection: 'column',
                         w: 'max-content',
                         justifyContent: 'center',
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        alignItems: 'center'
                     }}>
                         <Text css={{
-                            fontWeight: '$semibold',
-                            '@xsMax': {
-                                fontSize: '$xl',
-                            },
-                            '@xsMin': {
-                                fontSize: '$2xl'
-                            },
-                            color: '$red700'
-                        }}>
+                            width: 'max-content',
+                            textAlign: 'center',
+                            // backgroundColor: '#3E5896',
+                            backgroundColor: '$red300',
+                            color: 'white',
+                            borderRadius: 10,
+                            padding: '5px 25px',
+                            fontWeight: '$medium',
+                            color: '$red800'
+                        }}
+                        >
                             Presidents
                         </Text>
 
@@ -156,18 +159,21 @@ export default function TeamPage() {
                             flexDirection: 'column',
                             w: 'max-content',
                             justifyContent: 'center',
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            alignItems: 'center'
                         }}>
                             <Text css={{
-                                fontWeight: '$semibold',
-                                '@xsMax': {
-                                    fontSize: '$xl',
-                                },
-                                '@xsMin': {
-                                    fontSize: '$2xl'
-                                },
-                                color: '$yellow600'
-                            }}>
+                                width: 'max-content',
+                                textAlign: 'center',
+                                // backgroundColor: '#3E5896',
+                                backgroundColor: '$yellow300',
+                                color: 'white',
+                                borderRadius: 10,
+                                padding: '5px 25px',
+                                fontWeight: '$medium',
+                                color: '$yellow800'
+                            }}
+                            >
                                 Marketing
                             </Text>
 
@@ -266,18 +272,21 @@ export default function TeamPage() {
                             flexDirection: 'column',
                             w: 'max-content',
                             justifyContent: 'center',
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            alignItems: 'center'
                         }}>
                             <Text css={{
-                                fontWeight: '$semibold',
-                                '@xsMax': {
-                                    fontSize: '$xl',
-                                },
-                                '@xsMin': {
-                                    fontSize: '$2xl'
-                                },
-                                color: '$green600'
-                            }}>
+                                width: 'max-content',
+                                textAlign: 'center',
+                                // backgroundColor: '#3E5896',
+                                backgroundColor: '$green300',
+                                color: 'white',
+                                borderRadius: 10,
+                                padding: '5px 25px',
+                                fontWeight: '$medium',
+                                color: '$green800'
+                            }}
+                            >
                                 Events
                             </Text>
 
@@ -385,18 +394,21 @@ export default function TeamPage() {
                             flexDirection: 'column',
                             w: 'max-content',
                             justifyContent: 'center',
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            alignItems: 'center'
                         }}>
                             <Text css={{
-                                fontWeight: '$semibold',
-                                '@xsMax': {
-                                    fontSize: '$xl',
-                                },
-                                '@xsMin': {
-                                    fontSize: '$2xl'
-                                },
-                                color: '$blue600'
-                            }}>
+                                width: 'max-content',
+                                textAlign: 'center',
+                                // backgroundColor: '#3E5896',
+                                backgroundColor: '$blue300',
+                                color: 'white',
+                                borderRadius: 10,
+                                padding: '5px 25px',
+                                fontWeight: '$medium',
+                                color: '$blue800'
+                            }}
+                            >
                                 Newsletter
                             </Text>
 
@@ -494,18 +506,21 @@ export default function TeamPage() {
                             flexDirection: 'column',
                             w: 'max-content',
                             justifyContent: 'center',
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            alignItems: 'center'
                         }}>
                             <Text css={{
-                                fontWeight: '$semibold',
-                                '@xsMax': {
-                                    fontSize: '$xl',
-                                },
-                                '@xsMin': {
-                                    fontSize: '$2xl'
-                                },
-                                color: '$purple600'
-                            }}>
+                                width: 'max-content',
+                                textAlign: 'center',
+                                // backgroundColor: '#3E5896',
+                                backgroundColor: '$purple300',
+                                color: 'white',
+                                borderRadius: 10,
+                                padding: '5px 25px',
+                                fontWeight: '$medium',
+                                color: '$purple800'
+                            }}
+                            >
                                 Technology
                             </Text>
 
