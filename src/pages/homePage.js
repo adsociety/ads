@@ -73,7 +73,7 @@ export default function HomePage() {
                     }}>
                         Official Website
                     </Text>
-                    <Image width='80%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} />
+                    <Image width='70%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} />
 
                     <Text css={{
                         textAlign: 'center',
@@ -297,7 +297,7 @@ export default function HomePage() {
                     }}>
 
                         {events.map(event => (
-                            <Card css={{ w: "460px", h: "400px", margin: '0px 20px' }}>
+                            <Card css={{ w: "400px", h: "300px", margin: '0px 20px' }}>
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image
                                         src={event.image[0]}
@@ -377,7 +377,8 @@ export default function HomePage() {
                                     fontSize: '$lg',
                                     fontWeight: '$semibold',
                                     paddingRight: 10,
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    textDecoration: 'underline'
                                 }}>
                                     Explore All Events
                                 </Text>
@@ -450,7 +451,8 @@ export default function HomePage() {
                                     fontSize: '$lg',
                                     fontWeight: '$semibold',
                                     paddingRight: 10,
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    textDecoration: 'underline'
                                 }}>
                                     All Team Members
                                 </Text>
@@ -720,7 +722,7 @@ export default function HomePage() {
                     }}>
 
                         {events.map(event => (
-                            <Card css={{ w: "460px", h: "400px", margin: '20px 0px' }}>
+                            <Card css={{ w: "400px", h: "300px", margin: '20px 0px' }}>
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image
                                         src={event.image[0]}
@@ -800,7 +802,8 @@ export default function HomePage() {
                                     fontSize: '$lg',
                                     fontWeight: '$semibold',
                                     paddingRight: 10,
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    textDecoration: 'underline'
                                 }}>
                                     Explore All Events
                                 </Text>
@@ -873,7 +876,8 @@ export default function HomePage() {
                                     fontSize: '$lg',
                                     fontWeight: '$semibold',
                                     paddingRight: 10,
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    textDecoration: 'underline'
                                 }}>
                                     All Team Members
                                 </Text>
@@ -1126,7 +1130,7 @@ export default function HomePage() {
                     </Text>
 
                     {events.map(event => (
-                        <Card css={{ w: "90%", margin: '10px 0', maxW: '300px', h: '400px' }}>
+                        <Card css={{ w: "90%", margin: '10px 0', maxW: '350px', h: '300px' }}>
                             <Card.Body css={{ p: 0 }}>
                                 <Card.Image
                                     src={event.image[0]}
@@ -1190,7 +1194,8 @@ export default function HomePage() {
                             <Text css={{
                                 fontSize: '$md',
                                 fontWeight: '$semibold',
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                textDecoration: 'underline'
                             }}>
                                 Explore All Events
                             </Text>
@@ -1252,7 +1257,8 @@ export default function HomePage() {
                             <Text css={{
                                 fontSize: '$md',
                                 fontWeight: '$semibold',
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                textDecoration: 'underline'
                             }}>
                                 All Team Members
                             </Text>

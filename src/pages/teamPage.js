@@ -1,6 +1,8 @@
 import { Grid, Text, Image, Row, Col } from "@nextui-org/react";
 import React from "react";
 import Grey from '../assets/images/Grey.jpeg'
+import Aryan from '../assets/team/webteam_aryanyadav.jpeg'
+import Zahaan from '../assets/team/webteam_zahaan.jpg'
 
 export default function TeamPage() {
     return (
@@ -32,7 +34,8 @@ export default function TeamPage() {
                 {/* Presidents */}
 
                 <Grid.Container css={{
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    paddingTop: '20px'
                 }}>
                     <Col css={{
                         display: 'flex',
@@ -63,7 +66,11 @@ export default function TeamPage() {
                                 padding: '20px',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                borderColor: '$red300',
+                                borderWidth: '2px 0px 0px 0px',
+                                borderStyle: 'solid',
+                                borderRadius: '30px 0px 0px 0px'
                             }}>
                                 <Col css={{
                                     display: 'flex',
@@ -84,17 +91,31 @@ export default function TeamPage() {
                                         }}
                                     />
                                     <Text
-                                        css={{
-                                            marginTop: 10,
-                                            fontSize: '$base',
-                                            fontWeight: '$medium'
-                                        }}
-                                    >
-                                        Vrinda Bhola, UG24
-                                    </Text>
-                                    <Text>
-                                        President & Co-Founder
-                                    </Text>
+                                            css={{
+                                                marginTop: 10,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            Vrinda Bhola
+                                        </Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
+                                            President & Co-Founder
+                                        </Text>
                                 </Col>
                             </Grid>
 
@@ -103,7 +124,11 @@ export default function TeamPage() {
                                 padding: '20px',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                borderColor: '$red300',
+                                borderWidth: '2px 0px 0px 0px',
+                                borderStyle: 'solid',
+                                borderRadius: '0px 30px 0px 0px'
                             }}>
                                 <Col css={{
                                     display: 'flex',
@@ -124,17 +149,31 @@ export default function TeamPage() {
                                         }}
                                     />
                                     <Text
-                                        css={{
-                                            marginTop: 10,
-                                            fontSize: '$base',
-                                            fontWeight: '$medium'
-                                        }}
-                                    >
-                                        Uttkarsh Kohli, UG24
-                                    </Text>
-                                    <Text>
-                                        President & Co-Founder
-                                    </Text>
+                                            css={{
+                                                marginTop: 10,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            Uttkarsh Kohli
+                                        </Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
+                                            President & Co-Founder
+                                        </Text>
                                 </Col>
                             </Grid>
                         </Row>
@@ -150,7 +189,8 @@ export default function TeamPage() {
                 }}>
 
                     <Row css={{
-                        w: 'max-content'
+                        w: 'max-content',
+                        paddingTop: '60px'
                     }}>
 
 
@@ -183,7 +223,11 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$yellow300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '30px 0px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
@@ -210,9 +254,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Tanvi Mahajan, UG24
+                                            Tanvi Mahajan
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -223,7 +281,11 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$yellow300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '0px 30px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
@@ -250,9 +312,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Manjari Goel, UG24
+                                            Manjari Goel
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -264,7 +340,8 @@ export default function TeamPage() {
                     </Row>
 
                     <Row css={{
-                        w: 'max-content'
+                        w: 'max-content',
+                        paddingTop: '60px'
                     }}>
 
                         <Col css={{
@@ -296,7 +373,11 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$green300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '30px 0px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
@@ -323,9 +404,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Gareema Goel, UG25
+                                            Gareema Goel
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG25
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -336,7 +431,11 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$green300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '0px 30px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
@@ -363,9 +462,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Abhay Madan, UG24
+                                            Abhay Madan
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -386,7 +499,8 @@ export default function TeamPage() {
                 }}>
 
                     <Row css={{
-                        w: 'max-content'
+                        w: 'max-content',
+                        paddingTop: '60px'
                     }}>
 
                         <Col css={{
@@ -418,7 +532,11 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$blue300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '30px 0px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
@@ -445,9 +563,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Ananya Sarvani Sankara, UG25
+                                            Ananya Sarvani Sankara
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG25
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -458,7 +590,11 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$blue300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '0px 30px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
@@ -485,9 +621,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Syona, UG25
+                                            Syona
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG25
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -498,7 +648,8 @@ export default function TeamPage() {
                     </Row>
 
                     <Row css={{
-                        w: 'max-content'
+                        w: 'max-content',
+                        paddingTop: '60px'
                     }}>
 
                         <Col css={{
@@ -518,7 +669,7 @@ export default function TeamPage() {
                                 borderRadius: 10,
                                 padding: '5px 25px',
                                 fontWeight: '$medium',
-                                color: '$purple800'
+                                color: '$purple800',
                             }}
                             >
                                 Technology
@@ -530,14 +681,18 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$purple300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '30px 0px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Grey}
+                                        <Image src={Aryan}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -557,9 +712,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Aryan Yadav, ASP24
+                                            Aryan Yadav
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            ASP24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>
@@ -570,14 +739,18 @@ export default function TeamPage() {
                                     padding: '20px',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    borderColor: '$purple300',
+                                    borderWidth: '2px 0px 0px 0px',
+                                    borderStyle: 'solid',
+                                    borderRadius: '0px 30px 0px 0px'
                                 }}>
                                     <Col css={{
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Grey}
+                                        <Image src={Zahaan}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -597,9 +770,23 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Zahaan Shapoorjee, UG24
+                                            Zahaan Shapoorjee
                                         </Text>
-                                        <Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
                                             Co-Head
                                         </Text>
                                     </Col>

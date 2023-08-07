@@ -22,6 +22,7 @@ function Header() {
             height: '40px',
             transitionDuration: '0.5s',
             transitionProperty: 'transform',
+            borderRadius: 5,
             '&:hover':{
               cursor: 'pointer',
               transform: 'rotate(360deg)',
