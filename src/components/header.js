@@ -2,17 +2,13 @@ import React from "react";
 import "./components.css";
 import { Navbar, Link, Image} from "@nextui-org/react";
 import { FaInstagram, FaYoutube } from 'react-icons/fa';
-import TransparentLogo from '../../assets/images/TransparentLogo.png'
+import Logo from '../assets/images/Grey.jpeg'
 
 function Header() {
     const items = [
       {name: 'Home', href:'/'},
-      {name: 'APL x FanUp', href:'/fanup'},
-      {name: 'APL 7.0', href: '/seasons/apl7'},
-      {name: 'RoadToAPL', href:'/roadtoapl'},
-      {name: 'Registration', href:'/registration'},
-      {name: 'Slots', href:'/slots'},
-      {name: 'Seasons', href:'/seasons'},
+      {name: 'Events', href:'/events'},
+      {name: 'Team', href:'/team'},
     ]
 
     var active = window.location.pathname
@@ -30,7 +26,7 @@ function Header() {
               cursor: 'pointer',
               transform: 'rotate(360deg)',
             }
-          }} src={TransparentLogo} 
+          }} src={Logo} 
           onClick={()=>{
             window.location.pathname=''
           }}/>
@@ -47,7 +43,7 @@ function Header() {
           <Image css={{
               width: '40px',
               height: '40px'
-            }} src={TransparentLogo} />
+            }} src={Logo} />
         </Navbar.Content>
         <Navbar.Content>
           <Link target="_blank" href="https://www.instagram.com/apl.ashoka/">
