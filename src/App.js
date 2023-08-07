@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import HomePage from './pages/homePage';
+import TeamPage from './pages/teamPage';
+import EventsPage from './pages/eventsPage';
 
 
 
@@ -21,6 +23,8 @@ function App() {
               <Routes>
 
                 <Route exact path="/" element={<HomePage/>} />
+                <Route exact path="/events" element={<EventsPage/>} />
+                <Route exact path="/team" element={<TeamPage/>} />
 
               </Routes>
             </Router>

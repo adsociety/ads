@@ -1,12 +1,12 @@
 import { Grid, Text } from "@nextui-org/react";
 import React from "react";
 
-export default function TeamPage(){
+export default function EventsPage(){
     return(
         <Grid.Container>
             <Grid>
                 <Text>
-                    TEAM
+                    EVENTS
                 </Text>
             </Grid>
         </Grid.Container>

@@ -1,59 +1,35 @@
 import React from "react";
-import { Container, Row, Text, Link, Col } from "@nextui-org/react";
+import { Container, Row, Text, Link, Col, Input, Button } from "@nextui-org/react";
 
 function Footer(){
     return(
         <Container fluid >
-            <Col>
-                {/* <Row      
-                css={{
-                    jc: 'center',
-                    textAlign: 'center',
+            <Col css={{
+                w: '100%',
+                justifyContent: 'center'
+            }}>
+                <Row css={{
                     alignItems: 'center',
-                    borderStyle: 'solid',
-                    borderColor: '$gray600',
-                    borderWidth: '0px 0px 0px 0px'
+                    justifyContent: 'center',
+                    padding: '20px 0px'
                 }}>
-                    <Text hideIn={'xs'}
-                    css={{
-                        padding: '1% 0.35%',
-                        fontSize: '$normal'
+                    <Text css={{
+                        paddingRight: 20,
+                        fontWeight: '$semibold'
                     }}>
-                        Made with 🤍 by
+                        Subscribe To Our Newsletter
                     </Text>
-                    <Text showIn={'xs'}
-                    css={{
-                        padding: '1%',
-                    }}>
-                        By
-                    </Text>
-                    <Link
-                    css={{
-                        color: '#3694ff'
-                    }} target='_blank' href="https://aryanyadav.com/"
-                    >
-                        Aryan Yadav
-                    </Link>
-                    <Text hideIn={'xs'}
-                    css={{
-                        padding: '1% 0.35%'
-                    }}>
-                        and 
-                    </Text>
-                    <Text showIn={'xs'}
-                    css={{
-                        padding: '1%'
-                    }}>
-                        and 
-                    </Text>
-                    <Link 
-                    css={{
-                        color: '#3694ff'
-                    }} target='_blank' href="https://zahaanshapoorjee.netlify.app/"
-                    >
-                        Zahaan Shapoorjee
-                    </Link>
-                </Row> */}
+                    <Input type='email' placeholder="Your email address" 
+                        css={{
+                            paddingRight: 20
+                        }}
+                    />
+                    <Button flat auto color="warning">
+                        <Text>
+                            Subscribe
+                        </Text>
+                    </Button>
+                </Row>
                 <Text
                 css={{
                     color: '$gray700',
@@ -61,7 +37,7 @@ function Footer(){
                     textAlign: 'center',
                     padding: '10px 0px',
                     borderStyle: 'solid',
-                    borderColor: '$gray700',
+                    borderColor: '$gray400',
                     borderWidth: '1px 0px 0px 0px',
                     '@xsMax':{
                         fontSize: '$xs'
