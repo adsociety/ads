@@ -14,7 +14,7 @@ function Header() {
     var active = window.location.pathname
 
     return(
-      <Navbar className="navbar" variant="static">
+      <Navbar variant="sticky"  shouldHideOnScroll>
         <Navbar.Toggle color="inherit" showIn="sm" />
         <Navbar.Brand hideIn="sm" css={{'&:hover':{transform: 'scale(1.25)'}}}>
           <Image css={{
@@ -31,7 +31,7 @@ function Header() {
             window.location.pathname=''
           }}/>
         </Navbar.Brand>
-        <Navbar.Content hideIn="sm" variant="highlight-rounded">
+        <Navbar.Content hideIn="sm" variant="underline-rounded">
         {items.map((item, index) => (
             <Navbar.Link key={index} isActive={item.href===active.substring(0,item.href.length+1)} href={item.href}>
               {item.name}

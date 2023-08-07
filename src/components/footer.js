@@ -5,7 +5,7 @@ function Footer(){
     return(
         <Container fluid >
             <Col>
-                <Row      
+                {/* <Row      
                 css={{
                     jc: 'center',
                     textAlign: 'center',
@@ -53,7 +53,7 @@ function Footer(){
                     >
                         Zahaan Shapoorjee
                     </Link>
-                </Row>
+                </Row> */}
                 <Text
                 css={{
                     color: '$gray700',
@@ -67,7 +67,7 @@ function Footer(){
                         fontSize: '$xs'
                     }
                 }}>
-                    © 2023 Ashoka Premier League. All Rights Reserved.
+                    © 2023 Ashoka Data Society. All Rights Reserved.
                 </Text>
             </Col>
         </Container>
