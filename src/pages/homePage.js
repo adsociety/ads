@@ -865,8 +865,157 @@ export default function HomePage() {
             </div>
 
             <div className="mobile">
+  <Grid.Container css={{
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '20px',
+    padding: '0',
+    flexDirection: 'column'
+  }}>
+    <Text css={{
+      fontSize: '$2xl',
+      padding: '0 5% 0 5%',
+      fontWeight: '$medium'
+    }}>
+      Ashoka Data Society
+    </Text>
+    <Text css={{
+      fontSize: '$xl',
+      padding: '0 5% 0 5%',
+    }}>
+      Official Website
+    </Text>
+    <Image width='100%' css={{ objectFit: 'cover', height: '300px', marginTop: 20, marginBottom: 20}} src={Grey} />
 
-            </div>
+    {events.map(event => (
+      <Card css={{ w: "90%", margin: '10px 0' }}>
+        <Card.Body css={{ p: 0 }}>
+          <Card.Image
+            src={event.image[0]}
+            width="100%"
+            height="200px"
+            objectFit="cover"
+            alt="Card example background"
+          />
+        </Card.Body>
+        <Card.Footer
+          isBlurred
+          css={{
+            position: "relative",
+            bgBlur: "#ffffff66",
+            borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+            bottom: 0,
+            zIndex: 1,
+            padding: '10px'
+          }}
+        >
+          <Text className="multiline-ellipsis" css={{
+            fontWeight: '$semibold',
+            fontSize: '$md',
+            marginBottom: 5
+          }}>
+            {event.name}
+          </Text>
+          <Text className="multiline-ellipsis" css={{
+            fontSize: '$sm',
+            marginBottom: 5
+          }}>
+            {event.date}
+          </Text>
+          <Button flat auto rounded color="primary">
+            <Text
+              css={{ color: "inherit", fontSize: '$sm' }}
+              weight="bold"
+              transform="uppercase"
+            >
+              KNOW MORE
+            </Text>
+          </Button>
+        </Card.Footer>
+      </Card>
+    ))}
+
+    <Link href="/events" >
+      <Row css={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '20px 0'
+      }}>
+        <Text css={{
+          fontSize: '$md',
+          fontWeight: '$semibold',
+          textAlign: 'center'
+        }}>
+          Explore All Events
+        </Text>
+        <BsArrowRight size={20} color='black' />
+      </Row>
+    </Link>
+
+    <Text css={{
+      textAlign: 'center',
+      fontWeight: '$semibold',
+      fontSize: '$xl',
+      paddingBottom: '10px'
+    }}>
+      Team
+    </Text>
+
+    <Grid.Container
+      css={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '0px 10px'
+      }}
+    >
+      {team.map(member => (
+        <Grid css={{
+          flexDirection: 'column',
+          padding: '10px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center'
+        }}>
+          <Image width={120} height={120} src={member.image}
+            css={{
+              borderRadius: '50%',
+            }}
+          />
+          <Text
+            css={{
+              marginTop: 5,
+              fontSize: '$base',
+              fontWeight: '$medium'
+            }}
+          >
+            {member.name}
+          </Text>
+          <Text css={{ fontSize: '$sm' }}>
+            {member.role}
+          </Text>
+        </Grid>
+      ))}
+    </Grid.Container>
+
+    <Link href="/team" >
+      <Row css={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '20px 0'
+      }}>
+        <Text css={{
+          fontSize: '$md',
+          fontWeight: '$semibold',
+          textAlign: 'center'
+        }}>
+          All Team Members
+        </Text>
+        <BsArrowRight size={20} color='black' />
+      </Row>
+    </Link>
+  </Grid.Container>
+</div>
+
         </div>
     )
 }
