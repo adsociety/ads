@@ -48,12 +48,6 @@ export default function EventsPage() {
             date: '1st February, 2023',
         },
         {
-            name: 'FINANCE COHORT WITH METVY',
-            description: `Ashoka Data Society yet again partnered with the Ed- Tech start-up Metvy to organize a comprehensive Finance cohort, providing participants with a unique learning experience. This cohort focused on equipping individuals with the necessary skills and knowledge to excel in the field of finance. The Finance cohort offered several valuable features to enhance participants' learning journey.\n Firstly, the cohort provided opportunities to learn from industry experts, who shared their insights and experiences through interactive sessions. Additionally, the cohort incorporated live projects, enabling participants to apply their newfound knowledge and skills in real-world scenarios. Upon successful completion of the cohort, participants received a certificate recognizing their achievement and proficiency in finance. Moreover, they had the opportunity to obtain personalized Letters of Recommendation (LORs), which could be valuable for future career prospects.`,
-            image: [Grey],
-            date: '1st February, 2023',
-        },
-        {
             name: 'ADE X EQUILIBRIUM FAMILY FEUD',
             description: `ADE, at the first Ashoka Economics Fest “Equilibrium”, organised an interactive activity inspired by the reality show “Family Feud”. This adapted version managed to gain a lot of traction from visitors bustling around the stall and playing out the game to win Theobroma Brownies. From engaging conversations to wild guesses for difficult questions, we saw it all at the stall!\n `,
             image: [Grey],

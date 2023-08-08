@@ -42,6 +42,16 @@
     /* let the text wrap preserving spaces */
 }
 
+.multiline-ellipsis-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+    /* let the text wrap preserving spaces */
+}
+
 .multiline-ellipsis-3 {
     overflow: hidden;
     display: -webkit-box;
@@ -63,25 +73,25 @@
 }
 
 .homepage-row{
-    background-image: url('../src/assets/images/bggreen.jpg');
+    background-image: url('../src/assets/images/bglaptop.jpg');
     background-size: cover;
     background-repeat: no-repeat
 }
 
 .homepage-mobile-row{
-    background-image: url('../src/assets/images/bggreen-mobile.jpg');
+    background-image: url('../src/assets/images/bglaptop-mobile.jpg');
     background-size: cover;
     background-repeat: no-repeat
 }
 
 .featuredpage-row{
-    background-image: url('../src/assets/images/bgpink.jpg');
+    background-image: url('../src/assets/images/bgdata.jpg');
     background-size: cover;
     background-repeat: no-repeat
 }
 
 .featuredpage-mobile-row{
-    background-image: url('../src/assets/images/bgpink-mobile.jpg');
+    background-image: url('../src/assets/images/bgdata-mobile.jpg');
     background-size: cover;
     background-repeat: no-repeat
 }

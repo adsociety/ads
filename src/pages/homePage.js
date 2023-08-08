@@ -5,21 +5,19 @@ import Grey from '../assets/images/Grey.jpeg'
 import Overview from '../assets/images/overview.png'
 import Mission from '../assets/images/mission.png'
 import Vision from '../assets/images/vision.png'
-import BGGreen from '../assets/images/bggreen.jpg'
-import BGPink from '../assets/images/bgpink.jpg'
 
 export default function HomePage() {
 
     const events = [
         {
-            name: 'CS Social WICSER',
-            description: "Ashoka Data Society actively participated in the CS Social Wicser, which served as an excellent platform for networking, knowledge exchange, and creating opportunities for collaboration among the Ashokans. Ashoka Data Society set up an information booth to showcase our organization's mission, projects, and initiatives. It provided an opportunity for attendees to interact directly with our team, inquire about our work, and learn about potential involvement opportunities. Our team members actively engaged with attendees, allowing for meaningful conversations and identifying potential researchers, and industry professionals with shared interests, paving the way for future joint initiatives or projects.",
+            name: 'ADE X ABC CONVERSATION WITH SNEHIL JAIN, THE VICE PRESIDENT OF HSBC',
+            description: `Ashoka Data Society, in collaboration with the Ashoka Business Club, organized an engaging conversation on "Marketing Analytics" featuring Snehil Jain, the Vice President of HSBC. The conversation aimed to provide participants with valuable insights into the field of marketing analytics and its applications in today's business landscape.\n During the conversation, Snehil Jain, an experienced professional in the finance and marketing domain, shared her expertise and perspectives on marketing analytics. Participants had the opportunity to learn about the importance of data- driven decision-making in marketing, the role of analytics in understanding customer behaviour and preferences, and the impact of analytics on marketing strategies.\n The conversation fostered interactive discussions, allowing participants to engage directly with Snehil Jain, and ask questions. It provided a platform for knowledge sharing and networking among like-minded individuals interested in marketing analytics. `,
             image: [Grey],
             date: '1st February, 2023',
         },
         {
-            name: 'PYTHON BOOTCAMP WITH PROFESSOR AMIT GOYAL',
-            description: "Ashoka Data Society conducted a Python Bootcamp in collaboration with Professor Amit Goyal. The boot camp provided participants with an immersive learning experience and a solid foundation in Python programming. Led by Professor Amit Goyal, an esteemed expert in the field, the Python Bootcamp aimed to equip attendees with practical programming skills and empower them to leverage Python's capabilities for data analysis and machine learning.\n The boot camp covered essential Python concep syntax, data structures, and commonly used libraries. The boot camp ensured active participation and engagement from attendees and proved to a valuable learning experience for all participants.",
+            name: 'IMPORTANCE OF DATA-DRIVEN FINANCE AND HOW TO BREAK INTO THIS FIELD BY SRINIDHI RAGHAVENDRA, CEO OF MINT FINANCE',
+            description: `Ashoka Data Society organized an insightful webinar titled "Importance of Data-Driven Finance and How to Break into This Field," featuring Srinidhi Raghavendra, the CEO of Mint Finance, as the distinguished speaker.\n Srinidhi Raghavendra, an industry expert with extensive experience in finance and data analytics, shared his expertise and insights with the attendees. The webinar explored various aspects, including the role of data- driven decision-making in finance, emerging trends, and the skills required to thrive in this evolving landscape. Participants had the opportunity to learn from Srinidhi Raghavendra's experiences and gain valuable insights into how data analytics is transforming the finance sector. The webinar also provided guidance on breaking into the field, highlighting the essential skills, educational background, and career pathways to consider.`,
             image: [Grey],
             date: '1st February, 2023',
         },
@@ -27,27 +25,27 @@ export default function HomePage() {
 
     const team = [
         {
-            name: 'Vrinda Bhola',
+            name: 'Professor A',
             batch: 'UG24',
-            role: 'President & Co-Founder',
+            role: 'A Department',
             image: Grey
         },
         {
-            name: 'Uttkarsh Kohli',
+            name: 'Professor B',
             batch: 'UG24',
-            role: 'President & Co-Founder',
+            role: 'B Department',
             image: Grey
         },
         {
-            name: 'Tanya Mahajan',
+            name: 'Professor C',
             batch: 'UG24',
-            role: 'Co-Head of Marketing',
+            role: 'C Department',
             image: Grey
         },
         {
-            name: 'Abhay Madan',
+            name: 'Professor D',
             batch: 'UG24',
-            role: 'Co-Head of Events',
+            role: 'D Department',
             image: Grey
         },
     ]
@@ -90,28 +88,30 @@ export default function HomePage() {
                     </Row> */}
 
                     <Row className="homepage-row" css={{
-                        jc: 'start',
-                        alignItems: 'center',
+                        jc: 'center',
+                        alignItems: 'start',
                         padding: '60px 20%',
                         height: '85vh'
                     }}>
                         <Col css={{
-                            w: 'max-content',
+                            w: '100%',
                             display: 'flex',
                             flexDirection: 'column',
-                            jc: 'start',
-                            alignItems: 'start'
+                            jc: 'center',
+                            alignItems: 'center',
                         }}>
                             <Text css={{
                                 fontSize: '$3xl',
                                 padding: '0 5%',
-                                fontWeight: '$semibold'
+                                fontWeight: '$semibold',
+                                color: 'White'
                             }}>
                                 Data Society @Ashoka
                             </Text>
                             <Text css={{
                                 fontSize: '$xl',
                                 padding: '0 5%',
+                                color: 'White'
                             }}>
                                 The official Data Society of Ashoka University.
                             </Text>
@@ -339,7 +339,7 @@ export default function HomePage() {
                                 fontWeight: '$semibold',
                                 width: '100%',
                                 fontSize: '$3xl',
-                                paddingBottom: '40px'
+                                paddingBottom: '80px'
                             }}>
                                 Featured Events
                             </Text>
@@ -351,7 +351,7 @@ export default function HomePage() {
                             }}>
 
                                 {events.map(event => (
-                                    <Card css={{ w: "400px", h: "300px", margin: '0px 20px' }}>
+                                    <Card css={{ w: "450px", h: "400px", margin: '0px 20px' }}>
                                         <Card.Body css={{ p: 0 }}>
                                             <Card.Image
                                                 src={event.image[0]}
@@ -415,34 +415,36 @@ export default function HomePage() {
 
 
                             </Row>
-                            <Grid css={{
-                                width: '100%',
-                                justifyContent: 'center',
-                                display: 'flex',
-                                marginBottom: '80px'
-                            }}>
-                                <Link href="/events" >
-                                    <Row css={{
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        <Text css={{
-                                            fontSize: '$lg',
-                                            fontWeight: '$semibold',
-                                            paddingRight: 10,
-                                            textAlign: 'center',
-                                            textDecoration: 'underline'
-                                        }}>
-                                            Explore All Events
-                                        </Text>
-                                        <BsArrowRight size={20} color='black' />
-                                    </Row>
-                                </Link>
-                            </Grid>
                         </Col>
 
 
                     </Row>
+                    <Grid css={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        marginBottom: '40px',
+                        marginTop: '20px'
+                    }}>
+                        <Link href="/events" >
+                            <Row css={{
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <Text css={{
+                                    fontSize: '$lg',
+                                    fontWeight: '$semibold',
+                                    paddingRight: 10,
+                                    textAlign: 'center',
+                                    textDecoration: 'underline',
+                                    color: 'Black'
+                                }}>
+                                    Explore All Events
+                                </Text>
+                                <BsArrowRight size={20} color='#000' />
+                            </Row>
+                        </Link>
+                    </Grid>
 
 
 
@@ -453,7 +455,7 @@ export default function HomePage() {
                         fontSize: '$3xl',
                         padding: '60px 0px 10px 0px'
                     }}>
-                        Team
+                        Professors Associated With Us
                     </Text>
 
                     <Grid.Container
@@ -512,7 +514,7 @@ export default function HomePage() {
                                     textAlign: 'center',
                                     textDecoration: 'underline'
                                 }}>
-                                    All Team Members
+                                    ADS Core Team
                                 </Text>
                                 <BsArrowRight size={20} color='black' />
                             </Row>
@@ -532,29 +534,31 @@ export default function HomePage() {
                 }}>
 
                     <Row className="homepage-row" css={{
-                        jc: 'start',
-                        alignItems: 'center',
+                        jc: 'center',
+                        alignItems: 'start',
                         // w: 'max-content',
                         padding: '60px 20%',
-                        height: '85vh'
+                        height: 715
                     }}>
                         <Col css={{
-                            w: 'max-content',
+                            w: '100%',
                             display: 'flex',
                             flexDirection: 'column',
-                            jc: 'start',
-                            alignItems: 'start'
+                            jc: 'center',
+                            alignItems: 'center'
                         }}>
                             <Text css={{
                                 fontSize: '$2xl',
                                 padding: '0 5%',
-                                fontWeight: '$semibold'
+                                fontWeight: '$semibold',
+                                color: 'white'
                             }}>
                                 Data Society @Ashoka
                             </Text>
                             <Text css={{
                                 fontSize: '$xl',
                                 padding: '0 5%',
+                                color: 'white'
                             }}>
                                 The official Data Society of Ashoka University.
                             </Text>
@@ -741,7 +745,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1320,
+                                top: 1270,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
@@ -917,13 +921,13 @@ export default function HomePage() {
                                 fontWeight: '$semibold',
                                 width: '100%',
                                 fontSize: '$2xl',
-                                paddingBottom: '40px'
+                                padding: '40px 0px'
                             }}>
                                 Featured Events
                             </Text>
 
                             <Col css={{
-                                padding: '0 40px 30px 40px',
+                                padding: '30px 40px 0px 40px',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 w: '100%',
@@ -1001,7 +1005,8 @@ export default function HomePage() {
                                 width: '100%',
                                 justifyContent: 'center',
                                 display: 'flex',
-                                marginBottom: '80px'
+                                marginBottom: '80px',
+                                padding: '40px 0px 0px 0px'
                             }}>
                                 <Link href="/events" >
                                     <Row css={{
@@ -1034,9 +1039,10 @@ export default function HomePage() {
                         width: '100%',
                         fontSize: '$3xl',
                         paddingBottom: '10px',
-                        paddingTop: '60px'
+                        paddingTop: '80px',
+                        marginTop: '60px'
                     }}>
-                        Team
+                        Professors Associated With Us
                     </Text>
 
                     <Grid.Container
@@ -1095,7 +1101,7 @@ export default function HomePage() {
                                     textAlign: 'center',
                                     textDecoration: 'underline'
                                 }}>
-                                    All Team Members
+                                    ADS Core Team
                                 </Text>
                                 <BsArrowRight size={20} color='black' />
                             </Row>
@@ -1130,8 +1136,8 @@ export default function HomePage() {
                     <Image width='95%' css={{ objectFit: 'cover', height: '300px', marginTop: 20, marginBottom: 20, borderRadius: 10 }} src={Grey} /> */}
 
                     <Row className="homepage-mobile-row" css={{
-                        jc: 'start',
-                        alignItems: 'center',
+                        jc: 'center',
+                        alignItems: 'start',
                         padding: '60px 20%',
                         height: '85vh'
                     }}>
@@ -1139,19 +1145,22 @@ export default function HomePage() {
                             w: 'max-content',
                             display: 'flex',
                             flexDirection: 'column',
-                            jc: 'start',
-                            alignItems: 'start'
+                            jc: 'center',
+                            alignItems: 'center',
+                            textAlign: 'center'
                         }}>
                             <Text css={{
                                 fontSize: '$xl',
                                 padding: '0 2.5%',
-                                fontWeight: '$semibold'
+                                fontWeight: '$semibold',
+                                color: 'White'
                             }}>
                                 Data Society @Ashoka
                             </Text>
                             <Text css={{
                                 fontSize: '$md',
                                 padding: '0 2.5%',
+                                color: 'White'
                             }}>
                                 The official Data Society of Ashoka University.
                             </Text>
@@ -1373,7 +1382,7 @@ export default function HomePage() {
                     }}>
                         <Col css={{
                             margin: '0px 0px 0px 0px',
-                            w: 'max-content',
+                            w: '100%',
                             display: 'flex',
                             flexDirection: 'column',
                             jc: 'center',
@@ -1532,7 +1541,7 @@ export default function HomePage() {
                                 textAlign: 'center',
                                 textDecoration: 'underline'
                             }}>
-                                All Team Members
+                                ADS Core Team
                             </Text>
                             <BsArrowRight size={20} color='black' />
                         </Row>
