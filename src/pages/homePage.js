@@ -5,6 +5,8 @@ import Grey from '../assets/images/Grey.jpeg'
 import Overview from '../assets/images/overview.png'
 import Mission from '../assets/images/mission.png'
 import Vision from '../assets/images/vision.png'
+import BGGreen from '../assets/images/bggreen.jpg'
+import BGPink from '../assets/images/bgpink.jpg'
 
 export default function HomePage() {
 
@@ -55,25 +57,67 @@ export default function HomePage() {
             <div className="desktop">
                 <Grid.Container css={{
                     justifyContent: 'center',
-                    alignItems: 'start',
+                    alignItems: 'center',
                     marginTop: '20px',
                     padding: '0 20px 0 20px',
                     flexDirection: 'column'
                 }}>
-                    <Text css={{
-                        fontSize: '$3xl',
-                        padding: '0 15% 0 15%',
-                        fontWeight: '$medium'
+
+                    {/* <Row css={{
+                        jc: 'center',
+                        alignItems: 'center',
+                        // w: 'max-content',
+                        padding: '60px 20%',
                     }}>
-                        Ashoka Data Society
-                    </Text>
-                    <Text css={{
-                        fontSize: '$xl',
-                        padding: '0 15% 0 15%',
+                        <Col css={{}}>
+                            <Text css={{
+                                fontSize: '$3xl',
+                                padding: '0 15% 0 15%',
+                                fontWeight: '$medium'
+                            }}>
+                                Ashoka Data Society
+                            </Text>
+                            <Text css={{
+                                fontSize: '$xl',
+                                padding: '0 15% 0 15%',
+                            }}>
+                                Official Website
+                            </Text>
+
+                        </Col>
+                        <Image width='700px' css={{ objectFit: 'cover', height: '300px', borderRadius: 10, marginTop: 20 }} src={Grey} />
+
+                    </Row> */}
+
+                    <Row className="homepage-row" css={{
+                        jc: 'start',
+                        alignItems: 'center',
+                        padding: '60px 20%',
+                        height: '85vh'
                     }}>
-                        Official Website
-                    </Text>
-                    <Image width='70%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} />
+                        <Col css={{
+                            w: 'max-content',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            jc: 'start',
+                            alignItems: 'start'
+                        }}>
+                            <Text css={{
+                                fontSize: '$3xl',
+                                padding: '0 5%',
+                                fontWeight: '$semibold'
+                            }}>
+                                Data Society @Ashoka
+                            </Text>
+                            <Text css={{
+                                fontSize: '$xl',
+                                padding: '0 5%',
+                            }}>
+                                The official Data Society of Ashoka University.
+                            </Text>
+
+                        </Col>
+                    </Row>
 
                     <Text css={{
                         textAlign: 'center',
@@ -81,18 +125,18 @@ export default function HomePage() {
                         width: '100%',
                         fontSize: '$3xl',
                         paddingBottom: '0px',
-                        paddingTop: '40px'
+                        paddingTop: '60px'
                     }}>
                         About Us
                     </Text>
-                    
+
                     <Row css={{
                         // margin: '40px 0 40px 0',
                         justifyContent: 'space-center',
                         width: '960px',
                         justifySelf: 'center',
                         alignSelf: 'center',
-                        margin: '70px 0px 50px 0px'
+                        margin: '40px 0px 80px 0px'
                     }}>
 
                         <Grid css={{
@@ -280,112 +324,126 @@ export default function HomePage() {
 
                     </Row>
 
-                    <Text css={{
-                        textAlign: 'center',
-                        fontWeight: '$semibold',
-                        width: '100%',
-                        fontSize: '$3xl',
-                        paddingBottom: '40px'
-                    }}>
-                        Featured Events
-                    </Text>
-
-                    <Row css={{
-                        padding: '0 40px 30px 40px',
-                        justifyContent: 'center',
+                    <Row className="featuredpage-row" css={{
+                        jc: 'start',
                         alignItems: 'center',
+                        // w: 'max-content',
+                        padding: '60px 10%',
+                        height: '85vh'
                     }}>
+                        <Col css={{
+                            margin: '0px 0px 0px 0px'
+                        }}>
+                            <Text css={{
+                                textAlign: 'center',
+                                fontWeight: '$semibold',
+                                width: '100%',
+                                fontSize: '$3xl',
+                                paddingBottom: '40px'
+                            }}>
+                                Featured Events
+                            </Text>
 
-                        {events.map(event => (
-                            <Card css={{ w: "400px", h: "300px", margin: '0px 20px' }}>
-                                <Card.Body css={{ p: 0 }}>
-                                    <Card.Image
-                                        src={event.image[0]}
-                                        width="100%"
-                                        height="100%"
-                                        objectFit="cover"
-                                        alt="Card example background"
-                                    />
-                                </Card.Body>
-                                <Card.Footer
-                                    isBlurred
-                                    css={{
-                                        position: "absolute",
-                                        bgBlur: "#ffffff66",
-                                        borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-                                        bottom: 0,
-                                        zIndex: 1,
-                                    }}
-                                >
-                                    <Row css={{
-                                        alignItems: 'center'
-                                    }}>
-                                        <Col css={{
-                                            width: '75%',
-                                        }}>
-                                            <Text className="multiline-ellipsis" css={{
-                                                fontWeight: '$semibold',
-                                                fontSize: '$md',
-                                                marginRight: 10
+                            <Row css={{
+                                padding: '0 40px 10px 40px',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+
+                                {events.map(event => (
+                                    <Card css={{ w: "400px", h: "300px", margin: '0px 20px' }}>
+                                        <Card.Body css={{ p: 0 }}>
+                                            <Card.Image
+                                                src={event.image[0]}
+                                                width="100%"
+                                                height="100%"
+                                                objectFit="cover"
+                                                alt="Card example background"
+                                            />
+                                        </Card.Body>
+                                        <Card.Footer
+                                            isBlurred
+                                            css={{
+                                                position: "absolute",
+                                                bgBlur: "#ffffff66",
+                                                borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+                                                bottom: 0,
+                                                zIndex: 1,
+                                            }}
+                                        >
+                                            <Row css={{
+                                                alignItems: 'center'
                                             }}>
-                                                {event.name}
-                                            </Text>
-                                            <Text className="multiline-ellipsis" css={{
-                                                fontWeight: '$semibold',
-                                                fontSize: '$md',
-                                                marginRight: 10
-                                            }}>
-                                                {event.date}
-                                            </Text>
-                                        </Col>
-                                        <Col css={{
-                                            width: 'max-content'
-                                        }}>
-                                            <Row justify="flex-end">
-                                                <Button flat auto rounded color="primary">
-                                                    <Text
-                                                        css={{ color: "inherit" }}
-                                                        size={12}
-                                                        weight="bold"
-                                                        transform="uppercase"
-                                                    >
-                                                        KNOW MORE
+                                                <Col css={{
+                                                    width: '75%',
+                                                }}>
+                                                    <Text className="multiline-ellipsis" css={{
+                                                        fontWeight: '$semibold',
+                                                        fontSize: '$md',
+                                                        marginRight: 10
+                                                    }}>
+                                                        {event.name}
                                                     </Text>
-                                                </Button>
+                                                    <Text className="multiline-ellipsis" css={{
+                                                        fontWeight: '$semibold',
+                                                        fontSize: '$md',
+                                                        marginRight: 10
+                                                    }}>
+                                                        {event.date}
+                                                    </Text>
+                                                </Col>
+                                                <Col css={{
+                                                    width: 'max-content'
+                                                }}>
+                                                    <Row justify="flex-end">
+                                                        <Button flat auto rounded color="primary">
+                                                            <Text
+                                                                css={{ color: "inherit" }}
+                                                                size={12}
+                                                                weight="bold"
+                                                                transform="uppercase"
+                                                            >
+                                                                KNOW MORE
+                                                            </Text>
+                                                        </Button>
+                                                    </Row>
+                                                </Col>
                                             </Row>
-                                        </Col>
+                                        </Card.Footer>
+                                    </Card>
+                                ))}
+
+
+                            </Row>
+                            <Grid css={{
+                                width: '100%',
+                                justifyContent: 'center',
+                                display: 'flex',
+                                marginBottom: '80px'
+                            }}>
+                                <Link href="/events" >
+                                    <Row css={{
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}>
+                                        <Text css={{
+                                            fontSize: '$lg',
+                                            fontWeight: '$semibold',
+                                            paddingRight: 10,
+                                            textAlign: 'center',
+                                            textDecoration: 'underline'
+                                        }}>
+                                            Explore All Events
+                                        </Text>
+                                        <BsArrowRight size={20} color='black' />
                                     </Row>
-                                </Card.Footer>
-                            </Card>
-                        ))}
+                                </Link>
+                            </Grid>
+                        </Col>
 
 
                     </Row>
 
-                    <Grid css={{
-                        width: '100%',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        marginBottom: '80px'
-                    }}>
-                        <Link href="/events" >
-                            <Row css={{
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}>
-                                <Text css={{
-                                    fontSize: '$lg',
-                                    fontWeight: '$semibold',
-                                    paddingRight: 10,
-                                    textAlign: 'center',
-                                    textDecoration: 'underline'
-                                }}>
-                                    Explore All Events
-                                </Text>
-                                <BsArrowRight size={20} color='black' />
-                            </Row>
-                        </Link>
-                    </Grid>
 
 
                     <Text css={{
@@ -393,7 +451,7 @@ export default function HomePage() {
                         fontWeight: '$semibold',
                         width: '100%',
                         fontSize: '$3xl',
-                        paddingBottom: '10px'
+                        padding: '60px 0px 10px 0px'
                     }}>
                         Team
                     </Text>
@@ -440,7 +498,7 @@ export default function HomePage() {
                         width: '100%',
                         justifyContent: 'center',
                         display: 'flex',
-                        marginBottom: '80px'
+                        marginBottom: '100px'
                     }}>
                         <Link href="/team" >
                             <Row css={{
@@ -472,7 +530,39 @@ export default function HomePage() {
                     padding: '0 20px 0 20px',
                     flexDirection: 'column'
                 }}>
-                    <Text css={{
+
+                    <Row className="homepage-row" css={{
+                        jc: 'start',
+                        alignItems: 'center',
+                        // w: 'max-content',
+                        padding: '60px 20%',
+                        height: '85vh'
+                    }}>
+                        <Col css={{
+                            w: 'max-content',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            jc: 'start',
+                            alignItems: 'start'
+                        }}>
+                            <Text css={{
+                                fontSize: '$2xl',
+                                padding: '0 5%',
+                                fontWeight: '$semibold'
+                            }}>
+                                Data Society @Ashoka
+                            </Text>
+                            <Text css={{
+                                fontSize: '$xl',
+                                padding: '0 5%',
+                            }}>
+                                The official Data Society of Ashoka University.
+                            </Text>
+
+                        </Col>
+                        {/* <Image width='500px' css={{ objectFit: 'cover', height: '300px', borderRadius: 10 }} src={Grey} /> */}
+                    </Row>
+                    {/* <Text css={{
                         fontSize: '$3xl',
                         padding: '0 5% 0 5%',
                         fontWeight: '$medium'
@@ -485,7 +575,7 @@ export default function HomePage() {
                     }}>
                         Official Website
                     </Text>
-                    <Image width='95%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} />
+                    <Image width='95%' css={{ objectFit: 'cover', height: '500px', borderRadius: 10, marginTop: 20 }} src={Grey} /> */}
 
                     <Text css={{
                         textAlign: 'center',
@@ -503,7 +593,7 @@ export default function HomePage() {
                         flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        margin: '10px 0px'
+                        margin: '10px 0px 140px 0px'
                     }}>
                         <Row css={{
                             // margin: '40px 0 40px 0',
@@ -651,7 +741,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1160,
+                                top: 1320,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
@@ -701,7 +791,7 @@ export default function HomePage() {
 
                     </Col>
 
-                    <Text css={{
+                    {/* <Text css={{
                         textAlign: 'center',
                         fontWeight: '$semibold',
                         width: '100%',
@@ -810,7 +900,132 @@ export default function HomePage() {
                                 <BsArrowRight size={20} color='black' />
                             </Row>
                         </Link>
-                    </Grid>
+                    </Grid> */}
+
+                    <Row className="featuredpage-row" css={{
+                        jc: 'start',
+                        alignItems: 'center',
+                        // w: 'max-content',
+                        padding: '60px 10%',
+                        height: '85vh'
+                    }}>
+                        <Col css={{
+                            margin: '0px 0px 0px 0px'
+                        }}>
+                            <Text css={{
+                                textAlign: 'center',
+                                fontWeight: '$semibold',
+                                width: '100%',
+                                fontSize: '$2xl',
+                                paddingBottom: '40px'
+                            }}>
+                                Featured Events
+                            </Text>
+
+                            <Col css={{
+                                padding: '0 40px 30px 40px',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                w: '100%',
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}>
+
+                                {events.map(event => (
+                                    <Card css={{ w: "400px", h: "300px", margin: '20px 0px' }}>
+                                        <Card.Body css={{ p: 0 }}>
+                                            <Card.Image
+                                                src={event.image[0]}
+                                                width="100%"
+                                                height="100%"
+                                                objectFit="cover"
+                                                alt="Card example background"
+                                            />
+                                        </Card.Body>
+                                        <Card.Footer
+                                            isBlurred
+                                            css={{
+                                                position: "absolute",
+                                                bgBlur: "#ffffff66",
+                                                borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+                                                bottom: 0,
+                                                zIndex: 1,
+                                            }}
+                                        >
+                                            <Row css={{
+                                                alignItems: 'center'
+                                            }}>
+                                                <Col css={{
+                                                    width: '75%',
+                                                }}>
+                                                    <Text className="multiline-ellipsis" css={{
+                                                        fontWeight: '$semibold',
+                                                        fontSize: '$md',
+                                                        marginRight: 10
+                                                    }}>
+                                                        {event.name}
+                                                    </Text>
+                                                    <Text className="multiline-ellipsis" css={{
+                                                        fontWeight: '$semibold',
+                                                        fontSize: '$md',
+                                                        marginRight: 10
+                                                    }}>
+                                                        {event.date}
+                                                    </Text>
+                                                </Col>
+                                                <Col css={{
+                                                    width: 'max-content'
+                                                }}>
+                                                    <Row justify="flex-end">
+                                                        <Button flat auto rounded color="primary">
+                                                            <Text
+                                                                css={{ color: "inherit" }}
+                                                                size={12}
+                                                                weight="bold"
+                                                                transform="uppercase"
+                                                            >
+                                                                KNOW MORE
+                                                            </Text>
+                                                        </Button>
+                                                    </Row>
+                                                </Col>
+                                            </Row>
+                                        </Card.Footer>
+                                    </Card>
+                                ))}
+
+
+                            </Col>
+
+                            <Grid css={{
+                                width: '100%',
+                                justifyContent: 'center',
+                                display: 'flex',
+                                marginBottom: '80px'
+                            }}>
+                                <Link href="/events" >
+                                    <Row css={{
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}>
+                                        <Text css={{
+                                            fontSize: '$lg',
+                                            fontWeight: '$semibold',
+                                            paddingRight: 10,
+                                            textAlign: 'center',
+                                            textDecoration: 'underline'
+                                        }}>
+                                            Explore All Events
+                                        </Text>
+                                        <BsArrowRight size={20} color='black' />
+                                    </Row>
+                                </Link>
+                            </Grid>
+                        </Col>
+
+
+                    </Row>
+
 
 
                     <Text css={{
@@ -818,7 +1033,8 @@ export default function HomePage() {
                         fontWeight: '$semibold',
                         width: '100%',
                         fontSize: '$3xl',
-                        paddingBottom: '10px'
+                        paddingBottom: '10px',
+                        paddingTop: '60px'
                     }}>
                         Team
                     </Text>
@@ -895,10 +1111,10 @@ export default function HomePage() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginTop: '20px',
-                    padding: '0',
+                    padding: '0px 5%',
                     flexDirection: 'column'
                 }}>
-                    <Text css={{
+                    {/* <Text css={{
                         fontSize: '$2xl',
                         padding: '0 5% 0 5%',
                         fontWeight: '$medium'
@@ -911,7 +1127,37 @@ export default function HomePage() {
                     }}>
                         Official Website
                     </Text>
-                    <Image width='95%' css={{ objectFit: 'cover', height: '300px', marginTop: 20, marginBottom: 20, borderRadius: 10 }} src={Grey} />
+                    <Image width='95%' css={{ objectFit: 'cover', height: '300px', marginTop: 20, marginBottom: 20, borderRadius: 10 }} src={Grey} /> */}
+
+                    <Row className="homepage-mobile-row" css={{
+                        jc: 'start',
+                        alignItems: 'center',
+                        padding: '60px 20%',
+                        height: '85vh'
+                    }}>
+                        <Col css={{
+                            w: 'max-content',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            jc: 'start',
+                            alignItems: 'start'
+                        }}>
+                            <Text css={{
+                                fontSize: '$xl',
+                                padding: '0 2.5%',
+                                fontWeight: '$semibold'
+                            }}>
+                                Data Society @Ashoka
+                            </Text>
+                            <Text css={{
+                                fontSize: '$md',
+                                padding: '0 2.5%',
+                            }}>
+                                The official Data Society of Ashoka University.
+                            </Text>
+
+                        </Col>
+                    </Row>
 
                     <Text css={{
                         textAlign: 'center',
@@ -923,13 +1169,13 @@ export default function HomePage() {
                     }}>
                         About Us
                     </Text>
-                    
+
                     <Col css={{
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        margin: '10px 0px'
+                        margin: '10px 0px 100px 0px'
                     }}>
 
                         <Grid css={{
@@ -947,7 +1193,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 625,
+                                top: 925,
                                 maxW: 'max-content',
                                 marginLeft: '75px'
                             }}>
@@ -1007,7 +1253,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 950,
+                                top: 1250,
                                 maxW: 'max-content',
                                 marginLeft: '67px'
                             }}>
@@ -1068,7 +1314,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1275,
+                                top: 1575,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
@@ -1118,95 +1364,121 @@ export default function HomePage() {
 
                     </Col>
 
-                    <Text css={{
-                        textAlign: 'center',
-                        fontWeight: '$semibold',
-                        width: '100%',
-                        fontSize: '$2xl',
-                        paddingBottom: '20px',
-                        paddingTop: '40px'
+                    <Row className="featuredpage-mobile-row" css={{
+                        jc: 'start',
+                        alignItems: 'center',
+                        // w: 'max-content',
+                        padding: '60px 10%',
+                        height: '85vh'
                     }}>
-                        Featured Events
-                    </Text>
-
-                    {events.map(event => (
-                        <Card css={{ w: "90%", margin: '10px 0', maxW: '350px', h: '300px' }}>
-                            <Card.Body css={{ p: 0 }}>
-                                <Card.Image
-                                    src={event.image[0]}
-                                    width="100%"
-                                    height="100%"
-                                    objectFit="cover"
-                                    alt="Card example background"
-                                />
-                            </Card.Body>
-                            <Card.Footer
-                                isBlurred
-                                css={{
-                                    position: "absolute",
-                                    bgBlur: "#ffffff66",
-                                    borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-                                    bottom: 0,
-                                    zIndex: 1,
-                                    padding: '10px'
-                                }}
-                            >
-                                <Col css={{
-                                    w: '100%',
-                                    jc: 'center',
-                                    alignItems: 'center',
-                                    display: 'flex',
-                                    flexDirection: 'column'
-                                }}>
-                                    <Text className="multiline-ellipsis" css={{
-                                        fontWeight: '$semibold',
-                                        fontSize: '$md',
-                                        marginBottom: 5
-                                    }}>
-                                        {event.name}
-                                    </Text>
-                                    <Text className="multiline-ellipsis" css={{
-                                        fontSize: '$sm',
-                                        marginBottom: 5
-                                    }}>
-                                        {event.date}
-                                    </Text>
-                                    <Button flat auto rounded color="primary">
-                                        <Text
-                                            css={{ color: "inherit", fontSize: '$sm' }}
-                                            weight="bold"
-                                            transform="uppercase"
-                                        >
-                                            KNOW MORE
-                                        </Text>
-                                    </Button>
-                                </Col>
-                            </Card.Footer>
-                        </Card>
-                    ))}
-
-                    <Link href="/events" >
-                        <Row css={{
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            margin: '20px 0'
+                        <Col css={{
+                            margin: '0px 0px 0px 0px',
+                            w: 'max-content',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            jc: 'center',
+                            alignItems: 'center'
                         }}>
                             <Text css={{
-                                fontSize: '$md',
-                                fontWeight: '$semibold',
                                 textAlign: 'center',
-                                textDecoration: 'underline'
+                                fontWeight: '$semibold',
+                                width: '100%',
+                                fontSize: '$2xl',
+                                paddingBottom: '10px',
                             }}>
-                                Explore All Events
+                                Featured Events
                             </Text>
-                            <BsArrowRight size={20} color='black' />
-                        </Row>
-                    </Link>
+
+                            {events.map(event => (
+                                <Card css={{ w: "90%", margin: '10px 0', maxW: '350px', h: '300px' }}>
+                                    <Card.Body css={{ p: 0 }}>
+                                        <Card.Image
+                                            src={event.image[0]}
+                                            width="100%"
+                                            height="100%"
+                                            objectFit="cover"
+                                            alt="Card example background"
+                                        />
+                                    </Card.Body>
+                                    <Card.Footer
+                                        isBlurred
+                                        css={{
+                                            position: "absolute",
+                                            bgBlur: "#ffffff66",
+                                            borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+                                            bottom: 0,
+                                            zIndex: 1,
+                                            padding: '10px'
+                                        }}
+                                    >
+                                        <Col css={{
+                                            w: '100%',
+                                            jc: 'center',
+                                            alignItems: 'center',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                        }}>
+                                            <Text className="multiline-ellipsis" css={{
+                                                fontWeight: '$semibold',
+                                                fontSize: '$md',
+                                                marginBottom: 5
+                                            }}>
+                                                {event.name}
+                                            </Text>
+                                            <Text className="multiline-ellipsis" css={{
+                                                fontSize: '$sm',
+                                                marginBottom: 15
+                                            }}>
+                                                {event.date}
+                                            </Text>
+                                            <Button flat auto rounded color="primary">
+                                                <Text
+                                                    css={{ color: "inherit", fontSize: '$sm' }}
+                                                    weight="bold"
+                                                    transform="uppercase"
+                                                >
+                                                    KNOW MORE
+                                                </Text>
+                                            </Button>
+                                        </Col>
+                                    </Card.Footer>
+                                </Card>
+                            ))}
+
+                        </Col>
+
+                    </Row>
+
+                    <Grid css={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        marginBottom: '80px',
+                        marginTop: '40px'
+                    }}>
+                        <Link href="/events" >
+                            <Row css={{
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <Text css={{
+                                    fontSize: '$lg',
+                                    fontWeight: '$semibold',
+                                    paddingRight: 10,
+                                    textAlign: 'center',
+                                    textDecoration: 'underline'
+                                }}>
+                                    Explore All Events
+                                </Text>
+                                <BsArrowRight size={20} color='black' />
+                            </Row>
+                        </Link>
+                    </Grid>
 
                     <Text css={{
                         textAlign: 'center',
                         fontWeight: '$semibold',
-                        fontSize: '$xl',
+                        fontSize: '$2xl',
                         paddingBottom: '10px'
                     }}>
                         Team
@@ -1252,7 +1524,7 @@ export default function HomePage() {
                         <Row css={{
                             alignItems: 'center',
                             justifyContent: 'center',
-                            margin: '20px 0'
+                            margin: '20px 0 80px 0'
                         }}>
                             <Text css={{
                                 fontSize: '$md',

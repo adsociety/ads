@@ -114,7 +114,7 @@ export default function EventsPage() {
                                 }}
                                 key={index}
                                 onClick={() => {
-                                    navigate(`/events/eventlink`);
+                                    navigate(`/events/eventlink`,{state: {event}});
                                 }}
                             >
                                 <Row css={{
@@ -232,7 +232,7 @@ export default function EventsPage() {
                                 }}
                                 key={index}
                                 onClick={() => {
-                                    navigate(`/events/eventlink`);
+                                    navigate(`/events/eventlink`, {event});
                                 }}
                             >
                                 <Row css={{
@@ -348,6 +348,9 @@ export default function EventsPage() {
                                         paddingBottom: '12px',
                                     }}
                                     key={index}
+                                    onClick={()=>{
+                                        navigate(`/events/eventlink`, {event});
+                                    }}
                                 >
                                     <Col>
                                         <Image

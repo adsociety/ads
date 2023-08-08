@@ -2,28 +2,33 @@
     .desktop {
         display: none;
     }
-    .mobile{
-        displaY: none
-    }
-}
-@media screen and (min-width: 1075px) {
+
     .mobile {
-        display: none;
-    }
-    .tablet{
-        display: none
-    }
-}
-@media screen and (max-width: 690px) {
-    .desktop {
-        display: none;
-    }
-    .tablet{
         displaY: none
     }
 }
 
-.nextui-c-iWjDFM-kaRBtV-cv{
+@media screen and (min-width: 1075px) {
+    .mobile {
+        display: none;
+    }
+
+    .tablet {
+        display: none
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .desktop {
+        display: none;
+    }
+
+    .tablet {
+        displaY: none
+    }
+}
+
+.nextui-c-iWjDFM-kaRBtV-cv {
     color: #3E5896 !important
 }
 
@@ -31,22 +36,52 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1; /* start showing ellipsis when 3rd line is reached */
-    white-space: pre-wrap; /* let the text wrap preserving spaces */
-  }
+    -webkit-line-clamp: 1;
+    /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+    /* let the text wrap preserving spaces */
+}
 
-  .multiline-ellipsis-3 {
+.multiline-ellipsis-3 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
-    white-space: pre-wrap; /* let the text wrap preserving spaces */
-  }
+    -webkit-line-clamp: 3;
+    /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+    /* let the text wrap preserving spaces */
+}
 
-  .multiline-ellipsis-6 {
+.multiline-ellipsis-6 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6; /* start showing ellipsis when 3rd line is reached */
-    white-space: pre-wrap; /* let the text wrap preserving spaces */
-  }
+    -webkit-line-clamp: 6;
+    /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+    /* let the text wrap preserving spaces */
+}
+
+.homepage-row{
+    background-image: url('../src/assets/images/bggreen.jpg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.homepage-mobile-row{
+    background-image: url('../src/assets/images/bggreen-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.featuredpage-row{
+    background-image: url('../src/assets/images/bgpink.jpg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.featuredpage-mobile-row{
+    background-image: url('../src/assets/images/bgpink-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
