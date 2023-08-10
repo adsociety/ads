@@ -121,7 +121,7 @@ export default function EventsPage() {
                                             width: '100%',
                                             height: '100%',
                                             objectFit: 'cover',
-                                            borderRadius: 10
+                                            borderRadius: 10,
                                         }}
                                     />
                                     <Col
@@ -144,6 +144,9 @@ export default function EventsPage() {
                                                 borderStyle: 'solid',
                                                 borderWidth: '0px 0px 1px 0px',
                                                 borderColor: '$red200',
+                                                '&:hover':{
+                                                    textDecoration: 'underline'
+                                                },
                                             }}
                                         >
                                             {event.name}
@@ -155,6 +158,9 @@ export default function EventsPage() {
                                                 fontSize: '$lg',
                                                 padding: '6px 24px',
                                                 minWidth: '75px',
+                                                '&:hover':{
+                                                    textDecoration: 'underline'
+                                                },
                                             }}
                                         >
                                             {event.description}

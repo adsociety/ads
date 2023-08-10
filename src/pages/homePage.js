@@ -5,8 +5,12 @@ import Grey from '../assets/images/Grey.jpeg'
 import Overview from '../assets/images/overview.png'
 import Mission from '../assets/images/mission.png'
 import Vision from '../assets/images/vision.png'
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+
+    
+    const navigate = useNavigate();
 
     const events = [
         {
@@ -396,7 +400,11 @@ export default function HomePage() {
                                                     width: 'max-content'
                                                 }}>
                                                     <Row justify="flex-end">
-                                                        <Button flat auto rounded color="primary">
+                                                        <Button flat auto rounded color="primary"
+                                                            onClick={() => {
+                                                                navigate(`/events/eventlink`,{state: {event}});
+                                                            }}
+                                                        >
                                                             <Text
                                                                 css={{ color: "inherit" }}
                                                                 size={12}
@@ -981,7 +989,11 @@ export default function HomePage() {
                                                     width: 'max-content'
                                                 }}>
                                                     <Row justify="flex-end">
-                                                        <Button flat auto rounded color="primary">
+                                                        <Button flat auto rounded color="primary"
+                                                            onClick={() => {
+                                                                navigate(`/events/eventlink`,{state: {event}});
+                                                            }}
+                                                        >
                                                             <Text
                                                                 css={{ color: "inherit" }}
                                                                 size={12}
@@ -1440,7 +1452,11 @@ export default function HomePage() {
                                             }}>
                                                 {event.date}
                                             </Text>
-                                            <Button flat auto rounded color="primary">
+                                            <Button flat auto rounded color="primary"
+                                                onClick={() => {
+                                                    navigate(`/events/eventlink`,{state: {event}});
+                                                }}
+                                            >
                                                 <Text
                                                     css={{ color: "inherit", fontSize: '$sm' }}
                                                     weight="bold"

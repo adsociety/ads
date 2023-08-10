@@ -162,14 +162,25 @@ export default function EachEvent(props) {
 
                                             <Row css={{
                                                 margin: '20px 0px',
-                                                alignItems: 'center'
-                                            }}>
+                                                alignItems: 'center',
+                                                '&:hover':{
+                                                    cursor: 'pointer'
+                                                }
+                                            }}
+                                            onClick={() => {
+                                                navigate(`/events/eventlink`,{state: {event}});
+                                            }}
+                                            >
                                                 <Image src={event.image}
                                                     css={{
                                                         width: '100%',
                                                         height: '100%',
                                                         objectFit: 'cover',
                                                         borderRadius: 5,
+                                                        alignItems: 'center',
+                                                        '&:hover':{
+                                                            opacity: 0.8
+                                                        }
                                                     }}
                                                     width={200}
                                                     height={100}
@@ -179,7 +190,10 @@ export default function EachEvent(props) {
                                                     <Text className="multiline-ellipsis-3" css={{
                                                         padding: '0px 0px 0px 5px',
                                                         fontWeight: '$semibold',
-                                                        fontSize: '$base'
+                                                        fontSize: '$base',
+                                                        '&:hover':{
+                                                            textDecoration: 'underline'
+                                                        }
                                                     }}>
                                                         {event.name}
                                                     </Text>
@@ -273,7 +287,10 @@ export default function EachEvent(props) {
 
                                             <Row css={{
                                                 margin: '20px 0px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                '&:hover':{
+                                                    cursor: 'pointer'
+                                                }
                                             }}
                                                 onClick={() => {
                                                     navigate(`/events/eventlink`, { state: { event } });
@@ -285,6 +302,9 @@ export default function EachEvent(props) {
                                                         height: '100%',
                                                         objectFit: 'cover',
                                                         borderRadius: 5,
+                                                        '&:hover':{
+                                                            opacity: 0.8
+                                                        }
                                                     }}
                                                     width={200}
                                                     height={100}
@@ -388,7 +408,10 @@ export default function EachEvent(props) {
 
                                             <Row css={{
                                                 margin: '20px 0px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                '&:hover':{
+                                                    cursor: 'pointer'
+                                                }
                                             }}
                                                 onClick={() => {
                                                     navigate(`/events/eventlink`, { state: { event } });
@@ -400,6 +423,9 @@ export default function EachEvent(props) {
                                                         height: '100%',
                                                         objectFit: 'cover',
                                                         borderRadius: 5,
+                                                        '&:hover':{
+                                                            opacity: 0.8
+                                                        }
                                                     }}
                                                     width={200}
                                                     height={100}
