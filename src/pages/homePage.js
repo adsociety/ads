@@ -6,10 +6,11 @@ import Overview from '../assets/images/overview.png'
 import Mission from '../assets/images/mission.png'
 import Vision from '../assets/images/vision.png'
 import { useNavigate } from "react-router-dom";
+import NewsTicker from "../components/newsticker";
 
 export default function HomePage() {
 
-    
+
     const navigate = useNavigate();
 
     const events = [
@@ -29,25 +30,25 @@ export default function HomePage() {
 
     const team = [
         {
-            name: 'Professor A',
+            name: 'Debayan Gupta',
             batch: 'UG24',
-            role: 'A Department',
+            role: 'CS Department',
             image: Grey
         },
         {
-            name: 'Professor B',
+            name: 'Kumarjit Saha',
             batch: 'UG24',
             role: 'B Department',
             image: Grey
         },
         {
-            name: 'Professor C',
+            name: 'Amit Goyal',
             batch: 'UG24',
             role: 'C Department',
             image: Grey
         },
         {
-            name: 'Professor D',
+            name: 'TS Krishnan',
             batch: 'UG24',
             role: 'D Department',
             image: Grey
@@ -57,6 +58,8 @@ export default function HomePage() {
     return (
         <div>
             <div className="desktop">
+                <NewsTicker />
+
                 <Grid.Container css={{
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -402,7 +405,7 @@ export default function HomePage() {
                                                     <Row justify="flex-end">
                                                         <Button flat auto rounded color="primary"
                                                             onClick={() => {
-                                                                navigate(`/events/eventlink`,{state: {event}});
+                                                                navigate(`/events/eventlink`, { state: { event } });
                                                             }}
                                                         >
                                                             <Text
@@ -533,6 +536,8 @@ export default function HomePage() {
             </div>
 
             <div className="tablet">
+                <NewsTicker />
+
                 <Grid.Container css={{
                     justifyContent: 'center',
                     alignItems: 'start',
@@ -753,7 +758,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1270,
+                                top: 1322,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
@@ -991,7 +996,7 @@ export default function HomePage() {
                                                     <Row justify="flex-end">
                                                         <Button flat auto rounded color="primary"
                                                             onClick={() => {
-                                                                navigate(`/events/eventlink`,{state: {event}});
+                                                                navigate(`/events/eventlink`, { state: { event } });
                                                             }}
                                                         >
                                                             <Text
@@ -1125,6 +1130,8 @@ export default function HomePage() {
             </div>
 
             <div className="mobile">
+                <NewsTicker />
+
                 <Grid.Container css={{
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -1214,7 +1221,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 925,
+                                top: 1010,
                                 maxW: 'max-content',
                                 marginLeft: '75px'
                             }}>
@@ -1274,7 +1281,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1250,
+                                top: 1335,
                                 maxW: 'max-content',
                                 marginLeft: '67px'
                             }}>
@@ -1319,7 +1326,6 @@ export default function HomePage() {
                             </Text>
                         </Grid>
 
-
                         <Grid css={{
                             flexDirection: 'column',
                             alignItems: 'center',
@@ -1335,7 +1341,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1575,
+                                top: 1660,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
@@ -1454,7 +1460,7 @@ export default function HomePage() {
                                             </Text>
                                             <Button flat auto rounded color="primary"
                                                 onClick={() => {
-                                                    navigate(`/events/eventlink`,{state: {event}});
+                                                    navigate(`/events/eventlink`, { state: { event } });
                                                 }}
                                             >
                                                 <Text

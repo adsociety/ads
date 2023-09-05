@@ -7,6 +7,7 @@ import HomePage from './pages/homePage';
 import TeamPage from './pages/teamPage';
 import EventsPage from './pages/eventsPage';
 import EachEvent from './components/eachEvent';
+import Inductions from './pages/inductions';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                 <Route exact path="/" element={<HomePage/>} />
                 <Route exact path="/events" element={<EventsPage/>} />
                 <Route exact path="/team" element={<TeamPage/>} />
+                <Route exact path="/inductions" element={<Inductions/>} />
                 <Route exact path="/events/eventlink" element={<EachEvent/>} />
 
 

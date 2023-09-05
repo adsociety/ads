@@ -3,6 +3,12 @@ import React from "react";
 import Grey from '../assets/images/Grey.jpeg'
 import Aryan from '../assets/team/webteam_aryanyadav.jpeg'
 import Zahaan from '../assets/team/webteam_zahaan.jpg'
+import Uttakrsh from '../assets/team/president_uttkarshkohli.jpeg';
+import Vrinda from '../assets/team/president_vrindabhola.jpeg';
+import Ananya from '../assets/team/newsletter_ananyasarvanasankara.jpeg';
+import Tanya from '../assets/team/marketing_tanyamahajan.jpeg';
+import Syona from '../assets/team/newsletter_syonajain.jpeg';
+import Gareema from '../assets/team/events_gareemagoel.jpeg';
 
 export default function TeamPage() {
     return (
@@ -10,22 +16,20 @@ export default function TeamPage() {
             <Grid.Container css={{
                 padding: '0 5%',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                margin: '24px 0px 0px 0px'
             }}>
                 <Text
                     css={{
-                        textAlign: 'center',
-                        w: '100%',
-                        '@xsMin': {
-                            fontSize: '$2xl',
-                            fontWeight: '$semibold',
-                            padding: '40px 0px'
-                        },
+                        fontWeight: '$semibold',
                         '@xsMax': {
                             fontSize: '$xl',
-                            fontWeight: '$semibold',
-                            padding: '20px 0px'
-                        }
+                        },
+                        '@xsMin': {
+                            fontSize: '$3xl',
+                        },
+                        textAlign: 'center',
+                        margin: '24px 0px 12px 0px',
                     }}
                 >
                     ADS Core Team
@@ -78,7 +82,7 @@ export default function TeamPage() {
                                     flexDirection: 'column',
                                     justifyContent: 'center'
                                 }}>
-                                    <Image src={Grey}
+                                    <Image src={Vrinda}
                                         css={{
                                             borderRadius: 300,
                                             '@xsMax': {
@@ -88,7 +92,8 @@ export default function TeamPage() {
                                             '@xsMin': {
                                                 width: 200,
                                                 height: 200
-                                            }
+                                            },
+                                            objectFit: 'cover'
                                         }}
                                     />
                                     <Text
@@ -136,7 +141,7 @@ export default function TeamPage() {
                                     flexDirection: 'column',
                                     justifyContent: 'center'
                                 }}>
-                                    <Image src={Grey}
+                                    <Image src={Uttakrsh}
                                         css={{
                                             borderRadius: 300,
                                             '@xsMax': {
@@ -146,7 +151,8 @@ export default function TeamPage() {
                                             '@xsMin': {
                                                 width: 200,
                                                 height: 200
-                                            }
+                                            },
+                                            objectFit: 'cover'
                                         }}
                                     />
                                     <Text
@@ -236,7 +242,7 @@ export default function TeamPage() {
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Grey}
+                                        <Image src={Tanya}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -246,7 +252,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -256,7 +263,7 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Tanvi Mahajan
+                                            Tanya Mahajan
                                         </Text>
                                         <Text
                                             css={{
@@ -304,7 +311,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -387,7 +395,7 @@ export default function TeamPage() {
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Grey}
+                                        <Image src={Gareema}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -397,7 +405,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -455,7 +464,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -547,7 +557,7 @@ export default function TeamPage() {
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Grey}
+                                        <Image src={Ananya}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -557,7 +567,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -605,7 +616,7 @@ export default function TeamPage() {
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Grey}
+                                        <Image src={Syona}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -615,7 +626,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -625,7 +637,7 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Syona
+                                            Syona Jain
                                         </Text>
                                         <Text
                                             css={{
@@ -707,7 +719,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text
@@ -765,7 +778,8 @@ export default function TeamPage() {
                                                 '@xsMin': {
                                                     width: 200,
                                                     height: 200
-                                                }
+                                                },
+                                                objectFit: 'cover'
                                             }}
                                         />
                                         <Text

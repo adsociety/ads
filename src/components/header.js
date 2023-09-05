@@ -9,6 +9,7 @@ function Header() {
       {name: 'Home', href:'/'},
       {name: 'Events', href:'/events'},
       {name: 'Team', href:'/team'},
+      {name: 'Inductions', href: '/inductions'}
     ]
 
     var active = window.location.pathname
