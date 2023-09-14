@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/ashoka-data-society/static/css/main.2bc81dc0.css",
+    "main.js": "/ashoka-data-society/static/js/main.de375db5.js",
+    "static/js/787.49ed8a79.chunk.js": "/ashoka-data-society/static/js/787.49ed8a79.chunk.js",
+    "static/media/webteam_aryanyadav.jpeg": "/ashoka-data-society/static/media/webteam_aryanyadav.d1b6d9104daec6045715.jpeg",
+    "static/media/bgdata.jpg": "/ashoka-data-society/static/media/bgdata.9bac10b94a0fc57f26b6.jpg",
+    "static/media/bgdata-mobile.jpg": "/ashoka-data-society/static/media/bgdata-mobile.a798fcca75ac554f4b2b.jpg",
+    "static/media/bglaptop.jpg": "/ashoka-data-society/static/media/bglaptop.37f9618ac10afa3bfcdd.jpg",
+    "static/media/bglaptop-mobile.jpg": "/ashoka-data-society/static/media/bglaptop-mobile.4560d177834325437180.jpg",
+    "static/media/webteam_zahaan.jpg": "/ashoka-data-society/static/media/webteam_zahaan.f662e0065d89a1246fbf.jpg",
+    "static/media/marketing_tanyamahajan.jpeg": "/ashoka-data-society/static/media/marketing_tanyamahajan.8346200a6adebf13e686.jpeg",
+    "static/media/kumarjitsaha.png": "/ashoka-data-society/static/media/kumarjitsaha.2df9a3f848d92d1a01d9.png",
+    "static/media/tskrishnan.png": "/ashoka-data-society/static/media/tskrishnan.5c841c81ab88a1e8cbd4.png",
+    "static/media/president_vrindabhola.jpeg": "/ashoka-data-society/static/media/president_vrindabhola.7772c358ed4947fe466f.jpeg",
+    "static/media/president_uttkarshkohli.jpeg": "/ashoka-data-society/static/media/president_uttkarshkohli.d9f9b282de19534ce2c9.jpeg",
+    "static/media/ADEXABC.jpeg": "/ashoka-data-society/static/media/ADEXABC.952316f071d5638aeb19.jpeg",
+    "static/media/amitgoyal.png": "/ashoka-data-society/static/media/amitgoyal.09613c6ac403eeb71e2b.png",
+    "static/media/newsletter_ananyasarvanasankara.jpeg": "/ashoka-data-society/static/media/newsletter_ananyasarvanasankara.1e1453126d918827b4d4.jpeg",
+    "static/media/debayan.jpg": "/ashoka-data-society/static/media/debayan.12f995533fdd044e1092.jpg",
+    "static/media/events_gareemagoel.jpeg": "/ashoka-data-society/static/media/events_gareemagoel.4146b7405c3f4c76355f.jpeg",
+    "static/media/DATADRIVENFINANCE.jpeg": "/ashoka-data-society/static/media/DATADRIVENFINANCE.7205f2636ca1278eee0a.jpeg",
+    "static/media/newsletter_syonajain.jpeg": "/ashoka-data-society/static/media/newsletter_syonajain.ac0871143cd147eacfc8.jpeg",
+    "index.html": "/ashoka-data-society/index.html",
+    "main.2bc81dc0.css.map": "/ashoka-data-society/static/css/main.2bc81dc0.css.map",
+    "main.de375db5.js.map": "/ashoka-data-society/static/js/main.de375db5.js.map",
+    "787.49ed8a79.chunk.js.map": "/ashoka-data-society/static/js/787.49ed8a79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bc81dc0.css",
+    "static/js/main.de375db5.js"
+  ]
+}
