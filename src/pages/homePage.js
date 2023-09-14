@@ -9,6 +9,13 @@ import { useNavigate } from "react-router-dom";
 import NewsTicker from "../components/newsticker";
 import ADEXABC from "../assets/images/ADEXABC.jpeg"
 import DATADRIVENFINANCE from "../assets/images/DATADRIVENFINANCE.jpeg"
+import debayan from "../assets/images/debayan.jpg"
+import Kumarjit from "../assets/images/kumarjitsaha.png"
+import Amit from "../assets/images/amitgoyal.png"
+import tskrishna from "../assets/images/tskrishnan.png"
+
+
+
 
 export default function HomePage() {
 
@@ -35,25 +42,25 @@ export default function HomePage() {
             name: 'Debayan Gupta',
             batch: 'UG24',
             role: 'CS Department',
-            image: Grey
+            image: debayan
         },
         {
             name: 'Kumarjit Saha',
             batch: 'UG24',
             role: 'B Department',
-            image: Grey
+            image: Kumarjit
         },
         {
             name: 'Amit Goyal',
             batch: 'UG24',
             role: 'C Department',
-            image: Grey
+            image: Amit
         },
         {
             name: 'TS Krishnan',
             batch: 'UG24',
             role: 'D Department',
-            image: Grey
+            image: tskrishna
         },
     ]
 
@@ -490,6 +497,7 @@ export default function HomePage() {
                                 <Image width={200} height={200} src={member.image}
                                     css={{
                                         borderRadius: 300,
+                                        objectFit:"fill"
                                     }}
                                 />
                                 <Text
