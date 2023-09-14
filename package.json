@@ -1,6 +1,7 @@
 {
   "name": "ads",
   "version": "0.1.0",
+  "homepage": "https://adsociety.github.io/ashoka-data-society",
   "private": true,
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.12",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.8.2",
     "framer-motion": "^10.15.0",
+    "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.0",
@@ -21,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build", 
+		"deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
