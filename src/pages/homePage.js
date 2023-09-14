@@ -7,6 +7,8 @@ import Mission from '../assets/images/mission.png'
 import Vision from '../assets/images/vision.png'
 import { useNavigate } from "react-router-dom";
 import NewsTicker from "../components/newsticker";
+import ADEXABC from "../assets/images/ADEXABC.jpeg"
+import DATADRIVENFINANCE from "../assets/images/DATADRIVENFINANCE.jpeg"
 
 export default function HomePage() {
 
@@ -17,13 +19,13 @@ export default function HomePage() {
         {
             name: 'ADE X ABC CONVERSATION WITH SNEHIL JAIN, THE VICE PRESIDENT OF HSBC',
             description: `Ashoka Data Society, in collaboration with the Ashoka Business Club, organized an engaging conversation on "Marketing Analytics" featuring Snehil Jain, the Vice President of HSBC. The conversation aimed to provide participants with valuable insights into the field of marketing analytics and its applications in today's business landscape.\n During the conversation, Snehil Jain, an experienced professional in the finance and marketing domain, shared her expertise and perspectives on marketing analytics. Participants had the opportunity to learn about the importance of data- driven decision-making in marketing, the role of analytics in understanding customer behaviour and preferences, and the impact of analytics on marketing strategies.\n The conversation fostered interactive discussions, allowing participants to engage directly with Snehil Jain, and ask questions. It provided a platform for knowledge sharing and networking among like-minded individuals interested in marketing analytics. `,
-            image: [Grey],
+            image: [ADEXABC],
             date: '1st February, 2023',
         },
         {
             name: 'IMPORTANCE OF DATA-DRIVEN FINANCE AND HOW TO BREAK INTO THIS FIELD BY SRINIDHI RAGHAVENDRA, CEO OF MINT FINANCE',
             description: `Ashoka Data Society organized an insightful webinar titled "Importance of Data-Driven Finance and How to Break into This Field," featuring Srinidhi Raghavendra, the CEO of Mint Finance, as the distinguished speaker.\n Srinidhi Raghavendra, an industry expert with extensive experience in finance and data analytics, shared his expertise and insights with the attendees. The webinar explored various aspects, including the role of data- driven decision-making in finance, emerging trends, and the skills required to thrive in this evolving landscape. Participants had the opportunity to learn from Srinidhi Raghavendra's experiences and gain valuable insights into how data analytics is transforming the finance sector. The webinar also provided guidance on breaking into the field, highlighting the essential skills, educational background, and career pathways to consider.`,
-            image: [Grey],
+            image: [DATADRIVENFINANCE],
             date: '1st February, 2023',
         },
     ]
