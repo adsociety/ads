@@ -26,7 +26,7 @@ export default function Inductions() {
                 Society Inductions
             </Text>
 
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSciKIv7cvcYPvXy6V1p8qWkKT-1O4vn0XGPh9fqNTd-iL0w3Q/viewform?embedded=true" width="640" height="1217" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSciKIv7cvcYPvXy6V1p8qWkKT-1O4vn0XGPh9fqNTd-iL0w3Q/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
         </Grid.Container>
     )
