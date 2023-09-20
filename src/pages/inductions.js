@@ -29,7 +29,7 @@ export default function Inductions() {
             <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdmOYJ6GNLB244VeWbbLSBLowYTbx2W5FxXp_xo028bjSldIw/viewform?embedded=true"
                 width="100%"
-                height="1500"
+                height="200vh"
                 frameborder="0"
                 marginheight="0"
                 marginwidth="0"
