@@ -48,7 +48,7 @@ function Header() {
             }} src={Logo} />
         </Navbar.Content>
         <Navbar.Content>
-          <Link target="_blank" href="https://www.instagram.com/apl.ashoka/">
+          <Link target="_blank" href="https://instagram.com/ashokadatasociety/">
             <FaInstagram className="instagram-logo" size={'25px'} />
           </Link>
         </Navbar.Content>
