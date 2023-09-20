@@ -620,7 +620,8 @@ export default function HomePage() {
                         flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        margin: '10px 0px 140px 0px'
+                        margin: '10px 0px 50px 0px',
+                        paddingBottom: '150px'
                     }}>
                         <Row css={{
                             // margin: '40px 0 40px 0',
@@ -1168,7 +1169,7 @@ export default function HomePage() {
                         jc: 'center',
                         alignItems: 'start',
                         padding: '60px 20%',
-                        height: '85vh'
+                        height: 615
                     }}>
                         <Col css={{
                             w: 'max-content',
@@ -1231,7 +1232,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1010,
+                                top: 875,
                                 maxW: 'max-content',
                                 marginLeft: '75px'
                             }}>
@@ -1291,7 +1292,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1335,
+                                top: 1200,
                                 maxW: 'max-content',
                                 marginLeft: '67px'
                             }}>
@@ -1351,7 +1352,7 @@ export default function HomePage() {
                         }}>
                             <Container css={{
                                 position: 'absolute',
-                                top: 1660,
+                                top: 1525,
                                 maxW: 'max-content',
                                 marginLeft: '64px'
                             }}>
