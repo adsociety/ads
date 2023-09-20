@@ -2,7 +2,7 @@ import React from "react";
 import "./components.css";
 import { Navbar, Link, Image} from "@nextui-org/react";
 import { FaInstagram, FaYoutube } from 'react-icons/fa';
-import Logo from '../assets/images/Grey.jpeg'
+import Logo from '../assets/images/ADSLOGO.jpeg'
 
 function Header() {
     const items = [
