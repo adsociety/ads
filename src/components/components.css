@@ -19,6 +19,14 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
 }
 
+.linkedin-logo {
+    padding: 10%;
+    border-radius: 05px;
+    color: white;
+    background: #0072b1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
 .youtube-logo {
     padding: 10%;
     border-radius: 05px;

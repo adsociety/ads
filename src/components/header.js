@@ -1,7 +1,7 @@
 import React from "react";
 import "./components.css";
 import { Navbar, Link, Image} from "@nextui-org/react";
-import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import Logo from '../assets/images/ADSLOGO.jpeg'
 
 function Header() {
@@ -19,8 +19,8 @@ function Header() {
         <Navbar.Toggle color="inherit" showIn="sm" />
         <Navbar.Brand hideIn="sm" css={{'&:hover':{transform: 'scale(1.25)'}}}>
           <Image css={{
-            width: '40px',
-            height: '40px',
+            width: '60x',
+            height: '60px',
             transitionDuration: '0.5s',
             transitionProperty: 'transform',
             borderRadius: 5,
@@ -50,6 +50,9 @@ function Header() {
         <Navbar.Content>
           <Link target="_blank" href="https://instagram.com/ashokadatasociety/">
             <FaInstagram className="instagram-logo" size={'25px'} />
+          </Link>
+          <Link target="_blank" href="https://www.linkedin.com/company/ashoka-data-society/">
+            <FaLinkedin className="linkedin-logo" size={'25px'} />
           </Link>
         </Navbar.Content>
         
