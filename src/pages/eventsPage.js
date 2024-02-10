@@ -102,7 +102,7 @@ export default function EventsPage() {
                             margin: '24px 0px 0px 0px',
                         }}
                     >
-                        ADS Events
+                        ADS Initiatives
                     </Text>
 
                     <Grid.Container
@@ -372,7 +372,7 @@ export default function EventsPage() {
                                 >
                                     <Col>
                                         <Image
-                                            src={Grey}
+                                            src={event.image}
                                             width={350}
                                             height={250}
                                             css={{
