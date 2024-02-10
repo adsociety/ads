@@ -73,9 +73,9 @@
 }
 
 .homepage-row{
-    background-image: url('../src/assets/images/bglaptop.jpg');
+    background-image: url('../src/assets/images/ashokauniversity.jpg');
     background-size: cover;
-    background-repeat: no-repeat
+    background-position: center;
 }
 
 .homepage-mobile-row{
