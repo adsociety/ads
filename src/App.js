@@ -20,7 +20,7 @@ function App() {
               <Routes>
 
                 <Route exact path="/" element={<HomePage/>} />
-                <Route exact path="/events" element={<EventsPage/>} />
+                <Route exact path="/initiatives" element={<EventsPage/>} />
                 <Route exact path="/team" element={<TeamPage/>} />
                 <Route exact path="/inductions" element={<Inductions/>} />
                 <Route exact path="/events/eventlink" element={<EachEvent/>} />

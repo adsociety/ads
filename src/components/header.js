@@ -7,7 +7,7 @@ import Logo from '../assets/images/ADSLOGO.jpeg'
 function Header() {
     const items = [
       {name: 'Home', href:'/'},
-      {name: 'Events', href:'/events'},
+      {name: 'Initiatives', href:'/initiatives'},
       {name: 'Team', href:'/team'},
       {name: 'Inductions', href: '/inductions'}
     ]

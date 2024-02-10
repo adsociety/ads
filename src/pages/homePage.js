@@ -47,19 +47,19 @@ export default function HomePage() {
         {
             name: 'Kumarjit Saha',
             batch: 'UG24',
-            role: 'B Department',
+            role: 'Math Department',
             image: Kumarjit
         },
         {
             name: 'Amit Goyal',
             batch: 'UG24',
-            role: 'C Department',
+            role: 'Economics Department',
             image: Amit
         },
         {
             name: 'TS Krishnan',
             batch: 'UG24',
-            role: 'D Department',
+            role: 'CS Department',
             image: tskrishna
         },
     ]
