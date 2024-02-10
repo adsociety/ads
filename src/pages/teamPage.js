@@ -9,6 +9,7 @@ import Ananya from '../assets/team/newsletter_ananyasarvanasankara.jpeg';
 import Tanya from '../assets/team/marketing_tanyamahajan.jpeg';
 import Syona from '../assets/team/newsletter_syonajain.jpeg';
 import Gareema from '../assets/team/events_gareemagoel.jpeg';
+import Yogya from '../assets/team/yogya_research.jpg';
 
 export default function TeamPage() {
     return (
@@ -134,7 +135,7 @@ export default function TeamPage() {
                                 borderColor: '$red300',
                                 borderWidth: '2px 0px 0px 0px',
                                 borderStyle: 'solid',
-                                borderRadius: '0px 30px 0px 0px'
+                                borderRadius: '0px 0px 0px 0px'
                             }}>
                                 <Col css={{
                                     display: 'flex',
@@ -180,6 +181,67 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}>
                                             President & Co-Founder
+                                        </Text>
+                                </Col>
+                            </Grid>
+
+
+
+                            <Grid css={{
+                                flexDirection: 'column',
+                                padding: '20px',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                textAlign: 'center',
+                                borderColor: '$red300',
+                                borderWidth: '2px 0px 0px 0px',
+                                borderStyle: 'solid',
+                                borderRadius: '0px 30px 0px 0px'
+                            }}>
+                                <Col css={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center'
+                                }}>
+                                    <Image src={Ananya}
+                                        css={{
+                                            borderRadius: 300,
+                                            '@xsMax': {
+                                                width: 125,
+                                                height: 125
+                                            },
+                                            '@xsMin': {
+                                                width: 200,
+                                                height: 200
+                                            },
+                                            objectFit: 'cover'
+                                        }}
+                                    />
+                                    <Text
+                                            css={{
+                                                marginTop: 10,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            Ananya Sarvani Sankara
+                                        </Text>
+                                        <Text
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}
+                                        >
+                                            UG24
+                                        </Text>
+                                        <Text 
+                                            css={{
+                                                marginTop: 0,
+                                                fontSize: '$base',
+                                                fontWeight: '$medium'
+                                            }}>
+                                            Vice President
                                         </Text>
                                 </Col>
                             </Grid>
@@ -537,7 +599,7 @@ export default function TeamPage() {
                                 color: '$blue800'
                             }}
                             >
-                                Newsletter
+                                Research
                             </Text>
 
                             <Row>
@@ -557,7 +619,7 @@ export default function TeamPage() {
                                         flexDirection: 'column',
                                         justifyContent: 'center'
                                     }}>
-                                        <Image src={Ananya}
+                                        <Image src={Yogya}
                                             css={{
                                                 borderRadius: 300,
                                                 '@xsMax': {
@@ -578,7 +640,7 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            Ananya Sarvani Sankara
+                                            Yogya Sareen
                                         </Text>
                                         <Text
                                             css={{
@@ -587,7 +649,7 @@ export default function TeamPage() {
                                                 fontWeight: '$medium'
                                             }}
                                         >
-                                            UG25
+                                            UG24
                                         </Text>
                                         <Text 
                                             css={{
