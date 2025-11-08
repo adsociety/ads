@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Student Performance Using Machine Learning - ADS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #111b2d;
+            color: #F8F9FA;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(17, 27, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(225, 70, 64, 0.2);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(225, 70, 64, 0.3);
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #F8F9FA;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #F8F9FA;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e14640;
+        }
+
+        main {
+            flex: 1;
+            padding: 120px 3rem 2rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e14640;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .research-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(248, 249, 250, 0.1);
+        }
+
+        .research-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F8F9FA;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .research-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .research-authors {
+            color: #e14640;
+            font-weight: 500;
+        }
+
+        .research-date {
+            color: rgba(248, 249, 250, 0.5);
+        }
+
+        .research-content {
+            font-size: 1.05rem;
+            color: rgba(248, 249, 250, 0.85);
+            line-height: 1.9;
+        }
+
+        .research-content h2 {
+            font-size: 1.8rem;
+            color: #F8F9FA;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-content h3 {
+            font-size: 1.4rem;
+            color: #F8F9FA;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .research-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .research-content ul, .research-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .research-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: rgba(17, 27, 45, 0.95);
+            border-top: 1px solid rgba(225, 70, 64, 0.2);
+            padding: 2.5rem 3rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #F8F9FA;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            color: rgba(248, 249, 250, 0.7);
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .footer-social-text {
+            font-size: 0.95rem;
+            color: rgba(248, 249, 250, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(248, 249, 250, 0.05);
+            border: 1px solid rgba(248, 249, 250, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F8F9FA;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #e14640;
+            border-color: #e14640;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 100px 1.5rem 2rem;
+            }
+
+            .research-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-social {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="logo.png" alt="ADS Logo">
+            </div>
+            <div class="logo-text">Ashoka Data Society</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="research.html" class="back-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+            </svg>
+            Back to Research
+        </a>
+
+        <div class="research-header">
+            <h1 class="research-title">Predicting Student Performance Using Machine Learning</h1>
+            <div class="research-meta">
+                <span class="research-authors">By Anya Ghosh, Krrish Goel, Saanvi Gopalka</span>
+                <span class="research-date">Published: December 2024</span>
+            </div>
+        </div>
+
+        <article class="research-content">
+            <h2>Abstract</h2>
+            <p>
+                Student performance prediction is crucial for early intervention and personalized learning strategies in modern educational systems. This research leverages advanced machine learning techniques to analyze patterns in student data and predict final grades with high accuracy. Our comprehensive dataset includes 1,500 students from various socio-economic backgrounds, incorporating features such as study time, family support, previous grades, attendance records, and extracurricular involvement.
+            </p>
+            <p>
+                The predictive models developed in this study can assist educational institutions in identifying at-risk students early in their academic journey, enabling timely interventions that can significantly improve educational outcomes. By understanding the key factors that influence student success, educators can design more effective support systems and personalized learning paths.
+            </p>
+
+            <h2>Introduction</h2>
+            <p>
+                The increasing availability of educational data has opened new possibilities for understanding and improving student performance. Traditional approaches to identifying struggling students often rely on reactive measures, addressing issues only after grades have declined significantly. Machine learning offers a proactive alternative, enabling educators to predict performance trends before critical failures occur.
+            </p>
+            <p>
+                This research addresses several key questions: Which factors are most predictive of student success? Can we accurately identify at-risk students early in the semester? How do different machine learning algorithms compare in educational contexts? Our findings provide actionable insights for educational policy and practice.
+            </p>
+
+            <h2>Methodology</h2>
+            <h3>Data Collection and Preprocessing</h3>
+            <p>
+                We collected comprehensive data from three secondary schools over two academic years. The dataset includes demographic information, academic history, behavioral patterns, and family background. Data preprocessing involved handling missing values, normalizing numerical features, and encoding categorical variables using one-hot encoding.
+            </p>
+
+            <h3>Feature Engineering</h3>
+            <p>
+                We developed several derived features to capture complex relationships in the data:
+            </p>
+            <ul>
+                <li>Grade trajectory: Rate of change in performance over previous terms</li>
+                <li>Engagement score: Composite metric combining attendance and participation</li>
+                <li>Support index: Quantification of family and institutional support systems</li>
+                <li>Study efficiency: Ratio of grades to reported study hours</li>
+            </ul>
+
+            <h3>Model Selection and Training</h3>
+            <p>
+                We employed three primary machine learning approaches, each chosen for specific strengths:
+            </p>
+            <p>
+                <strong>Random Forest:</strong> Selected for its robustness to overfitting and ability to handle non-linear relationships. We configured the model with 500 decision trees and maximum depth of 15 to balance complexity and generalization.
+            </p>
+            <p>
+                <strong>XGBoost:</strong> Chosen for its gradient boosting capabilities and superior performance on structured data. We implemented extensive hyperparameter tuning using grid search, optimizing learning rate, max depth, and regularization parameters.
+            </p>
+            <p>
+                <strong>Multi-Layer Perceptron (MLP) Neural Network:</strong> Deployed to capture complex non-linear patterns. Our architecture consisted of three hidden layers (128, 64, 32 neurons) with ReLU activation and dropout regularization to prevent overfitting.
+            </p>
+            <p>
+                The dataset was split 80-20 for training and testing, with 5-fold cross-validation applied during model development to ensure reliability and generalization. We employed stratified sampling to maintain class balance across folds.
+            </p>
+
+            <h2>Results</h2>
+            <h3>Model Performance</h3>
+            <p>
+                Our experimental results demonstrate the effectiveness of ensemble methods in educational prediction tasks:
+            </p>
+            <ul>
+                <li><strong>XGBoost:</strong> Achieved the highest accuracy of 87.3% with precision of 0.89 and recall of 0.85</li>
+                <li><strong>Random Forest:</strong> Delivered solid performance at 84.1% accuracy with excellent interpretability</li>
+                <li><strong>Neural Network:</strong> Attained 82.7% accuracy with superior performance on edge cases</li>
+            </ul>
+
+            <h3>Feature Importance Analysis</h3>
+            <p>
+                Analysis of feature importance revealed that previous academic performance and study time were the strongest predictors of final grades, accounting for approximately 45% of predictive power. Surprisingly, socio-economic factors showed less direct impact than expected, suggesting that targeted interventions can potentially overcome resource limitations.
+            </p>
+            <p>
+                Other significant predictors included:
+            </p>
+            <ul>
+                <li>Attendance rate (18% importance)</li>
+                <li>Family educational background (12% importance)</li>
+                <li>Extracurricular participation (8% importance)</li>
+                <li>Peer study groups (7% importance)</li>
+            </ul>
+
+            <h3>At-Risk Student Identification</h3>
+            <p>
+                The model successfully identified at-risk students with 91% precision, meaning that 91 out of 100 students flagged as at-risk genuinely needed intervention. This high precision minimizes false alarms while ensuring that students who need help receive timely support. The recall of 85% indicates that we successfully identify 85% of all students who will eventually struggle.
+            </p>
+
+            <h2>Discussion</h2>
+            <p>
+                Our findings have several important implications for educational practice. First, the high accuracy of XGBoost suggests that ensemble methods should be prioritized in educational prediction systems. The model's ability to handle complex interactions between features makes it particularly well-suited for the multifaceted nature of academic performance.
+            </p>
+            <p>
+                The strong predictive power of previous academic performance and study time suggests that early academic interventions can have cascading positive effects. Schools should consider implementing robust monitoring systems in early grades to establish positive academic trajectories.
+            </p>
+            <p>
+                Interestingly, our analysis revealed that the relationship between study time and performance is non-linear, with diminishing returns beyond 3-4 hours per day. This finding supports the importance of study quality over quantity and suggests that intervention programs should focus on effective study strategies rather than simply increasing study hours.
+            </p>
+
+            <h2>Limitations and Future Work</h2>
+            <p>
+                While our results are promising, several limitations warrant consideration. First, our dataset, while substantial, comes from a limited geographic region and may not generalize to all educational contexts. Second, we did not account for teacher quality or instructional methods, which likely play significant roles in student performance.
+            </p>
+            <p>
+                Future research directions include:
+            </p>
+            <ul>
+                <li>Incorporating real-time behavioral data from learning management systems</li>
+                <li>Developing models that account for temporal dynamics and changing student circumstances</li>
+                <li>Exploring causal relationships rather than purely predictive associations</li>
+                <li>Expanding the dataset to include more diverse student populations</li>
+                <li>Investigating the long-term impact of interventions guided by model predictions</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                This research demonstrates the effectiveness of machine learning in educational contexts, particularly for early identification of at-risk students. Our XGBoost-based system achieved 87.3% accuracy in predicting student performance and 91% precision in identifying students requiring intervention.
+            </p>
+            <p>
+                The developed models can assist educators in making data-driven decisions about resource allocation and intervention strategies. By identifying struggling students early in their academic journey, schools can implement targeted support that addresses specific needs before performance deteriorates significantly.
+            </p>
+            <p>
+                Most importantly, this work shows that academic outcomes are predictable and, therefore, improvable. With appropriate tools and interventions, educational institutions can move from reactive to proactive support systems, ultimately improving outcomes for all students. The transition from traditional intuition-based approaches to data-driven decision-making represents a significant opportunity to enhance educational equity and effectiveness.
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-title">Ashoka Data Society</div>
+                <div class="footer-text">Ashoka University, Sonipat, Haryana</div>
+            </div>
+            <div class="footer-social">
+                <div class="footer-social-text">Join our community</div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ashokadatasociety/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ashoka-data-society/posts/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
