@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP for Sentiment Analysis in Social Media - ADS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #111b2d;
+            color: #F8F9FA;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(17, 27, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(225, 70, 64, 0.2);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(225, 70, 64, 0.3);
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #F8F9FA;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #F8F9FA;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e14640;
+        }
+
+        main {
+            flex: 1;
+            padding: 120px 3rem 2rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e14640;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .research-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(248, 249, 250, 0.1);
+        }
+
+        .research-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F8F9FA;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .research-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .research-authors {
+            color: #e14640;
+            font-weight: 500;
+        }
+
+        .research-date {
+            color: rgba(248, 249, 250, 0.5);
+        }
+
+        .research-content {
+            font-size: 1.05rem;
+            color: rgba(248, 249, 250, 0.85);
+            line-height: 1.9;
+        }
+
+        .research-content h2 {
+            font-size: 1.8rem;
+            color: #F8F9FA;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-content h3 {
+            font-size: 1.4rem;
+            color: #F8F9FA;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .research-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .research-content ul, .research-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .research-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: rgba(17, 27, 45, 0.95);
+            border-top: 1px solid rgba(225, 70, 64, 0.2);
+            padding: 2.5rem 3rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #F8F9FA;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            color: rgba(248, 249, 250, 0.7);
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .footer-social-text {
+            font-size: 0.95rem;
+            color: rgba(248, 249, 250, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(248, 249, 250, 0.05);
+            border: 1px solid rgba(248, 249, 250, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F8F9FA;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #e14640;
+            border-color: #e14640;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 100px 1.5rem 2rem;
+            }
+
+            .research-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-social {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="logo.png" alt="ADS Logo">
+            </div>
+            <div class="logo-text">Ashoka Data Society</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="research.html" class="back-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+            </svg>
+            Back to Research
+        </a>
+
+        <div class="research-header">
+            <h1 class="research-title">Natural Language Processing for Sentiment Analysis in Social Media</h1>
+            <div class="research-meta">
+                <span class="research-authors">By Mihika Grover, Navya Agarwal, Yash Khaitan</span>
+                <span class="research-date">Published: November 2024</span>
+            </div>
+        </div>
+
+        <article class="research-content">
+            <h2>Abstract</h2>
+            <p>
+                Social media sentiment analysis presents unique challenges due to the prevalence of informal language, sarcasm, cultural references, and context-dependent meanings. Traditional sentiment analysis approaches often struggle with these nuances, leading to misclassification and poor real-world performance. This paper introduces a novel approach using fine-tuned BERT (Bidirectional Encoder Representations from Transformers) models enhanced with specialized attention mechanisms to capture subtle emotional cues in tweets.
+            </p>
+            <p>
+                Our model was trained on 500,000 labeled tweets across multiple topics including politics, entertainment, technology, and daily life experiences. We demonstrate significant improvements in both standard sentiment classification and the particularly challenging task of sarcasm detection, achieving state-of-the-art results on benchmark datasets.
+            </p>
+
+            <h2>Introduction</h2>
+            <p>
+                The explosive growth of social media has created unprecedented opportunities for understanding public opinion at scale. However, the informal, rapid-fire nature of social media communication introduces significant challenges for automated analysis. Users frequently employ sarcasm, irony, slang, abbreviations, and emojis to convey sentiment, creating a complex linguistic landscape that traditional NLP methods struggle to navigate.
+            </p>
+            <p>
+                Recent advances in transformer-based language models, particularly BERT and its variants, have shown remarkable success in various NLP tasks. However, their application to social media sentiment analysis requires careful adaptation to handle the unique characteristics of this domain. This research addresses these challenges through architectural innovations and domain-specific training strategies.
+            </p>
+
+            <h2>Related Work</h2>
+            <p>
+                Previous approaches to sentiment analysis have evolved from simple lexicon-based methods through machine learning classifiers to modern deep learning architectures. Early work relied on manually curated sentiment dictionaries, which proved inadequate for capturing contextual nuances. The advent of recurrent neural networks (RNNs) and LSTMs enabled better handling of sequential information, but these models still struggled with long-range dependencies and computational efficiency.
+            </p>
+            <p>
+                The introduction of attention mechanisms and transformer architectures revolutionized NLP, with BERT achieving state-of-the-art results across numerous tasks. However, applying BERT to social media text requires addressing specific challenges including handling informal language, incorporating visual information (emojis), and detecting complex linguistic phenomena like sarcasm.
+            </p>
+
+            <h2>Methodology</h2>
+            <h3>Dataset Construction</h3>
+            <p>
+                We constructed a comprehensive dataset of 500,000 tweets collected using the Twitter API across a six-month period. The dataset was carefully balanced across sentiment categories (positive, negative, neutral) and includes substantial representation of sarcastic content. Annotations were performed by three independent annotators with inter-annotator agreement measured using Cohen's kappa (κ = 0.82), indicating strong agreement.
+            </p>
+
+            <h3>Key Innovations</h3>
+            <p>
+                Our approach introduces several novel architectural components:
+            </p>
+
+            <h3>Dual-Attention Mechanism</h3>
+            <p>
+                We implemented a dual-attention architecture that separately processes linguistic features and contextual embeddings. The first attention stream focuses on syntactic and semantic patterns in the text itself, while the second stream captures broader contextual information including user history and conversation threads. These streams are then combined through a learned gating mechanism that dynamically weights their contributions based on input characteristics.
+            </p>
+
+            <h3>Emoji Embeddings</h3>
+            <p>
+                Recognizing the significant role of emojis in conveying emotion on social media, we developed a parallel feature stream specifically for emoji processing. Rather than treating emojis as simple tokens, we created rich emoji embeddings trained on co-occurrence patterns with sentiment-bearing text. This allows the model to capture the nuanced ways emojis modify or amplify textual sentiment.
+            </p>
+
+            <h3>Sarcasm Detection Module</h3>
+            <p>
+                Sarcasm detection required special attention due to its complexity. We incorporated a dedicated sarcasm detection module that analyzes incongruity between literal meaning and implied sentiment. This module examines:
+            </p>
+            <ul>
+                <li>Contrast between positive words and negative context (or vice versa)</li>
+                <li>Exaggeration patterns and hyperbolic language</li>
+                <li>Sentiment flip indicators (e.g., "yeah, right", "sure")</li>
+                <li>Punctuation patterns and excessive capitalization</li>
+            </ul>
+
+            <h3>Training Procedure</h3>
+            <p>
+                We employed a multi-stage training strategy:
+            </p>
+            <ol>
+                <li><strong>Pre-training:</strong> Initial training on a large corpus of general social media text to adapt BERT to informal language patterns</li>
+                <li><strong>Task-specific fine-tuning:</strong> Supervised training on our labeled sentiment dataset</li>
+                <li><strong>Adversarial training:</strong> Exposure to challenging examples designed to test sarcasm detection and edge cases</li>
+            </ol>
+            <p>
+                We used the AdamW optimizer with a learning rate of 2e-5 and applied gradient clipping to prevent training instability. The model was trained for 10 epochs with early stopping based on validation performance.
+            </p>
+
+            <h2>Results and Analysis</h2>
+            <h3>Performance Metrics</h3>
+            <p>
+                Our model achieved exceptional performance across multiple evaluation metrics:
+            </p>
+            <ul>
+                <li><strong>Overall sentiment classification:</strong> 92.4% accuracy (baseline BERT: 87.7%)</li>
+                <li><strong>Sarcasm detection:</strong> 78.3% accuracy (previous best: 66.1%)</li>
+                <li><strong>Precision:</strong> 0.91 across sentiment categories</li>
+                <li><strong>Recall:</strong> 0.90 with particularly strong performance on minority classes</li>
+                <li><strong>F1-score:</strong> 0.905, demonstrating balanced precision and recall</li>
+            </ul>
+
+            <h3>Comparative Analysis</h3>
+            <p>
+                We compared our approach against several strong baselines:
+            </p>
+            <ul>
+                <li>Standard BERT fine-tuning: 87.7% accuracy</li>
+                <li>RoBERTa with emoji preprocessing: 89.3% accuracy</li>
+                <li>Ensemble of LSTM and CNN: 84.2% accuracy</li>
+                <li>Traditional feature-based SVM: 76.8% accuracy</li>
+            </ul>
+            <p>
+                Our model's 4.7% improvement over baseline BERT translates to correctly classifying approximately 23,500 additional tweets in a dataset of 500,000, demonstrating substantial practical impact.
+            </p>
+
+            <h3>Sarcasm Detection Breakthrough</h3>
+            <p>
+                The 12% improvement in sarcasm detection represents a significant advance in this notoriously difficult task. Analysis of correctly identified sarcastic tweets revealed that our dual-attention mechanism successfully captured subtle contextual cues that previous approaches missed. The model learned to identify patterns such as:
+            </p>
+            <ul>
+                <li>Incongruity between sentiment-bearing words and overall message tone</li>
+                <li>Exaggerated expressions combined with negative context</li>
+                <li>Cultural and contextual references that flip apparent meaning</li>
+            </ul>
+
+            <h3>Cross-Platform Generalization</h3>
+            <p>
+                To test generalization, we evaluated our Twitter-trained model on Reddit comments and Facebook posts without additional training. Performance remained strong (88.7% and 87.3% accuracy respectively), suggesting that our architectural innovations capture general principles of social media communication rather than Twitter-specific patterns.
+            </p>
+
+            <h2>Applications and Impact</h2>
+            <h3>Brand Monitoring</h3>
+            <p>
+                Companies can deploy our system to monitor real-time brand sentiment across social media platforms. The improved sarcasm detection is particularly valuable for identifying genuine criticism disguised as praise, preventing potential PR crises.
+            </p>
+
+            <h3>Public Opinion Analysis</h3>
+            <p>
+                Political campaigns and policy makers can use this technology to gauge public reaction to policies, speeches, and events with unprecedented accuracy. The system's ability to handle nuanced sentiment expressions provides a more reliable picture of public opinion than simple positive/negative classifications.
+            </p>
+
+            <h3>Mental Health Surveillance</h3>
+            <p>
+                With appropriate ethical safeguards, this technology could assist mental health professionals in identifying individuals expressing distress on social media, enabling early intervention. However, we emphasize the critical importance of human oversight and ethical considerations in such sensitive applications.
+            </p>
+
+            <h2>Ethical Considerations</h2>
+            <p>
+                The power of automated sentiment analysis raises important ethical questions:
+            </p>
+            <ul>
+                <li><strong>Privacy:</strong> Analyzing public posts must balance research value against individual privacy expectations</li>
+                <li><strong>Bias:</strong> Models may perpetuate or amplify biases present in training data, particularly regarding demographic groups</li>
+                <li><strong>Misuse potential:</strong> Surveillance capabilities could be misapplied for manipulation or suppression of speech</li>
+                <li><strong>Transparency:</strong> Users should be aware when automated systems analyze their content</li>
+            </ul>
+            <p>
+                We strongly advocate for human oversight in all deployments, particularly in sensitive domains like mental health or political analysis. Automated systems should augment rather than replace human judgment.
+            </p>
+
+            <h2>Limitations and Future Work</h2>
+            <p>
+                Despite strong performance, several limitations warrant attention:
+            </p>
+            <ul>
+                <li>The model occasionally struggles with highly domain-specific slang and rapidly evolving internet language</li>
+                <li>Performance degrades on multilingual tweets or code-switched text</li>
+                <li>Computational requirements may limit real-time deployment at massive scale</li>
+                <li>Cultural context dependence means models trained on one culture may not generalize to others</li>
+            </ul>
+
+            <h3>Future Research Directions</h3>
+            <p>
+                We identify several promising directions for future work:
+            </p>
+            <ul>
+                <li>Incorporating multimodal information (images, videos) for richer sentiment understanding</li>
+                <li>Developing specialized models for different languages and cultures</li>
+                <li>Real-time adaptation to evolving language patterns and new slang</li>
+                <li>Explainable AI techniques to make model decisions more interpretable</li>
+                <li>Few-shot learning approaches to handle rare sentiment expressions</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                This research demonstrates that careful architectural design and domain-specific adaptations can significantly improve sentiment analysis in the challenging domain of social media text. Our dual-attention mechanism combined with specialized emoji processing achieved state-of-the-art results, with particularly notable success in sarcasm detection.
+            </p>
+            <p>
+                The 92.4% accuracy in overall sentiment classification and 78.3% accuracy in sarcasm detection represent substantial advances that enable more reliable automated analysis of social media content. These improvements have practical implications for brand monitoring, public opinion research, and social science studies.
+            </p>
+            <p>
+                However, we emphasize that technical advances must be accompanied by careful consideration of ethical implications. As these systems become more powerful, the NLP community must remain vigilant about potential misuse and work to ensure that sentiment analysis technology serves the public good while respecting individual privacy and autonomy.
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-title">Ashoka Data Society</div>
+                <div class="footer-text">Ashoka University, Sonipat, Haryana</div>
+            </div>
+            <div class="footer-social">
+                <div class="footer-social-text">Join our community</div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ashokadatasociety/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ashoka-data-society/posts/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
