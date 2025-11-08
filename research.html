@@ -185,32 +185,11 @@
         }
 
         .research-full {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-
-        .research-full.expanded {
-            max-height: 5000px;
+            display: none;
         }
 
         .research-content {
-            font-size: 1rem;
-            color: rgba(248, 249, 250, 0.75);
-            line-height: 1.8;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(248, 249, 250, 0.1);
-        }
-
-        .research-content h3 {
-            font-size: 1.3rem;
-            color: #F8F9FA;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .research-content p {
-            margin-bottom: 1rem;
+            display: none;
         }
 
         .read-more-btn {
@@ -223,6 +202,8 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .read-more-btn:hover {
@@ -363,14 +344,14 @@
         </div>
 
         <div class="research-list">
-            <div class="research-card">
+                            <div class="research-card">
                 <div class="research-header">
                     <div class="research-info">
                         <h2 class="research-title">Predicting Student Performance Using Machine Learning</h2>
                         <div class="research-authors">By Anya Ghosh, Krrish Goel, Saanvi Gopalka</div>
                         <div class="research-date">Published: December 2024</div>
                     </div>
-                    <button class="read-more-btn" onclick="openResearchPage('research1.html')">Read Full Article</button>
+                    <a href="research1.html" target="_blank" class="read-more-btn">Read Full Article</a>
                 </div>
                 <p class="research-summary">
                     This study explores the application of machine learning algorithms to predict student academic performance based on various socio-economic and behavioral factors. We compare multiple models including Random Forest, XGBoost, and Neural Networks to identify the most accurate predictor.
@@ -404,7 +385,7 @@
                         <div class="research-authors">By Mihika Grover, Navya Agarwal, Yash Khaitan</div>
                         <div class="research-date">Published: November 2024</div>
                     </div>
-                    <button class="read-more-btn" onclick="toggleResearch(this)">Read Full Article</button>
+                    <a href="research2.html" target="_blank" class="read-more-btn">Read Full Article</a>
                 </div>
                 <p class="research-summary">
                     An investigation into advanced NLP techniques for analyzing sentiment in social media posts. We developed a transformer-based model that achieves state-of-the-art performance in detecting nuanced emotions and sarcasm in Twitter data.
@@ -438,7 +419,7 @@
                         <div class="research-authors">By Shreenand Bhatld, Suhani Sharma, Srishti Rai</div>
                         <div class="research-date">Published: October 2024</div>
                     </div>
-                    <button class="read-more-btn" onclick="toggleResearch(this)">Read Full Article</button>
+                    <a href="research3.html" target="_blank" class="read-more-btn">Read Full Article</a>
                 </div>
                 <p class="research-summary">
                     This project develops a deep learning pipeline for automated species identification and behavior analysis from camera trap images. Our system processes thousands of wildlife images daily, helping conservationists track endangered species populations with minimal human intervention.
@@ -490,20 +471,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function toggleResearch(button) {
-            const card = button.closest('.research-card');
-            const fullContent = card.querySelector('.research-full');
-            
-            if (fullContent.classList.contains('expanded')) {
-                fullContent.classList.remove('expanded');
-                button.textContent = 'Read Full Article';
-            } else {
-                fullContent.classList.add('expanded');
-                button.textContent = 'Show Less';
-            }
-        }
-    </script>
 </body>
 </html>
