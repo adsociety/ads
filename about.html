@@ -216,17 +216,17 @@
 
         .hods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 700px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .hod-card {
             background: rgba(248, 249, 250, 0.05);
             border: 1px solid rgba(248, 249, 250, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 15px;
+            padding: 2.5rem;
             text-align: center;
             transition: all 0.3s ease;
         }
@@ -238,36 +238,30 @@
         }
 
         .hod-image {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
             background: linear-gradient(135deg, rgba(225, 70, 64, 0.6), rgba(194, 56, 50, 0.6));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 600;
             color: #F8F9FA;
         }
 
         .hod-name {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #F8F9FA;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
 
         .hod-role {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #e14640;
             font-weight: 500;
-            margin-bottom: 0.8rem;
-        }
-
-        .hod-department {
-            font-size: 0.85rem;
-            color: rgba(248, 249, 250, 0.6);
         }
 
         footer {
@@ -423,75 +417,79 @@
 
         <section class="hods-section">
             <h2 class="section-title">Heads of Departments</h2>
-            <div class="hods-grid">
-                <div class="hod-card">
-                    <div class="hod-image">PS</div>
-                    <h3 class="hod-name">Pranjal Shevdekar</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Strategy and Events</p>
+            
+            <div class="department-group">
+                <h3 class="department-name">Strategy and Events</h3>
+                <div class="hods-grid">
+                    <div class="hod-card">
+                        <div class="hod-image">PS</div>
+                        <h3 class="hod-name">Pranjal Shevdekar</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
+                    <div class="hod-card">
+                        <div class="hod-image">SG</div>
+                        <h3 class="hod-name">Saanvi Gopalka</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="hod-card">
-                    <div class="hod-image">MG</div>
-                    <h3 class="hod-name">Mihika Grover</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Operations and Skill Dev</p>
+            <div class="department-group">
+                <h3 class="department-name">Operations and Skill Dev</h3>
+                <div class="hods-grid">
+                    <div class="hod-card">
+                        <div class="hod-image">MG</div>
+                        <h3 class="hod-name">Mihika Grover</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
+                    <div class="hod-card">
+                        <div class="hod-image">NA</div>
+                        <h3 class="hod-name">Navya Agarwal</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="hod-card">
-                    <div class="hod-image">SB</div>
-                    <h3 class="hod-name">Shreenand Bhatld</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Research and Insights</p>
+            <div class="department-group">
+                <h3 class="department-name">Research and Insights</h3>
+                <div class="hods-grid">
+                    <div class="hod-card">
+                        <div class="hod-image">SB</div>
+                        <h3 class="hod-name">Shreenand Bhatld</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
+                    <div class="hod-card">
+                        <div class="hod-image">YK</div>
+                        <h3 class="hod-name">Yash Khaitan</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="hod-card">
-                    <div class="hod-image">SS</div>
-                    <h3 class="hod-name">Suhani Sharma</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Media and Marketing</p>
+            <div class="department-group">
+                <h3 class="department-name">Media and Marketing</h3>
+                <div class="hods-grid">
+                    <div class="hod-card">
+                        <div class="hod-image">SS</div>
+                        <h3 class="hod-name">Suhani Sharma</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
+                    <div class="hod-card">
+                        <div class="hod-image">D</div>
+                        <h3 class="hod-name">Devyanee Dalmia</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
                 </div>
+            </div>
 
-                <div class="hod-card">
-                    <div class="hod-image">SR</div>
-                    <h3 class="hod-name">Srishti Rai</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Finance & Outreach</p>
-                </div>
-
-                <div class="hod-card">
-                    <div class="hod-image">SG</div>
-                    <h3 class="hod-name">Saanvi Gopalka</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Strategy and Events</p>
-                </div>
-
-                <div class="hod-card">
-                    <div class="hod-image">NA</div>
-                    <h3 class="hod-name">Navya Agarwal</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Operations and Skill Dev</p>
-                </div>
-
-                <div class="hod-card">
-                    <div class="hod-image">YK</div>
-                    <h3 class="hod-name">Yash Khaitan</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Research and Insights</p>
-                </div>
-
-                <div class="hod-card">
-                    <div class="hod-image">D</div>
-                    <h3 class="hod-name">Devyanee Dalmia</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Media and Marketing</p>
-                </div>
-
-                <div class="hod-card">
-                    <div class="hod-image">JG</div>
-                    <h3 class="hod-name">Jiya Gupta</h3>
-                    <p class="hod-role">Director</p>
-                    <p class="hod-department">Finance & Outreach</p>
+            <div class="department-group">
+                <h3 class="department-name">Finance & Outreach</h3>
+                <div class="hods-grid" style="grid-template-columns: minmax(300px, 400px); justify-content: center;">
+                    <div class="hod-card">
+                        <div class="hod-image">SR</div>
+                        <h3 class="hod-name">Srishti Rai</h3>
+                        <p class="hod-role">Director</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -504,7 +502,6 @@
                 <div class="footer-text">Ashoka University, Sonipat, Haryana</div>
             </div>
             <div class="footer-social">
-                <div class="footer-social-text">Join our community</div>
                 <div class="social-links">
                     <a href="https://www.instagram.com/ashokadatasociety/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
