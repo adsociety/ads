@@ -340,110 +340,22 @@
     <main>
         <div class="page-header">
             <h1>Research Publications</h1>
-            <p>Cutting-edge research by our members in data science and machine learning</p>
+            <p>Cutting-edge research by our members in data science and analytics</p>
         </div>
 
         <div class="research-list">
-                            <div class="research-card">
+            <div class="research-card">
                 <div class="research-header">
                     <div class="research-info">
-                        <h2 class="research-title">Predicting Student Performance Using Machine Learning</h2>
-                        <div class="research-authors">By Anya Ghosh, Krrish Goel, Saanvi Gopalka</div>
-                        <div class="research-date">Published: December 2024</div>
+                        <h2 class="research-title">Do NBA Players Shoot Better on Their Second Free Throw?</h2>
+                        <div class="research-authors">By Vivaan Majumder (UG2023)</div>
+                        <div class="research-date">Published: March 2026</div>
                     </div>
                     <a href="research1.html" target="_blank" class="read-more-btn">Read Full Article</a>
                 </div>
                 <p class="research-summary">
-                    This study explores the application of machine learning algorithms to predict student academic performance based on various socio-economic and behavioral factors. We compare multiple models including Random Forest, XGBoost, and Neural Networks to identify the most accurate predictor.
+                    A statistical analysis of sequential dependency in free throw outcomes. This report examines whether the outcome of a player's first free throw in a two-shot sequence predicts the outcome of their second, using a cleaned dataset of regular-season NBA free throw records and multiple statistical models including fixed-effects logistic regression.
                 </p>
-                <div class="research-full">
-                    <div class="research-content">
-                        <h3>Abstract</h3>
-                        <p>
-                            Student performance prediction is crucial for early intervention and personalized learning. This research leverages machine learning techniques to analyze patterns in student data and predict final grades with high accuracy. Our dataset includes 1,500 students from various backgrounds, incorporating features such as study time, family support, previous grades, and attendance records.
-                        </p>
-                        <h3>Methodology</h3>
-                        <p>
-                            We employed three primary machine learning approaches: Random Forest for its robustness to overfitting, XGBoost for gradient boosting capabilities, and a Multi-Layer Perceptron Neural Network for complex pattern recognition. The dataset was split 80-20 for training and testing, with 5-fold cross-validation applied to ensure model reliability.
-                        </p>
-                        <h3>Results</h3>
-                        <p>
-                            Our findings indicate that XGBoost achieved the highest accuracy of 87.3%, followed by Random Forest at 84.1% and Neural Networks at 82.7%. Feature importance analysis revealed that previous academic performance and study time were the strongest predictors of final grades. The model successfully identified at-risk students with 91% precision, enabling timely interventions.
-                        </p>
-                        <h3>Conclusion</h3>
-                        <p>
-                            This research demonstrates the effectiveness of machine learning in educational contexts. The developed models can assist educators in identifying students who may need additional support, ultimately improving overall academic outcomes. Future work will explore incorporating real-time behavioral data and expanding the dataset to include more diverse student populations.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="research-card">
-                <div class="research-header">
-                    <div class="research-info">
-                        <h2 class="research-title">Natural Language Processing for Sentiment Analysis in Social Media</h2>
-                        <div class="research-authors">By Mihika Grover, Navya Agarwal, Yash Khaitan</div>
-                        <div class="research-date">Published: November 2024</div>
-                    </div>
-                    <a href="research2.html" target="_blank" class="read-more-btn">Read Full Article</a>
-                </div>
-                <p class="research-summary">
-                    An investigation into advanced NLP techniques for analyzing sentiment in social media posts. We developed a transformer-based model that achieves state-of-the-art performance in detecting nuanced emotions and sarcasm in Twitter data.
-                </p>
-                <div class="research-full">
-                    <div class="research-content">
-                        <h3>Abstract</h3>
-                        <p>
-                            Social media sentiment analysis presents unique challenges due to informal language, sarcasm, and context-dependent meanings. This paper introduces a novel approach using fine-tuned BERT models enhanced with attention mechanisms to capture subtle emotional cues in tweets. Our model was trained on 500,000 labeled tweets across multiple topics.
-                        </p>
-                        <h3>Key Innovations</h3>
-                        <p>
-                            We implemented a dual-attention mechanism that separately processes linguistic features and contextual embeddings. This architecture proved particularly effective in identifying sarcasm, a notoriously difficult aspect of sentiment analysis. Additionally, we incorporated emoji embeddings as a parallel feature stream, recognizing their significant role in conveying emotion in social media contexts.
-                        </p>
-                        <h3>Performance Metrics</h3>
-                        <p>
-                            Our model achieved 92.4% accuracy on standard sentiment classification, outperforming baseline BERT by 4.7%. More impressively, sarcasm detection reached 78.3% accuracy, a 12% improvement over existing methods. The model demonstrated strong generalization across different social media platforms and topics.
-                        </p>
-                        <h3>Applications</h3>
-                        <p>
-                            This research has practical applications in brand monitoring, public opinion analysis, and mental health surveillance. We discuss ethical considerations and potential biases in automated sentiment analysis systems, emphasizing the importance of human oversight in sensitive applications.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="research-card">
-                <div class="research-header">
-                    <div class="research-info">
-                        <h2 class="research-title">Computer Vision for Automated Wildlife Monitoring</h2>
-                        <div class="research-authors">By Shreenand Bhatld, Suhani Sharma, Srishti Rai</div>
-                        <div class="research-date">Published: October 2024</div>
-                    </div>
-                    <a href="research3.html" target="_blank" class="read-more-btn">Read Full Article</a>
-                </div>
-                <p class="research-summary">
-                    This project develops a deep learning pipeline for automated species identification and behavior analysis from camera trap images. Our system processes thousands of wildlife images daily, helping conservationists track endangered species populations with minimal human intervention.
-                </p>
-                <div class="research-full">
-                    <div class="research-content">
-                        <h3>Introduction</h3>
-                        <p>
-                            Wildlife conservation efforts increasingly rely on camera trap networks that generate massive amounts of image data. Manual classification of these images is time-consuming and expensive. Our automated system uses state-of-the-art computer vision to identify species, count individuals, and analyze behavioral patterns.
-                        </p>
-                        <h3>Technical Approach</h3>
-                        <p>
-                            We developed a multi-stage pipeline: first, an object detection model (YOLOv8) localizes animals in images; second, a ResNet-based classifier identifies species with 96% accuracy across 50 different species; finally, a temporal analysis module tracks individual animals and identifies behaviors such as feeding, hunting, and social interactions.
-                        </p>
-                        <h3>Dataset and Training</h3>
-                        <p>
-                            Our training dataset comprised 250,000 labeled images from camera traps across three national parks. We employed extensive data augmentation to handle varying lighting conditions, weather effects, and camera angles. Transfer learning from ImageNet pretrained models significantly improved convergence speed and final accuracy.
-                        </p>
-                        <h3>Impact and Deployment</h3>
-                        <p>
-                            The system has been deployed in two wildlife reserves, processing over 10,000 images daily. Conservationists report 85% time savings compared to manual classification. The automated alerts for rare species sightings have enabled rapid response to poaching threats. Future enhancements include acoustic monitoring integration and real-time population dynamics modeling.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
@@ -455,6 +367,7 @@
                 <div class="footer-text">Ashoka University, Sonipat, Haryana</div>
             </div>
             <div class="footer-social">
+                <div class="footer-social-text">Join our community</div>
                 <div class="social-links">
                     <a href="https://www.instagram.com/ashokadatasociety/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
