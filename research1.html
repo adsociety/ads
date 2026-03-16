@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predicting Student Performance Using Machine Learning - ADS</title>
+    <title>Do NBA Players Shoot Better on Their Second Free Throw? - ADS</title>
     <style>
         * {
             margin: 0;
@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #111b2d;
-            color: #F8F9FA;
+            background: #ffffff;
+            color: #1a1a1a;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -60,7 +60,7 @@
         .logo-text {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #F8F9FA;
+            color: #ffffff;
             letter-spacing: 0.5px;
         }
 
@@ -71,7 +71,7 @@
         }
 
         .nav-links a {
-            color: #F8F9FA;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -106,25 +106,55 @@
             transform: translateX(-5px);
         }
 
+        .download-btn {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid #e14640;
+            color: #e14640;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 0.8rem;
+        }
+
+        .download-btn:hover {
+            background: #e14640;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
         .research-header {
             margin-bottom: 3rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(248, 249, 250, 0.1);
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .research-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #F8F9FA;
-            margin-bottom: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
             line-height: 1.2;
+        }
+
+        .research-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
         }
 
         .research-meta {
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
             gap: 1.5rem;
             font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         .research-authors {
@@ -133,25 +163,44 @@
         }
 
         .research-date {
-            color: rgba(248, 249, 250, 0.5);
+            color: #6a6a6a;
+        }
+
+        .research-org {
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+        .abstract-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e14640;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .abstract-box h3 {
+            font-size: 1.2rem;
+            color: #e14640;
+            margin-bottom: 1rem;
         }
 
         .research-content {
             font-size: 1.05rem;
-            color: rgba(248, 249, 250, 0.85);
+            color: #2a2a2a;
             line-height: 1.9;
         }
 
         .research-content h2 {
             font-size: 1.8rem;
-            color: #F8F9FA;
+            color: #1a1a1a;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
         }
 
         .research-content h3 {
             font-size: 1.4rem;
-            color: #F8F9FA;
+            color: #1a1a1a;
             margin-top: 2rem;
             margin-bottom: 0.8rem;
         }
@@ -167,6 +216,57 @@
 
         .research-content li {
             margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+        }
+
+        table caption {
+            color: #e14640;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            color: #1a1a1a;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+            color: #2a2a2a;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        .equation {
+            background: #f5f5f5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            border-left: 3px solid #e14640;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            color: #1a1a1a;
+        }
+
+        .stat-highlight {
+            color: #e14640;
+            font-weight: 600;
         }
 
         footer {
@@ -283,137 +383,367 @@
     </nav>
 
     <main>
-        <a href="research.html" class="back-link">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
-            </svg>
-            Back to Research
-        </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+            <a href="research.html" class="back-link">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+                </svg>
+                Back to Research
+            </a>
+        </div>
 
         <div class="research-header">
-            <h1 class="research-title">Predicting Student Performance Using Machine Learning</h1>
+            <h1 class="research-title">Do NBA Players Shoot Better on Their Second Free Throw?</h1>
+            <p class="research-subtitle">A Statistical Analysis of Sequential Dependency in Free Throw Outcomes</p>
             <div class="research-meta">
-                <span class="research-authors">By Anya Ghosh, Krrish Goel, Saanvi Gopalka</span>
-                <span class="research-date">Published: December 2024</span>
+                <span class="research-authors">Vivaan Majumder (UG2023)</span>
+                <span class="research-org">Ashoka Data Society</span>
+                <span class="research-date">March 2026</span>
+                <a href="https://drive.google.com/file/d/1pfqHYINEV4sH0miNtzNdFVT94SH4CTEu/view?usp=sharing" target="_blank" class="download-btn" title="Download PDF">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
             </div>
         </div>
 
+        <div class="abstract-box">
+            <h3>Abstract</h3>
+            <p>
+                This report examines whether the outcome of a player's first free throw in a two-shot sequence predicts the outcome of their second. Using a cleaned dataset of regular-season NBA free throw records, the analysis runs a two-sample proportions test, a linear probability model, and two logistic regression models, the second of which controls for player-level ability using fixed effects. The raw data shows a 6.3 percentage point gap in second-shot success rates between players who made versus missed the first. After controlling for shooter identity, the effect drops to roughly 1.1 percentage points but stays highly significant. The evidence points to a small, real within-player sequential effect that is not fully explained by sorting on shooter quality.
+            </p>
+        </div>
+
         <article class="research-content">
-            <h2>Abstract</h2>
+            <h2>1. Introduction</h2>
             <p>
-                Student performance prediction is crucial for early intervention and personalized learning strategies in modern educational systems. This research leverages advanced machine learning techniques to analyze patterns in student data and predict final grades with high accuracy. Our comprehensive dataset includes 1,500 students from various socio-economic backgrounds, incorporating features such as study time, family support, previous grades, attendance records, and extracurricular involvement.
+                Free throws are the most controlled shot in basketball. The distance is fixed at 15 feet, there is no defensive pressure, and the shooter has several seconds to prepare. Given all that, it is worth asking whether the outcome of the first free throw in a two-shot sequence tells us anything useful about the second.
             </p>
             <p>
-                The predictive models developed in this study can assist educational institutions in identifying at-risk students early in their academic journey, enabling timely interventions that can significantly improve educational outcomes. By understanding the key factors that influence student success, educators can design more effective support systems and personalized learning paths.
-            </p>
-
-            <h2>Introduction</h2>
-            <p>
-                The increasing availability of educational data has opened new possibilities for understanding and improving student performance. Traditional approaches to identifying struggling students often rely on reactive measures, addressing issues only after grades have declined significantly. Machine learning offers a proactive alternative, enabling educators to predict performance trends before critical failures occur.
+                Two competing stories exist. One is that the shots are independent: each attempt draws on the same stable physical skill, so the first outcome carries no information about the second beyond what we already know about the player. The other is that momentum or mental state matters within a sequence. Making the first shot might build confidence; missing it might introduce hesitation.
             </p>
             <p>
-                This research addresses several key questions: Which factors are most predictive of student success? Can we accurately identify at-risk students early in the semester? How do different machine learning algorithms compare in educational contexts? Our findings provide actionable insights for educational policy and practice.
+                This analysis tests those two stories using NBA regular-season data. The goal is to get a clean estimate of whether there is a within-player sequential effect, separated from the compositional effect that comes from better shooters naturally converting more of both shots.
             </p>
 
-            <h2>Methodology</h2>
-            <h3>Data Collection and Preprocessing</h3>
+            <h2>2. Data and Cleaning</h2>
+            
+            <h3>2.1 Source</h3>
             <p>
-                We collected comprehensive data from three secondary schools over two academic years. The dataset includes demographic information, academic history, behavioral patterns, and family background. Data preprocessing involved handling missing values, normalizing numerical features, and encoding categorical variables using one-hot encoding.
+                The raw data comes from free throws.csv, a play-by-play record of NBA regular-season free throw attempts. Each row is a single attempt and records the game ID, period, clock time, player name, shot outcome (made or missed), and a text description of the play type.
             </p>
 
-            <h3>Feature Engineering</h3>
+            <h3>2.2 Filtering Steps</h3>
             <p>
-                We developed several derived features to capture complex relationships in the data:
-            </p>
-            <ul>
-                <li>Grade trajectory: Rate of change in performance over previous terms</li>
-                <li>Engagement score: Composite metric combining attendance and participation</li>
-                <li>Support index: Quantification of family and institutional support systems</li>
-                <li>Study efficiency: Ratio of grades to reported study hours</li>
-            </ul>
-
-            <h3>Model Selection and Training</h3>
-            <p>
-                We employed three primary machine learning approaches, each chosen for specific strengths:
+                Several filters reduce the data to clean two-shot pairs. Only regular-season games are kept; playoff observations are dropped. Three-shot foul sequences are excluded by removing any play descriptions containing the digit 3 or the phrase "of 1". Technical free throws are also removed since they are isolated single attempts with no second shot to pair with.
             </p>
             <p>
-                <strong>Random Forest:</strong> Selected for its robustness to overfitting and ability to handle non-linear relationships. We configured the model with 500 decision trees and maximum depth of 15 to balance complexity and generalization.
-            </p>
-            <p>
-                <strong>XGBoost:</strong> Chosen for its gradient boosting capabilities and superior performance on structured data. We implemented extensive hyperparameter tuning using grid search, optimizing learning rate, max depth, and regularization parameters.
-            </p>
-            <p>
-                <strong>Multi-Layer Perceptron (MLP) Neural Network:</strong> Deployed to capture complex non-linear patterns. Our architecture consisted of three hidden layers (128, 64, 32 neurons) with ReLU activation and dropout regularization to prevent overfitting.
-            </p>
-            <p>
-                The dataset was split 80-20 for training and testing, with 5-fold cross-validation applied during model development to ensure reliability and generalization. We employed stratified sampling to maintain class balance across folds.
+                After filtering, a variable FTno is extracted from the play description text. It takes the value 1 for the first attempt and 2 for the second. The data is then pivoted so each row represents one two-shot pair with columns FT1 and FT2, both binary (1 = made, 0 = missed). Pairs with missing values in either column are dropped.
             </p>
 
-            <h2>Results</h2>
-            <h3>Model Performance</h3>
+            <h3>2.3 Final Sample</h3>
             <p>
-                Our experimental results demonstrate the effectiveness of ensemble methods in educational prediction tasks:
-            </p>
-            <ul>
-                <li><strong>XGBoost:</strong> Achieved the highest accuracy of 87.3% with precision of 0.89 and recall of 0.85</li>
-                <li><strong>Random Forest:</strong> Delivered solid performance at 84.1% accuracy with excellent interpretability</li>
-                <li><strong>Neural Network:</strong> Attained 82.7% accuracy with superior performance on edge cases</li>
-            </ul>
-
-            <h3>Feature Importance Analysis</h3>
-            <p>
-                Analysis of feature importance revealed that previous academic performance and study time were the strongest predictors of final grades, accounting for approximately 45% of predictive power. Surprisingly, socio-economic factors showed less direct impact than expected, suggesting that targeted interventions can potentially overcome resource limitations.
-            </p>
-            <p>
-                Other significant predictors included:
-            </p>
-            <ul>
-                <li>Attendance rate (18% importance)</li>
-                <li>Family educational background (12% importance)</li>
-                <li>Extracurricular participation (8% importance)</li>
-                <li>Peer study groups (7% importance)</li>
-            </ul>
-
-            <h3>At-Risk Student Identification</h3>
-            <p>
-                The model successfully identified at-risk students with 91% precision, meaning that 91 out of 100 students flagged as at-risk genuinely needed intervention. This high precision minimizes false alarms while ensuring that students who need help receive timely support. The recall of 85% indicates that we successfully identify 85% of all students who will eventually struggle.
+                The cleaned dataset contains <span class="stat-highlight">245,456 two-shot free throw pairs</span> across <span class="stat-highlight">1,007 unique players</span>. One minor data quality issue surfaced: 51 player-game-time combinations had duplicate records for the same shot number. These were collapsed to one observation per pair using the first recorded value.
             </p>
 
-            <h2>Discussion</h2>
+            <h2>3. Descriptive Statistics</h2>
             <p>
-                Our findings have several important implications for educational practice. First, the high accuracy of XGBoost suggests that ensemble methods should be prioritized in educational prediction systems. The model's ability to handle complex interactions between features makes it particularly well-suited for the multifaceted nature of academic performance.
-            </p>
-            <p>
-                The strong predictive power of previous academic performance and study time suggests that early academic interventions can have cascading positive effects. Schools should consider implementing robust monitoring systems in early grades to establish positive academic trajectories.
-            </p>
-            <p>
-                Interestingly, our analysis revealed that the relationship between study time and performance is non-linear, with diminishing returns beyond 3-4 hours per day. This finding supports the importance of study quality over quantity and suggests that intervention programs should focus on effective study strategies rather than simply increasing study hours.
+                Table 1 shows the raw conversion rates split by first-shot outcome.
             </p>
 
-            <h2>Limitations and Future Work</h2>
-            <p>
-                While our results are promising, several limitations warrant consideration. First, our dataset, while substantial, comes from a limited geographic region and may not generalize to all educational contexts. Second, we did not account for teacher quality or instructional methods, which likely play significant roles in student performance.
-            </p>
-            <p>
-                Future research directions include:
-            </p>
-            <ul>
-                <li>Incorporating real-time behavioral data from learning management systems</li>
-                <li>Developing models that account for temporal dynamics and changing student circumstances</li>
-                <li>Exploring causal relationships rather than purely predictive associations</li>
-                <li>Expanding the dataset to include more diverse student populations</li>
-                <li>Investigating the long-term impact of interventions guided by model predictions</li>
-            </ul>
+            <table>
+                <caption>Table 1: Free Throw Conversion Rates by First Shot Outcome</caption>
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>FT2 Success Rate</th>
+                        <th>N</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Overall FT1 success rate</td>
+                        <td>73.5%</td>
+                        <td>245,456</td>
+                    </tr>
+                    <tr>
+                        <td>Overall FT2 success rate</td>
+                        <td>77.8%</td>
+                        <td>245,456</td>
+                    </tr>
+                    <tr>
+                        <td>FT2 rate given FT1 made</td>
+                        <td class="stat-highlight">79.5%</td>
+                        <td>≈180,000</td>
+                    </tr>
+                    <tr>
+                        <td>FT2 rate given FT1 missed</td>
+                        <td class="stat-highlight">73.2%</td>
+                        <td>≈65,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Difference</strong></td>
+                        <td class="stat-highlight"><strong>6.3 pp</strong></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h2>Conclusion</h2>
             <p>
-                This research demonstrates the effectiveness of machine learning in educational contexts, particularly for early identification of at-risk students. Our XGBoost-based system achieved 87.3% accuracy in predicting student performance and 91% precision in identifying students requiring intervention.
+                Players convert FT2 at a higher rate when they make FT1 (79.5%) than when they miss it (73.2%). The 6.3 percentage point gap is the raw number before any controls are applied. It is also worth noting that FT2 rates are higher than FT1 rates overall, consistent with a small warm-up or feedback mechanism within the sequence.
+            </p>
+
+            <h2>4. Statistical Analysis</h2>
+
+            <h3>4.1 Two-Sample Proportions Test</h3>
+            <p>
+                The first test compares FT2 success rates between players who made FT1 and players who missed FT1.
+            </p>
+            <div class="equation">
+                H₀: p(FT2|FT1=1) = p(FT2|FT1=0)<br>
+                H₁: p(FT2|FT1=1) ≠ p(FT2|FT1=0)
+            </div>
+            <p>
+                The test uses a continuity correction. Results:
+            </p>
+            <div class="equation">
+                χ² = 1103.7, df = 1, p < 2.2 × 10⁻¹⁶
+            </div>
+            <p>
+                The 95% confidence interval on the difference is (0.059, 0.067), confirming the 6.3 percentage point gap is precisely estimated and not a sampling artifact. The null hypothesis is rejected at any conventional significance level.
             </p>
             <p>
-                The developed models can assist educators in making data-driven decisions about resource allocation and intervention strategies. By identifying struggling students early in their academic journey, schools can implement targeted support that addresses specific needs before performance deteriorates significantly.
+                This test establishes a strong, statistically significant association between FT1 and FT2 outcomes. It does not tell us whether that association is causal or driven by variation in shooter quality.
+            </p>
+
+            <h3>4.2 Linear Probability Model</h3>
+            <p>
+                The linear probability model (LPM) treats FT2 as the outcome and FT1 as the only predictor:
+            </p>
+            <div class="equation">
+                FT2ᵢ = β₀ + β₁ · FT1ᵢ + εᵢ
+            </div>
+
+            <table>
+                <caption>Table 2: Linear Probability Model: FT2 Regressed on FT1</caption>
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Estimate</th>
+                        <th>Std. Error</th>
+                        <th>t-value</th>
+                        <th>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Intercept (β₀)</td>
+                        <td>0.7315</td>
+                        <td>0.0016</td>
+                        <td>449.8</td>
+                        <td>< 2.2 × 10⁻¹⁶</td>
+                    </tr>
+                    <tr>
+                        <td>FT1 (β₁)</td>
+                        <td class="stat-highlight">0.0632</td>
+                        <td>0.0019</td>
+                        <td>33.3</td>
+                        <td>< 2.2 × 10⁻¹⁶</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><strong>R² = 0.0045</strong> | <strong>N = 245,456</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                The intercept of 0.7315 is the predicted FT2 success rate for players who missed FT1, matching the descriptive figure from Section 3. The slope of 0.0632 means making FT1 is associated with a 6.3 percentage point increase in FT2 success. The effect is statistically significant with t = 33.3.
             </p>
             <p>
-                Most importantly, this work shows that academic outcomes are predictable and, therefore, improvable. With appropriate tools and interventions, educational institutions can move from reactive to proactive support systems, ultimately improving outcomes for all students. The transition from traditional intuition-based approaches to data-driven decision-making represents a significant opportunity to enhance educational equity and effectiveness.
+                However, R² = 0.0045. FT1 explains less than half a percent of total variation in FT2. This is expected: individual player ability dominates, and the model includes no player-level controls.
+            </p>
+
+            <h3>4.3 Pooled Logistic Regression</h3>
+            <p>
+                A logistic regression is more appropriate for a binary outcome since it keeps predicted probabilities within [0, 1]:
+            </p>
+            <div class="equation">
+                log[P(FT2 = 1) / (1 - P(FT2 = 1))] = α + γ · FT1ᵢ
+            </div>
+
+            <table>
+                <caption>Table 3: Pooled Logistic Regression: FT2 on FT1</caption>
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Estimate</th>
+                        <th>Std. Error</th>
+                        <th>z-value</th>
+                        <th>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Intercept (α)</td>
+                        <td>1.0023</td>
+                        <td>0.0088</td>
+                        <td>113.28</td>
+                        <td>< 2.2 × 10⁻¹⁶</td>
+                    </tr>
+                    <tr>
+                        <td>FT1 (γ)</td>
+                        <td class="stat-highlight">0.3510</td>
+                        <td>0.0106</td>
+                        <td>33.13</td>
+                        <td>< 2.2 × 10⁻¹⁶</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><strong>AIC = 258,875</strong> | <strong>N = 245,456</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                The logistic coefficient on FT1 is 0.351. Converting to an odds ratio:
+            </p>
+            <div class="equation">
+                OR = e^0.351 ≈ 1.42
+            </div>
+            <p>
+                Making the first free throw increases the odds of making the second by roughly <span class="stat-highlight">42%</span>. In probability terms, predicted FT2 success rises from 73.1% to 79.5%, consistent with all earlier figures. The results are fully aligned across the proportions test and LPM.
+            </p>
+
+            <h3>4.4 Fixed-Effects Logistic Regression</h3>
+            <p>
+                The previous models pool all players. A player who shoots 85% from the line will tend to make both FT1 and FT2 at high rates, creating a positive correlation between the two shots that reflects skill, not sequential dynamics. To isolate the within-player effect, the analysis adds player fixed effects using feglm from the fixest package:
+            </p>
+            <div class="equation">
+                log[P(FT2 = 1) / (1 - P(FT2 = 1))] = αⱼ + δ · FT1ᵢⱼ
+            </div>
+            <p>
+                Here, αⱼ is a player-specific intercept for player j. This absorbs all stable player-level variation. The model asks a sharper question: for the same player, does making FT1 improve FT2 success?
+            </p>
+            <p>
+                During estimation, 83 players are dropped because they show only one outcome type (all makes or all misses), leaving 245,219 observations across 1,007 players.
+            </p>
+
+            <table>
+                <caption>Table 4: Fixed-Effects Logistic Regression: FT2 on FT1, Player Fixed Effects</caption>
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Estimate</th>
+                        <th>Std. Error</th>
+                        <th>z-value</th>
+                        <th>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FT1 (δ)</td>
+                        <td class="stat-highlight">0.1233</td>
+                        <td>0.0112</td>
+                        <td>11.01</td>
+                        <td>< 2.2 × 10⁻¹⁶</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><strong>Player FEs = 1,007</strong> | <strong>Adj. Pseudo R² = 0.0400</strong> | <strong>N = 245,219</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                The within-player coefficient is δ̂ = 0.1233. The corresponding odds ratio is:
+            </p>
+            <div class="equation">
+                OR(within) = e^0.1233 ≈ 1.13
+            </div>
+            <p>
+                Controlling for player ability, making the first free throw increases the odds of making the second by about <span class="stat-highlight">13%</span> within the same player. In probability terms, this is roughly a 1.0 to 1.5 percentage point increase in FT2 success for a typical shooter.
+            </p>
+            <p>
+                The pooled estimate (OR ≈ 1.42) drops sharply once player fixed effects enter (OR ≈ 1.13). A large share of the raw association is compositional: better shooters make both shots at higher rates. But the residual within-player effect is real. With z = 11.01 and N > 245,000, this cannot be attributed to noise.
+            </p>
+
+            <h2>5. Model Comparison</h2>
+            <p>
+                Table 5 puts all four approaches side by side.
+            </p>
+
+            <table>
+                <caption>Table 5: Summary of All Models and Key Estimates</caption>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Controls</th>
+                        <th>FT1 Estimate</th>
+                        <th>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Proportions Test</td>
+                        <td>None</td>
+                        <td>+6.3 pp diff</td>
+                        <td>< 0.001</td>
+                    </tr>
+                    <tr>
+                        <td>Linear Probability</td>
+                        <td>None</td>
+                        <td>+6.3 pp slope</td>
+                        <td>< 0.001</td>
+                    </tr>
+                    <tr>
+                        <td>Logistic (pooled)</td>
+                        <td>None</td>
+                        <td>OR ≈ 1.42</td>
+                        <td>< 0.001</td>
+                    </tr>
+                    <tr>
+                        <td>Logistic (player FEs)</td>
+                        <td>Player identity</td>
+                        <td class="stat-highlight">OR ≈ 1.13</td>
+                        <td>< 0.001</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Adding player fixed effects cuts the odds ratio from 1.42 to 1.13, a reduction of about 70% of the raw estimate. That gap is the compositional piece: better players make both shots more often, and that accounts for most of the raw association.
+            </p>
+            <p>
+                The remaining within-player effect of OR ≈ 1.13 is modest in absolute terms but statistically robust. Whether it reflects psychological momentum, physical calibration across the two attempts, or some other within-sequence mechanism is not identifiable from this data alone.
+            </p>
+
+            <h2>6. Limitations</h2>
+            <p>
+                <strong>Unobserved game context.</strong> Even within the same player, not all free throw situations are identical. Late-game pressure, foul trouble, opponent, and fatigue are not included in the model. If any of these affect both FT1 and FT2 simultaneously, the within-player estimate may still carry omitted variable bias.
+            </p>
+            <p>
+                <strong>Duplicate records in raw data.</strong> Cleaning surfaced 51 player-game-time groups with duplicate shot entries. These were resolved by taking the first recorded value. If any of these were genuine re-attempts rather than data entry errors, the resolution adds a small error to the sample.
+            </p>
+            <p>
+                <strong>No temporal modeling.</strong> Each pair is treated as independent of other pairs involving the same player. A richer model could account for hot-hand dynamics across possessions or intra-game fatigue, which might interact with the within-pair effect estimated here.
+            </p>
+            <p>
+                <strong>LPM boundary issue.</strong> The linear probability model can produce predictions outside [0, 1] for extreme covariate configurations. In this dataset the predictor is binary and the outcome range is moderate, so this is unlikely to matter in practice. The logistic models avoid this issue entirely.
+            </p>
+
+            <h2>7. Conclusion</h2>
+            <p>
+                The raw data makes the gap look large: players who make FT1 convert FT2 at a 6.3 percentage point higher rate. But most of that gap is driven by shooter quality rather than anything happening within the sequence itself.
+            </p>
+            <p>
+                After controlling for player identity, the effect drops to roughly 1 to 1.5 percentage points. That is a small number. But it holds up across 245,000 pairs and 1,007 players with z > 11. It is not a fluke.
+            </p>
+            <p>
+                The practical takeaway: if you see a player miss FT1, their FT2 success rate will dip slightly relative to their baseline, but it will not collapse to the level of a much worse shooter. The popular narrative of hot-hand momentum overstates the effect. At the same time, the assumption of perfect independence between consecutive free throws is also wrong, just wrong in a small and precisely estimated way.
+            </p>
+            <p>
+                <strong>There is a real, small, within-player sequential effect. It survives controls, it is consistent across methods, and it is worth knowing about.</strong>
+            </p>
+            <p style="margin-top: 2rem; color: #6a6a6a; font-style: italic;">
+                Analysis conducted in R using tidyverse, stringr, and fixest. Code is reproducible from Freethrow.R.
             </p>
         </article>
     </main>
