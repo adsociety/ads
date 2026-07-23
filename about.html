@@ -4,375 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Ashoka Data Society</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #111b2d;
+            background: #0f1826;
             color: #F8F9FA;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(17, 27, 45, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(225, 70, 64, 0.2);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(225, 70, 64, 0.3);
-        }
-
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #F8F9FA;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #F8F9FA;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-family: 'Manrope', sans-serif;
             position: relative;
-            transition: color 0.3s ease;
         }
 
-        .nav-links a::after {
+        /* faint dot-grid texture, kept very subtle */
+        body::before {
             content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #e14640;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #e14640;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(248, 249, 250, 0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+            z-index: 0;
         }
 
         main {
-            flex: 1;
-            padding: 120px 3rem 2rem;
-            max-width: 1400px;
-            width: 100%;
-            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
+        /* ---------- page header ---------- */
         .page-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin: 2rem 0 5rem;
+        }
+
+        .page-eyebrow {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: #e14640;
+            margin-bottom: 1rem;
         }
 
         .page-header h1 {
-            font-size: 3rem;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
+            font-size: 3.2rem;
             color: #F8F9FA;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.02em;
         }
 
         .page-header p {
-            font-size: 1.1rem;
-            color: rgba(248, 249, 250, 0.7);
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.05rem;
+            color: rgba(248, 249, 250, 0.55);
         }
 
+        /* ---------- section titles ---------- */
         .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #F8F9FA;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(248, 249, 250, 0.45);
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        .section-title::before,
         .section-title::after {
             content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: #e14640;
-            margin: 1rem auto 0;
+            flex: 1;
+            height: 1px;
+            background: rgba(248, 249, 250, 0.12);
         }
 
-        .presidents-section {
-            margin-bottom: 5rem;
+        .leadership-section,
+        .hods-section {
+            margin-bottom: 4.5rem;
         }
 
-        .presidents-grid {
+        /* ---------- shared card ---------- */
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 800px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .president-card {
-            background: rgba(248, 249, 250, 0.05);
-            border: 2px solid #e14640;
-            border-radius: 15px;
-            padding: 2.5rem;
+        .leadership-grid {
+            max-width: 820px;
+        }
+
+        .team-card {
+            background: rgba(248, 249, 250, 0.035);
+            border: 1px solid rgba(248, 249, 250, 0.08);
+            border-radius: 12px;
+            padding: 2.25rem 1.5rem 1.75rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
         }
 
-        .president-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(225, 70, 64, 0.3);
+        .team-card:hover {
+            border-color: rgba(225, 70, 64, 0.55);
+            background: rgba(248, 249, 250, 0.055);
+            transform: translateY(-4px);
         }
 
-        .president-image {
-            width: 150px;
-            height: 150px;
+        .team-avatar {
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #e14640, #c23832);
+            margin: 0 auto 1.25rem;
+            background: rgba(225, 70, 64, 0.12);
+            border: 1px solid rgba(225, 70, 64, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #F8F9FA;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #e14640;
+            position: relative;
+            overflow: hidden;
         }
 
-        .president-name {
-            font-size: 1.5rem;
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        .team-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
             font-weight: 600;
             color: #F8F9FA;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
-        .president-title {
-            font-size: 1rem;
+        .team-role {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             color: #e14640;
-            font-weight: 500;
+            background: rgba(225, 70, 64, 0.1);
+            border-radius: 100px;
+            padding: 0.25rem 0.7rem;
         }
 
-        .hods-section {
-            margin-bottom: 4rem;
-        }
-
+        /* ---------- departments ---------- */
         .department-group {
-            margin-bottom: 3rem;
+            margin-bottom: 2.75rem;
+        }
+
+        .department-group:last-child {
+            margin-bottom: 0;
         }
 
         .department-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #e14640;
-            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
             text-align: center;
+            margin: 0 auto 2.25rem;
         }
 
-        .hods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hod-card {
-            background: rgba(248, 249, 250, 0.05);
-            border: 1px solid rgba(248, 249, 250, 0.1);
-            border-radius: 15px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .hod-card:hover {
-            border-color: #e14640;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(225, 70, 64, 0.2);
-        }
-
-        .hod-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, rgba(225, 70, 64, 0.6), rgba(194, 56, 50, 0.6));
+        .department-icon {
+            width: 52px;
+            height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #F8F9FA;
-        }
-
-        .hod-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #F8F9FA;
-            margin-bottom: 0.5rem;
-        }
-
-        .hod-role {
-            font-size: 1rem;
-            color: #e14640;
-            font-weight: 500;
-        }
-
-        footer {
-            background: rgba(17, 27, 45, 0.95);
-            border-top: 1px solid rgba(225, 70, 64, 0.2);
-            padding: 2.5rem 3rem;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .footer-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #F8F9FA;
-        }
-
-        .footer-text {
-            font-size: 0.95rem;
-            color: rgba(248, 249, 250, 0.7);
-        }
-
-        .footer-social {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: flex-end;
-        }
-
-        .footer-social-text {
-            font-size: 0.95rem;
-            color: rgba(248, 249, 250, 0.7);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
+            font-size: 1.5rem;
+            background: rgba(225, 70, 64, 0.1);
+            border: 1px solid rgba(225, 70, 64, 0.35);
             border-radius: 50%;
-            background: rgba(248, 249, 250, 0.05);
-            border: 1px solid rgba(248, 249, 250, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #F8F9FA;
-            transition: all 0.3s ease;
-            text-decoration: none;
         }
 
-        .social-links a:hover {
+        .department-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #F8F9FA;
+        }
+
+        .department-name::after {
+            content: '';
+            width: 40px;
+            height: 2px;
             background: #e14640;
-            border-color: #e14640;
-            transform: translateY(-3px);
+            border-radius: 2px;
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            main {
-                padding: 100px 1.5rem 2rem;
-            }
-
             .page-header h1 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
 
             .section-title {
-                font-size: 1.6rem;
+                font-size: 0.75rem;
             }
 
-            .presidents-grid {
+            .team-grid,
+            .leadership-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .hods-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-social {
-                align-items: center;
+                max-width: 400px;
             }
         }
     </style>
@@ -381,7 +233,7 @@
     <nav>
         <div class="logo-container">
             <div class="logo-circle">
-                <img src="logo.png" alt="ADS Logo">
+                <img src="media/logo.png" alt="ADS Logo">
             </div>
             <div class="logo-text">Ashoka Data Society</div>
         </div>
@@ -395,100 +247,136 @@
 
     <main>
         <div class="page-header">
+            <span class="page-eyebrow">// THE TEAM</span>
             <h1>Our Team</h1>
             <p>Meet the people driving innovation and collaboration at ADS</p>
         </div>
 
-        <section class="presidents-section">
-            <h2 class="section-title">Presidents</h2>
-            <div class="presidents-grid">
-                <div class="president-card">
-                    <div class="president-image">AG</div>
-                    <h3 class="president-name">Anya Ghosh</h3>
-                    <p class="president-title">President</p>
+        <section class="leadership-section">
+            <h2 class="section-title">Leadership</h2>
+            <div class="team-grid leadership-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="" alt="Devyanee Dalmia" onerror="this.remove()">
+                        DD
+                    </div>
+                    <h3 class="team-name">Devyanee Dalmia</h3>
+                    <span class="team-role">President</span>
                 </div>
-                <div class="president-card">
-                    <div class="president-image">KG</div>
-                    <h3 class="president-name">Krrish Goel</h3>
-                    <p class="president-title">President</p>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="" alt="Saanvi Gopalika" onerror="this.remove()">
+                        SG
+                    </div>
+                    <h3 class="team-name">Saanvi Gopalika</h3>
+                    <span class="team-role">President</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="" alt="Kaashvi Diwan" onerror="this.remove()">
+                        KD
+                    </div>
+                    <h3 class="team-name">Kaashvi Diwan</h3>
+                    <span class="team-role">Vice President</span>
                 </div>
             </div>
         </section>
 
         <section class="hods-section">
             <h2 class="section-title">Heads of Departments</h2>
-            
+
             <div class="department-group">
-                <h3 class="department-name">Strategy and Events</h3>
-                <div class="hods-grid">
-                    <div class="hod-card">
-                        <div class="hod-image">PS</div>
-                        <h3 class="hod-name">Pranjal Shevdekar</h3>
-                        <p class="hod-role">Director</p>
+                <h3 class="department-name"><span class="department-icon">🎯</span><span class="department-label">Strategy and Events</span></h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Megha Mudakkayil" onerror="this.remove()">
+                            MM
+                        </div>
+                        <h3 class="team-name">Megha Mudakkayil</h3>
+                        <span class="team-role">Director</span>
                     </div>
-                    <div class="hod-card">
-                        <div class="hod-image">SG</div>
-                        <h3 class="hod-name">Saanvi Gopalka</h3>
-                        <p class="hod-role">Director</p>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Vivaan Mathur" onerror="this.remove()">
+                            VM
+                        </div>
+                        <h3 class="team-name">Vivaan Mathur</h3>
+                        <span class="team-role">Director</span>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Ahaana Bose" onerror="this.remove()">
+                            AB
+                        </div>
+                        <h3 class="team-name">Ahaana Bose</h3>
+                        <span class="team-role">Deputy Director</span>
                     </div>
                 </div>
             </div>
 
             <div class="department-group">
-                <h3 class="department-name">Operations and Skill Dev</h3>
-                <div class="hods-grid">
-                    <div class="hod-card">
-                        <div class="hod-image">MG</div>
-                        <h3 class="hod-name">Mihika Grover</h3>
-                        <p class="hod-role">Director</p>
+                <h3 class="department-name"><span class="department-icon">🤝</span><span class="department-label">Outreach</span></h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Kynaa Jain" onerror="this.remove()">
+                            KJ
+                        </div>
+                        <h3 class="team-name">Kynaa Jain</h3>
+                        <span class="team-role">Director</span>
                     </div>
-                    <div class="hod-card">
-                        <div class="hod-image">NA</div>
-                        <h3 class="hod-name">Navya Agarwal</h3>
-                        <p class="hod-role">Director</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="department-group">
-                <h3 class="department-name">Research and Insights</h3>
-                <div class="hods-grid">
-                    <div class="hod-card">
-                        <div class="hod-image">SB</div>
-                        <h3 class="hod-name">Shreenand Bhattad</h3>
-                        <p class="hod-role">Director</p>
-                    </div>
-                    <div class="hod-card">
-                        <div class="hod-image">YK</div>
-                        <h3 class="hod-name">Yash Khaitan</h3>
-                        <p class="hod-role">Director</p>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Aadi Thiagarajan" onerror="this.remove()">
+                            AT
+                        </div>
+                        <h3 class="team-name">Aadi Thiagarajan</h3>
+                        <span class="team-role">Director</span>
                     </div>
                 </div>
             </div>
 
             <div class="department-group">
-                <h3 class="department-name">Media and Marketing</h3>
-                <div class="hods-grid">
-                    <div class="hod-card">
-                        <div class="hod-image">SS</div>
-                        <h3 class="hod-name">Suhani Sharma</h3>
-                        <p class="hod-role">Director</p>
+                <h3 class="department-name"><span class="department-icon">📊</span><span class="department-label">Research and Data Insights</span></h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Shashwat Bhajanka" onerror="this.remove()">
+                            SB
+                        </div>
+                        <h3 class="team-name">Shashwat Bhajanka</h3>
+                        <span class="team-role">Director</span>
                     </div>
-                    <div class="hod-card">
-                        <div class="hod-image">D</div>
-                        <h3 class="hod-name">Devyanee Dalmia</h3>
-                        <p class="hod-role">Director</p>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Sreenandana Nair" onerror="this.remove()">
+                            SN
+                        </div>
+                        <h3 class="team-name">Sreenandana Nair</h3>
+                        <span class="team-role">Director</span>
                     </div>
                 </div>
             </div>
 
             <div class="department-group">
-                <h3 class="department-name">Finance & Outreach</h3>
-                <div class="hods-grid" style="grid-template-columns: minmax(300px, 400px); justify-content: center;">
-                    <div class="hod-card">
-                        <div class="hod-image">SR</div>
-                        <h3 class="hod-name">Srishti Rai</h3>
-                        <p class="hod-role">Director</p>
+                <h3 class="department-name"><span class="department-icon">📣</span><span class="department-label">Media and Marketing</span></h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Prisha Adhikari" onerror="this.remove()">
+                            PA
+                        </div>
+                        <h3 class="team-name">Prisha Adhikari</h3>
+                        <span class="team-role">Director</span>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="" alt="Ishani Dhingra" onerror="this.remove()">
+                            ID
+                        </div>
+                        <h3 class="team-name">Ishani Dhingra</h3>
+                        <span class="team-role">Director</span>
                     </div>
                 </div>
             </div>
