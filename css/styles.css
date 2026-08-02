@@ -1,10 +1,13 @@
 :root {
-  --ink: #16191C;
-  --paper: #EDEAE2;
-  --paper-dim: #E2DED2;
-  --signal: #C1432A;
-  --axis: #6B7280;
-  --field: #2F5D50;
+  --ink: #F8F9FA;         /* was deep blue text-on-light; now light text-on-blue */
+  --paper: #111B2D;        /* was off-white background; now deep blue is the primary surface */
+  --paper-dim: #1B2740;    /* muted navy panel tone — card fills, table shading, hover states */
+  --signal: #E14640;       /* unchanged — crimson, still reserved for interactive states only */
+  --axis: #A9B2BE;         /* lightened muted blue-grey — secondary/meta text needs to stay readable on navy */
+  --field: #6FA0C4;        /* lightened blue-grey accent — brighter than the brand's #457B9D so emphasis still pops against a dark page */
+  --dark: #212529;         /* unchanged, available */
+  --highlight-sky: #CAEBED;/* unchanged — reads as a bright highlight box against the dark page */
+  --grid-line: rgba(200, 106, 61, 0.3); /* new — very subtle burnt-orange tint, background grid only */
 }
 
 * {
@@ -18,13 +21,13 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   color: var(--ink);
   background-color: var(--paper);
   background-image:
-    linear-gradient(var(--paper-dim) 1px, transparent 1px),
-    linear-gradient(90deg, var(--paper-dim) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 28px 28px;
   min-height: 100vh;
   display: flex;
@@ -54,7 +57,7 @@ nav {
 }
 
 .logo {
-  font-family: 'Fraunces', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.3rem;
   color: var(--ink);
@@ -69,6 +72,7 @@ nav {
   height: 32px;
   object-fit: cover;
   border-radius: 50%;
+  background: #FFFFFF;
 }
 
 .nav-links {
@@ -79,7 +83,7 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
   color: var(--ink);
@@ -134,7 +138,7 @@ footer {
 }
 
 .footer-info {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.75rem;
   color: var(--axis);
   display: flex;
@@ -143,7 +147,7 @@ footer {
 }
 
 .footer-version {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.7rem;
   color: var(--axis);
   letter-spacing: 0.1em;
@@ -179,7 +183,7 @@ footer {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--axis);
@@ -188,7 +192,7 @@ footer {
 }
 
 .axis-tick {
-  color: var(--signal);
+  color: var(--field);
   font-size: 0.85rem;
   line-height: 1;
 }
@@ -209,7 +213,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
 }
@@ -222,7 +226,7 @@ footer {
 }
 
 .meta-number {
-  font-family: 'Fraunces', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.8rem;
   color: var(--ink);
@@ -265,7 +269,7 @@ footer {
 }
 
 .data-row {
-  background: var(--paper);
+  background: var(--paper-dim);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -319,6 +323,10 @@ footer {
   background: var(--paper-dim);
 }
 
+.member-photo.fallback {
+  background: var(--field);
+}
+
 .member-photo img {
   width: 100%;
   height: 100%;
@@ -332,10 +340,10 @@ footer {
 
 .member-initials {
   display: none;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--axis);
+  font-weight: 600;
+  color: #FFFFFF;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -353,30 +361,30 @@ footer {
 }
 
 .data-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.65rem;
-  font-weight: 500;
-  color: var(--signal);
+  font-weight: 600;
+  color: var(--field);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .data-name {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--ink);
   line-height: 1.2;
 }
 
 .data-role {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.72rem;
   color: var(--axis);
 }
 
 .data-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   font-size: 0.9rem;
   color: var(--ink);
@@ -403,7 +411,7 @@ footer {
 }
 
 .cap {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.7rem;
   color: var(--axis);
   margin-bottom: 1rem;
@@ -451,9 +459,10 @@ footer {
 }
 
 .node-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 10px;
   fill: var(--ink);
+  text-anchor: middle;
   pointer-events: none;
 }
 
@@ -472,14 +481,14 @@ footer {
 }
 
 .node-dot.highlighted {
-  fill: var(--signal);
-  stroke: var(--signal);
+  fill: var(--field);
+  stroke: var(--field);
   animation: nodeGlow 2.5s ease-in-out infinite;
 }
 
 .edge.highlighted {
   opacity: 1;
-  stroke: var(--signal);
+  stroke: var(--field);
   stroke-width: 2;
   animation: edgeShimmer 2s ease-in-out infinite;
 }
@@ -492,8 +501,8 @@ footer {
 /* ── Headings ── */
 
 .page-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 2.8rem;
   color: var(--ink);
   line-height: 1.15;
@@ -501,23 +510,23 @@ footer {
 }
 
 .page-title em {
-  font-style: italic;
-  color: var(--signal);
+  font-style: normal;
+  color: var(--field);
 }
 
 .section-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 2rem;
   margin: 0.5rem 0 2rem;
 }
 .section-title em {
-  font-style: italic;
-  color: var(--signal);
+  font-style: normal;
+  color: var(--field);
 }
 
 .page-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   font-size: 1.05rem;
   color: var(--axis);
@@ -529,16 +538,16 @@ footer {
 /* ── Section Headings ── */
 
 h2 {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.6rem;
   color: var(--ink);
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--ink);
   margin-bottom: 0.5rem;
@@ -548,7 +557,7 @@ h3 {
 
 .btn {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.8rem;
   color: var(--ink);
   text-decoration: none;
@@ -565,7 +574,7 @@ h3 {
 
 .btn-bracket {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.8rem;
   color: var(--ink);
   text-decoration: none;
@@ -618,7 +627,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.75rem;
   color: var(--axis);
   text-decoration: none;
@@ -638,25 +647,26 @@ h3 {
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.75rem;
   color: var(--axis);
   margin-bottom: 1rem;
 }
 
 .research-meta-bar .research-authors {
-  color: var(--signal);
+  color: var(--field);
 }
 
 .research-abstract {
-  background: var(--paper-dim);
+  background: var(--highlight-sky);
+  color: var(--dark);
   padding: 1.5rem;
   margin: 2rem 0;
   border-left: 3px solid var(--signal);
 }
 
 .research-abstract h3 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -671,16 +681,16 @@ h3 {
 }
 
 .research-content h2 {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .research-content h3 {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
@@ -708,9 +718,9 @@ h3 {
 }
 
 .research-content table caption {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 0.75rem;
-  color: var(--signal);
+  color: var(--field);
   margin-bottom: 0.5rem;
   text-align: left;
 }
@@ -771,6 +781,7 @@ h3 {
   height: 100px;
   margin-bottom: 2rem;
   border: 1px solid var(--ink);
+  background: #FFFFFF;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -789,7 +800,7 @@ h3 {
 }
 
 .home-container .page-title em {
-  color: var(--signal);
+  color: var(--field);
 }
 
 .home-container .page-subtitle {
@@ -818,7 +829,7 @@ h3 {
 }
 
 .event-card {
-  background: var(--paper);
+  background: var(--paper-dim);
   border: 1px solid var(--ink);
   padding: 0;
   display: flex;
