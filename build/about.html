@@ -6,7 +6,7 @@
     <title>About Us - Ashoka Data Society</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap');
     </style>
     <style>
         @media (max-width: 768px) { .graph-wrap svg { max-height: 260px; } }
@@ -15,7 +15,7 @@
             .graph-wrap::after {
                 content: '13 Members \00B7 5 Departments \00B7 est. 2025';
                 display: block;
-                font-family: 'JetBrains Mono', monospace;
+                font-family: 'Bricolage Grotesque', sans-serif;
                 font-size: 0.75rem;
                 color: var(--axis);
                 padding: 1rem;
@@ -68,34 +68,68 @@
 
         <div class="graph-wrap">
           <div class="cap">// all teams · hover to trace connections</div>
-          <svg viewBox="0 0 1150 380" id="graph"></svg>
+          <svg viewBox="0 0 1531.2 340" id="graph"></svg>
         </div>
 
         <script>
 const svg = document.getElementById('graph');
 
-const root = {id:'r0', x:600, y:45, label:'ADS'};
-const depts = [
-  {id:'d1', x:110, y:120, label:'Strategy'},
-  {id:'d2', x:345, y:120, label:'Outreach'},
-  {id:'d3', x:580, y:120, label:'Research'},
-  {id:'d4', x:815, y:120, label:'Marketing'},
-  {id:'d5', x:970, y:120, label:'Leaders'}
+const orgData = [
+  { dept: 'Strategy',  members: ['Megha', 'Vivaan', 'Ahaana'] },
+  { dept: 'Outreach',  members: ['Kynaa', 'Aadi'] },
+  { dept: 'Research',  members: ['Shashwat', 'Sreenandana'] },
+  { dept: 'Marketing', members: ['Prisha', 'Ishani'] },
+  { dept: 'Leaders',   members: ['Devyanee', 'Saanvi', 'Kaashvi'] },
 ];
-const members = [
-  {id:'m1',  x:40,   y:275, label:'Megha',       edges:['d1']},
-  {id:'m2',  x:110,  y:275, label:'Vivaan',      edges:['d1']},
-  {id:'m3',  x:180,  y:275, label:'Ahaana',      edges:['d1']},
-  {id:'m4',  x:305,  y:275, label:'Kynaa',       edges:['d2']},
-  {id:'m5',  x:355,  y:275, label:'Aadi',        edges:['d2']},
-  {id:'m6',  x:530,  y:275, label:'Shashwat',    edges:['d3']},
-  {id:'m7',  x:580,  y:275, label:'Sreenandana', edges:['d3']},
-  {id:'m8',  x:765,  y:275, label:'Prisha',      edges:['d4']},
-  {id:'m9',  x:815,  y:275, label:'Ishani',      edges:['d4']},
-  {id:'m10', x:900,  y:275, label:'Devyanee',    edges:['d5']},
-  {id:'m11', x:970,  y:275, label:'Saanvi',      edges:['d5']},
-  {id:'m12', x:1040, y:275, label:'Kaashvi',     edges:['d5']}
-];
+
+const CHAR_WIDTH = 6.4;
+const LABEL_PAD  = 28;
+const SIDE_MARGIN = 80;
+const DEPT_GAP    = 50;
+const DEPT_Y      = 70;
+const MEMBER_Y    = 260;
+const ROOT_Y      = 30;
+
+function slotWidth(name) {
+  return Math.max(name.length * CHAR_WIDTH + LABEL_PAD * 2, 70);
+}
+
+const deptWidths = orgData.map(d =>
+  d.members.reduce((sum, name) => sum + slotWidth(name), 0)
+);
+
+const totalWidth = deptWidths.reduce((a, b) => a + b, 0) + DEPT_GAP * (orgData.length - 1) + SIDE_MARGIN * 2;
+
+svg.setAttribute('viewBox', `0 0 ${totalWidth} 340`);
+
+const root = {id:'r0', x: totalWidth / 2, y: ROOT_Y, label:'ADS'};
+const depts = [];
+const members = [];
+let cursor = SIDE_MARGIN;
+
+orgData.forEach((group, i) => {
+  const bandWidth = deptWidths[i];
+  const deptId = `d${i + 1}`;
+
+  let memberCursor = cursor;
+  group.members.forEach((name, j) => {
+    const w = slotWidth(name);
+    const memberX = memberCursor + w / 2;
+    members.push({
+      id: `${deptId}-m${j}`,
+      x: memberX,
+      y: MEMBER_Y,
+      label: name,
+      edges: [deptId],
+    });
+    memberCursor += w;
+  });
+
+  const deptX = cursor + bandWidth / 2;
+  depts.push({ id: deptId, x: deptX, y: DEPT_Y, label: group.dept });
+
+  cursor += bandWidth + DEPT_GAP;
+});
 
 const all = [root, ...depts, ...members];
 function find(id){ return all.find(n => n.id === id); }
@@ -105,7 +139,9 @@ let animDelay = 0;
 
 // root to dept edges
 depts.forEach(d => {
-  svgHTML += `<line class="edge" data-node="r0 ${d.id}" x1="${root.x}" y1="${root.y}" x2="${d.x}" y2="${d.y}"/>`;
+  const midX = (root.x + d.x) / 2;
+  const midY = (root.y + d.y) / 2 - 18;
+  svgHTML += `<path class="edge" data-node="r0 ${d.id}" d="M ${root.x} ${root.y} Q ${midX} ${midY} ${d.x} ${d.y}" fill="none"/>`;
 });
 
 // member to dept edges
@@ -113,27 +149,29 @@ members.forEach(m => {
   m.edges.forEach(depId => {
     const d = find(depId);
     if (!d) return;
-    svgHTML += `<line class="edge" data-node="${m.id} ${depId}" x1="${m.x}" y1="${m.y}" x2="${d.x}" y2="${d.y}"/>`;
+    const midX = (m.x + d.x) / 2;
+    const midY = (m.y + d.y) / 2 - 18;
+    svgHTML += `<path class="edge" data-node="${m.id} ${depId}" d="M ${m.x} ${m.y} Q ${midX} ${midY} ${d.x} ${d.y}" fill="none"/>`;
   });
 });
 
 // render root node
 svgHTML += `<circle class="node-dot dept" data-node="r0" cx="${root.x}" cy="${root.y}" r="7" style="animation-delay:${animDelay * 0.15}s"/>`;
 animDelay++;
-svgHTML += `<text class="node-label dept" x="${root.x+14}" y="${root.y+4}">${root.label}</text>`;
+svgHTML += `<text class="node-label dept" x="${root.x}" y="${root.y + 22}" text-anchor="middle">${root.label}</text>`;
 
 // render depts
 depts.forEach(d => {
   svgHTML += `<circle class="node-dot dept" data-node="${d.id}" cx="${d.x}" cy="${d.y}" r="6" style="animation-delay:${animDelay * 0.15}s"/>`;
   animDelay++;
-  svgHTML += `<text class="node-label dept" x="${d.x+12}" y="${d.y+4}">${d.label}</text>`;
+  svgHTML += `<text class="node-label dept" x="${d.x}" y="${d.y + 22}" text-anchor="middle">${d.label}</text>`;
 });
 
 // render members
 members.forEach(m => {
   svgHTML += `<circle class="node-dot" data-node="${m.id}" cx="${m.x}" cy="${m.y}" r="5" style="animation-delay:${animDelay * 0.15}s"/>`;
   animDelay++;
-  svgHTML += `<text class="node-label" x="${m.x+10}" y="${m.y+4}">${m.label}</text>`;
+  svgHTML += `<text class="node-label" x="${m.x}" y="${m.y + 22}" text-anchor="middle">${m.label}</text>`;
 });
 
 svg.innerHTML = svgHTML;
