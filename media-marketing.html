@@ -80,121 +80,120 @@
 const svg = document.getElementById('graph');
 
 const orgData = [
-  { dept: 'Strategy',  members: ['Megha', 'Vivaan', 'Ahaana'] },
+  { dept: 'Strategy',  members: ['Megha', 'Ahaana'] },
   { dept: 'Outreach',  members: ['Kynaa', 'Aadi'] },
   { dept: 'Research',  members: ['Shashwat', 'Sreenandana'] },
   { dept: 'Marketing', members: ['Prisha', 'Ishani'] },
   { dept: 'Leaders',   members: ['Devyanee', 'Saanvi', 'Kaashvi'] },
 ];
 
-const CHAR_WIDTH = 6.4;
-const LABEL_PAD  = 28;
-const SIDE_MARGIN = 80;
-const DEPT_GAP    = 50;
-const DEPT_Y      = 70;
-const MEMBER_Y    = 260;
-const ROOT_Y      = 30;
+const CHAR_W    = 7.2;
+const LABEL_PAD = 42;
+const SIDE_PAD  = 80;
+const DEPT_GAP  = 60;
+const ROOT_Y    = 72;
+const DEPT_Y    = 224;
+const MEMBER_Y  = 372;
+const SVG_H     = 464;
 
-function slotWidth(name) {
-  return Math.max(name.length * CHAR_WIDTH + LABEL_PAD * 2, 70);
+function slotW(name) {
+  return Math.max(name.length * CHAR_W + LABEL_PAD * 2, 90);
 }
 
 const deptWidths = orgData.map(d =>
-  d.members.reduce((sum, name) => sum + slotWidth(name), 0)
+  d.members.reduce((sum, n) => sum + slotW(n), 0)
 );
 
-const totalWidth = deptWidths.reduce((a, b) => a + b, 0) + DEPT_GAP * (orgData.length - 1) + SIDE_MARGIN * 2;
+const totalW = deptWidths.reduce((a, b) => a + b, 0) + DEPT_GAP * (orgData.length - 1) + SIDE_PAD * 2;
 
-svg.setAttribute('viewBox', `0 0 ${totalWidth} 340`);
+svg.setAttribute('viewBox', `0 0 ${totalW} ${SVG_H}`);
 
-const root = {id:'r0', x: totalWidth / 2, y: ROOT_Y, label:'ADS'};
+const root = { id:'r0', x: totalW / 2, y: ROOT_Y, label:'ADS' };
 const depts = [];
 const members = [];
-let cursor = SIDE_MARGIN;
+let cursor = SIDE_PAD;
 
 orgData.forEach((group, i) => {
-  const bandWidth = deptWidths[i];
-  const deptId = `d${i + 1}`;
-
-  let memberCursor = cursor;
+  const bw = deptWidths[i];
+  const did = `d${i + 1}`;
+  let mc = cursor;
   group.members.forEach((name, j) => {
-    const w = slotWidth(name);
-    const memberX = memberCursor + w / 2;
-    members.push({
-      id: `${deptId}-m${j}`,
-      x: memberX,
-      y: MEMBER_Y,
-      label: name,
-      edges: [deptId],
-    });
-    memberCursor += w;
+    const w = slotW(name);
+    members.push({ id:`${did}-m${j}`, x: mc + w/2, y: MEMBER_Y, label: name, edges:[did] });
+    mc += w;
   });
-
-  const deptX = cursor + bandWidth / 2;
-  depts.push({ id: deptId, x: deptX, y: DEPT_Y, label: group.dept });
-
-  cursor += bandWidth + DEPT_GAP;
+  depts.push({ id: did, x: cursor + bw/2, y: DEPT_Y, label: group.dept });
+  cursor += bw + DEPT_GAP;
 });
 
 const highlightDept = 'd4';
 const highlightMembers = members.filter(m => m.edges[0] === highlightDept).map(m => m.id);
+
 const all = [root, ...depts, ...members];
-function find(id){ return all.find(n => n.id === id); }
+const find = id => all.find(n => n.id === id);
 
-let svgHTML = '';
-let animDelay = 0;
+let h = '';
 
-// root to dept edges
-depts.forEach(d => {
-  const midX = (root.x + d.x) / 2;
-  const midY = (root.y + d.y) / 2 - 18;
-  svgHTML += `<path class="edge" data-node="r0 ${d.id}" d="M ${root.x} ${root.y} Q ${midX} ${midY} ${d.x} ${d.y}" fill="none"/>`;
+h += `<defs>
+  <pattern id="dotgrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="0" cy="0" r="0.85" fill="rgba(169,178,190,0.18)"/>
+    <circle cx="24" cy="0" r="0.85" fill="rgba(169,178,190,0.18)"/>
+    <circle cx="0" cy="24" r="0.85" fill="rgba(169,178,190,0.18)"/>
+    <circle cx="24" cy="24" r="0.85" fill="rgba(169,178,190,0.18)"/>
+    <circle cx="12" cy="12" r="0.85" fill="rgba(169,178,190,0.1)"/>
+  </pattern>
+</defs>`;
+
+h += `<rect x="0" y="0" width="${totalW}" height="${SVG_H}" fill="url(#dotgrid)"/>`;
+
+[
+  { y: ROOT_Y,   label: 'root' },
+  { y: DEPT_Y,   label: 'dept' },
+  { y: MEMBER_Y, label: 'member' },
+].forEach(t => {
+  h += `<line x1="0" y1="${t.y}" x2="${totalW}" y2="${t.y}" stroke="rgba(169,178,190,0.13)" stroke-width="1" stroke-dasharray="4 6"/>`;
+  h += `<text x="${totalW - 10}" y="${t.y - 5}" text-anchor="end" font-family="'Bricolage Grotesque',monospace" font-size="9" fill="rgba(169,178,190,0.38)" letter-spacing="0.08em">${t.label}</text>`;
 });
 
-// member to dept edges
+depts.forEach(d => {
+  const cpY = ROOT_Y + (DEPT_Y - ROOT_Y) * 0.5;
+  h += `<path class="edge" data-node="r0 ${d.id}" d="M ${root.x} ${ROOT_Y} C ${root.x} ${cpY},${d.x} ${cpY},${d.x} ${DEPT_Y}" fill="none"/>`;
+});
+
 members.forEach(m => {
-  m.edges.forEach(depId => {
-    const d = find(depId);
+  m.edges.forEach(did => {
+    const d = find(did);
     if (!d) return;
-    const midX = (m.x + d.x) / 2;
-    const midY = (m.y + d.y) / 2 - 18;
-    svgHTML += `<path class="edge" data-node="${m.id} ${depId}" d="M ${m.x} ${m.y} Q ${midX} ${midY} ${d.x} ${d.y}" fill="none"/>`;
+    const cpY = DEPT_Y + (MEMBER_Y - DEPT_Y) * 0.5;
+    h += `<path class="edge" data-node="${m.id} ${did}" d="M ${m.x} ${MEMBER_Y} C ${m.x} ${cpY},${d.x} ${cpY},${d.x} ${DEPT_Y}" fill="none"/>`;
   });
 });
 
-// render root node
-svgHTML += `<circle class="node-dot dept" data-node="r0" cx="${root.x}" cy="${root.y}" r="7" style="animation-delay:${animDelay * 0.15}s"/>`;
-animDelay++;
-svgHTML += `<text class="node-label dept" x="${root.x}" y="${root.y + 22}" text-anchor="middle">${root.label}</text>`;
+h += `<circle class="node-dot dept" data-node="r0" cx="${root.x}" cy="${ROOT_Y}" r="8"/>`;
+h += `<text class="node-label dept root" x="${root.x}" y="${ROOT_Y - 22}" text-anchor="middle">${root.label}</text>`;
 
-// render depts
 depts.forEach(d => {
-  const isHighlighted = d.id === highlightDept;
-  svgHTML += `<circle class="node-dot dept${isHighlighted ? ' highlighted' : ''}" data-node="${d.id}" cx="${d.x}" cy="${d.y}" r="6" style="animation-delay:${animDelay * 0.15}s"/>`;
-  animDelay++;
-  svgHTML += `<text class="node-label dept" x="${d.x}" y="${d.y + 22}" text-anchor="middle">${d.label}</text>`;
+  const isHL = d.id === highlightDept;
+  if (isHL) h += `<circle class="node-ring" cx="${d.x}" cy="${DEPT_Y}" r="11"/>`;
+  h += `<circle class="node-dot dept${isHL ? ' highlighted' : ''}" data-node="${d.id}" cx="${d.x}" cy="${DEPT_Y}" r="6"/>`;
+  h += `<text class="node-label dept" x="${d.x}" y="${DEPT_Y - 20}" text-anchor="middle">${d.label}</text>`;
 });
 
-// render members
 members.forEach(m => {
-  const isHighlighted = highlightMembers.includes(m.id);
-  svgHTML += `<circle class="node-dot${isHighlighted ? ' highlighted' : ''}" data-node="${m.id}" cx="${m.x}" cy="${m.y}" r="5" style="animation-delay:${animDelay * 0.15}s"/>`;
-  animDelay++;
-  svgHTML += `<text class="node-label" x="${m.x}" y="${m.y + 22}" text-anchor="middle">${m.label}</text>`;
+  const isHL = highlightMembers.includes(m.id);
+  if (isHL) h += `<circle class="node-ring" cx="${m.x}" cy="${MEMBER_Y}" r="9"/>`;
+  h += `<circle class="node-dot${isHL ? ' highlighted' : ''}" data-node="${m.id}" cx="${m.x}" cy="${MEMBER_Y}" r="5"/>`;
+  h += `<text class="node-label" x="${m.x}" y="${MEMBER_Y + 24}" text-anchor="middle">${m.label}</text>`;
 });
 
-svg.innerHTML = svgHTML;
+svg.innerHTML = h;
 
-// highlight edges connected to highlighted nodes
 const highlightIds = [highlightDept, ...highlightMembers];
 svg.querySelectorAll('.edge').forEach(e => {
   const nodes = e.dataset.node.split(' ');
-  if (nodes.some(n => highlightIds.includes(n))) {
-    e.classList.add('highlighted');
-  }
+  if (nodes.some(n => highlightIds.includes(n))) e.classList.add('highlighted');
 });
 
-// hovered edge highlighting
 svg.querySelectorAll('.node-dot').forEach(dot => {
   dot.addEventListener('mouseenter', () => {
     const id = dot.dataset.node;
