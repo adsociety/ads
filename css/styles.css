@@ -460,16 +460,22 @@ footer {
 
 .node-label {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 10px;
+  font-size: 26px;
   fill: var(--ink);
   text-anchor: middle;
   pointer-events: none;
 }
 
 .node-label.dept {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   fill: var(--field);
+}
+
+.node-label.root {
+  font-size: 30px;
+  font-weight: 800;
+  fill: var(--ink);
 }
 
 .dept-graph .node-label {
@@ -478,6 +484,10 @@ footer {
 
 .dept-graph .node-label.dept {
   font-size: 9px;
+}
+
+.dept-graph .node-label.root {
+  font-size: 11px;
 }
 
 .node-dot.highlighted {
@@ -496,6 +506,24 @@ footer {
 @keyframes edgeShimmer {
   0%, 100% { stroke-opacity: 0.7; }
   50% { stroke-opacity: 1; }
+}
+
+.node-ring {
+  fill: none;
+  stroke: var(--field);
+  stroke-width: 1;
+  opacity: 0.45;
+  animation: ringPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { stroke-opacity: 0.3; }
+  50% { stroke-opacity: 0.65; }
+}
+
+@keyframes nodeGlow {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
 }
 
 /* ── Headings ── */
