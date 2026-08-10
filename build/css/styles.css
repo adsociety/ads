@@ -268,6 +268,22 @@ footer {
   grid-template-columns: 1fr;
 }
 
+/* Fixed 2x2 layout for the four-department grid — avoids a single
+   card orphaning onto its own row when the count is known and even,
+   and equalizes both rows so all four cards match in height. */
+.data-row-grid.dept-grid {
+  grid-template-columns: repeat(2, 280px);
+  grid-auto-rows: 1fr;
+}
+
+.dept-grid .data-row-link {
+  height: 100%;
+}
+
+.dept-grid .data-row-link .data-row {
+  height: 100%;
+}
+
 .data-row {
   background: var(--paper-dim);
   padding: 1.5rem;
@@ -795,12 +811,12 @@ h3 {
 /* ── Home page specific ── */
 
 .home-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 110px 2rem 0;
   text-align: center;
 }
 
@@ -845,6 +861,70 @@ h3 {
 .home-container .social-links a:hover {
   color: var(--signal);
   border-color: var(--signal);
+}
+
+.home-container .content-container {
+  width: 100%;
+}
+
+/* ── Collaborations / Partner Logos ── */
+
+.partner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem 1.5rem;
+}
+
+.partner-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 136px;
+}
+
+.partner-logo {
+  width: 128px;
+  height: 128px;
+  padding: 16px;
+  border: 1px solid var(--paper-dim);
+  border-radius: 18px;
+  background: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.partner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+  transition: transform 250ms ease;
+}
+
+.partner-badge:hover .partner-logo {
+  border-color: var(--field);
+}
+
+.partner-badge:hover .partner-logo img {
+  transform: scale(1.04);
+}
+
+.partner-name {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 0.75rem;
+  color: var(--axis);
+  text-align: center;
+  letter-spacing: 0.02em;
+  transition: color 200ms ease;
+}
+
+.partner-badge:hover .partner-name {
+  color: var(--ink);
 }
 
 /* ── Events Grid ── */
@@ -977,7 +1057,8 @@ button:focus-visible,
     font-size: 1.4rem;
   }
 
-  .data-row-grid {
+  .data-row-grid,
+  .data-row-grid.dept-grid {
     grid-template-columns: 1fr;
   }
 
@@ -999,6 +1080,10 @@ button:focus-visible,
     text-align: center;
   }
 
+  .home-container {
+    padding: 95px 1.25rem 0;
+  }
+
   .home-container .page-title {
     font-size: 2.2rem;
   }
@@ -1006,6 +1091,25 @@ button:focus-visible,
   .home-container .main-logo {
     width: 80px;
     height: 80px;
+  }
+
+  .partner-grid {
+    gap: 1.5rem 1.75rem;
+  }
+
+  .partner-badge {
+    width: 104px;
+  }
+
+  .partner-logo {
+    width: 92px;
+    height: 92px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .partner-name {
+    font-size: 0.68rem;
   }
 }
 
