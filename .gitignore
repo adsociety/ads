@@ -16,3 +16,7 @@ npm-debug.log*
 # Env
 .env
 .env.local
+
+# Build output
+build/
+build.zip
