@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research and Data Insights - Ashoka Data Society</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Outreach - Ashoka Data Society</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap');
     </style>
@@ -26,12 +26,12 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">
-            <img src="media/logo.png" alt="ADS Logo">
+        <a href="../index.html" class="logo">
+            <img src="../media/logo.png" alt="ADS Logo">
             Ashoka Data Society
         </a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -44,13 +44,13 @@
 
             <div class="axis-label">
                 <span class="axis-tick">&#9587;</span>
-                <span class="axis-text">DEPT.03 / RESEARCH &amp; DATA INSIGHTS</span>
+                <span class="axis-text">DEPT.02 / OUTREACH</span>
                 <span class="axis-rule"></span>
             </div>
 
-            <h1 class="page-title">Research and Data <em>Insights</em></h1>
-            <p class="page-subtitle">
-                We run real research projects — real data, real insights, and mentoring members to level up their skills.
+            <h1 class="page-title">Outreach</h1>
+<p class="page-subtitle">
+                We build partnerships, bring in guest speakers, and connect ADS with the world beyond campus.
             </p>
 
             <div class="meta-row">
@@ -72,7 +72,7 @@
         </div>
 
         <div class="graph-wrap">
-          <div class="cap">// Research &amp; Data Insights · highlighted department</div>
+          <div class="cap">// Outreach · highlighted department</div>
           <svg viewBox="0 0 1531.2 340" id="graph"></svg>
         </div>
 
@@ -126,7 +126,7 @@ orgData.forEach((group, i) => {
   cursor += bw + DEPT_GAP;
 });
 
-const highlightDept = 'd3';
+const highlightDept = 'd2';
 const highlightMembers = members.filter(m => m.edges[0] === highlightDept).map(m => m.id);
 
 const all = [root, ...depts, ...members];
@@ -227,30 +227,30 @@ svg.querySelectorAll('.node-dot.dept').forEach(dot => {
         <div class="data-row-grid single-col">
             <div class="data-row member-row">
                 <div class="member-photo">
-                    <img src="media/team/Shashwat.jpg" alt="Shashwat Bhajanka" onerror="this.parentNode.classList.add('fallback');this.remove()">
-                    <span class="member-initials">SB</span>
+                    <img src="../media/team/Kynaa.JPG" alt="Kynaa Jain" onerror="this.parentNode.classList.add('fallback');this.remove()">
+                    <span class="member-initials">KJ</span>
                 </div>
                 <div class="member-info">
                     <span class="data-tag">Director</span>
-                    <h3 class="data-name">Shashwat Bhajanka</h3>
-                    <span class="data-role">Research and Data Insights</span>
+                    <h3 class="data-name">Kynaa Jain</h3>
+                    <span class="data-role">Outreach</span>
                     <p class="data-desc">
-                        Shashwat leads research initiatives, guiding project teams through data analysis, visualization, and insight generation to produce meaningful outcomes.
+                        Kynaa drives ADS's outreach strategy, building meaningful partnerships with industry professionals and organizations to bring valuable opportunities to the community.
                     </p>
                 </div>
             </div>
             <div class="data-row member-row">
                 <div class="member-photo">
-                    <img src="media/team/Sreenandana.JPG" alt="Sreenandana Nair" onerror="this.parentNode.classList.add('fallback');this.remove()">
-                    <span class="member-initials">SN</span>
+                    <img src="../media/team/Aadi.JPG" alt="Aadi Thiagarajan" onerror="this.parentNode.classList.add('fallback');this.remove()">
+                    <span class="member-initials">AT</span>
                 </div>
                 <div class="member-info">
                     <span class="data-tag">Director</span>
-                    <h3 class="data-name">Sreenandana Nair</h3>
-                    <span class="data-role">Research and Data Insights</span>
+                    <h3 class="data-name">Aadi Thiagarajan</h3>
+                    <span class="data-role">Outreach</span>
                     <p class="data-desc">
-                        Sree is a third year eco-pub major from Kerala with a growing interest in research and public policy. She gravitates towards academic spaces in the hopes to learn as much as she can in whatever time she has - which is never quite enough. She has research experience with J-PAL, NITI Aayog, and IIM Kozhikame.<br><br>
-                        When she is not translating data into actionable insights (data joke), she is either on her 13th rerun of the office, travelling, playing foosball or collecting nitbits for her wall in no particular order of preference. If you feel like we'd be pals, free to reach out to at sreenandana.nair_ug2024@ashoka.edu.in :)
+                        Hey, I'm Aadi<br>
+                        I'm pursuing Economics, Finance (shocker) and Psychology here at Ashoka; I like to read, listen to music, play basketball and love to work with people. Looking forward to help take ADS to new heights!
                     </p>
                 </div>
             </div>

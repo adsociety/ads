@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outreach - Ashoka Data Society</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Media and Marketing - Ashoka Data Society</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap');
     </style>
@@ -26,12 +26,12 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">
-            <img src="media/logo.png" alt="ADS Logo">
+        <a href="../index.html" class="logo">
+            <img src="../media/logo.png" alt="ADS Logo">
             Ashoka Data Society
         </a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -44,13 +44,13 @@
 
             <div class="axis-label">
                 <span class="axis-tick">&#9587;</span>
-                <span class="axis-text">DEPT.02 / OUTREACH</span>
+                <span class="axis-text">DEPT.04 / MEDIA &amp; MARKETING</span>
                 <span class="axis-rule"></span>
             </div>
 
-            <h1 class="page-title">Outreach</h1>
-<p class="page-subtitle">
-                We build partnerships, bring in guest speakers, and connect ADS with the world beyond campus.
+            <h1 class="page-title">Media and <em>Marketing</em></h1>
+            <p class="page-subtitle">
+                We run ADS's brand — visual content, social media, and getting our message to the right people.
             </p>
 
             <div class="meta-row">
@@ -72,7 +72,7 @@
         </div>
 
         <div class="graph-wrap">
-          <div class="cap">// Outreach · highlighted department</div>
+          <div class="cap">// Media &amp; Marketing · highlighted department</div>
           <svg viewBox="0 0 1531.2 340" id="graph"></svg>
         </div>
 
@@ -126,7 +126,7 @@ orgData.forEach((group, i) => {
   cursor += bw + DEPT_GAP;
 });
 
-const highlightDept = 'd2';
+const highlightDept = 'd4';
 const highlightMembers = members.filter(m => m.edges[0] === highlightDept).map(m => m.id);
 
 const all = [root, ...depts, ...members];
@@ -227,30 +227,29 @@ svg.querySelectorAll('.node-dot.dept').forEach(dot => {
         <div class="data-row-grid single-col">
             <div class="data-row member-row">
                 <div class="member-photo">
-                    <img src="media/team/Kynaa.JPG" alt="Kynaa Jain" onerror="this.parentNode.classList.add('fallback');this.remove()">
-                    <span class="member-initials">KJ</span>
+                    <img src="../media/team/Prisha.JPG" alt="Prisha Adhikari" onerror="this.parentNode.classList.add('fallback');this.remove()">
+                    <span class="member-initials">PA</span>
                 </div>
                 <div class="member-info">
                     <span class="data-tag">Director</span>
-                    <h3 class="data-name">Kynaa Jain</h3>
-                    <span class="data-role">Outreach</span>
+                    <h3 class="data-name">Prisha Adhikari</h3>
+                    <span class="data-role">Media and Marketing</span>
                     <p class="data-desc">
-                        Kynaa drives ADS's outreach strategy, building meaningful partnerships with industry professionals and organizations to bring valuable opportunities to the community.
+                        Prisha leads the media strategy, overseeing content creation, branding, and visual design to maintain a cohesive and engaging ADS identity.
                     </p>
                 </div>
             </div>
             <div class="data-row member-row">
                 <div class="member-photo">
-                    <img src="media/team/Aadi.JPG" alt="Aadi Thiagarajan" onerror="this.parentNode.classList.add('fallback');this.remove()">
-                    <span class="member-initials">AT</span>
+                    <img src="../media/team/Ishani.JPG" alt="Ishani Dhingra" onerror="this.parentNode.classList.add('fallback');this.remove()">
+                    <span class="member-initials">ID</span>
                 </div>
                 <div class="member-info">
                     <span class="data-tag">Director</span>
-                    <h3 class="data-name">Aadi Thiagarajan</h3>
-                    <span class="data-role">Outreach</span>
+                    <h3 class="data-name">Ishani Dhingra</h3>
+                    <span class="data-role">Media and Marketing</span>
                     <p class="data-desc">
-                        Hey, I'm Aadi<br>
-                        I'm pursuing Economics, Finance (shocker) and Psychology here at Ashoka; I like to read, listen to music, play basketball and love to work with people. Looking forward to help take ADS to new heights!
+                        Ishani manages marketing campaigns and social media presence, creating compelling content that showcases ADS's activities and impact.
                     </p>
                 </div>
             </div>

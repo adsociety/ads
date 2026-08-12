@@ -1,0 +1,62 @@
+# Redirects to preserve pre-cleanup URLs after moving page HTML files
+# into pages/. index.html stays at the root, so it needs no redirect.
+
+[[redirects]]
+  from = "/about.html"
+  to = "/pages/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/events.html"
+  to = "/pages/events.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research.html"
+  to = "/pages/research.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research1.html"
+  to = "/pages/research1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research2.html"
+  to = "/pages/research2.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research3.html"
+  to = "/pages/research3.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research-insights.html"
+  to = "/pages/research-insights.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/strategy-events.html"
+  to = "/pages/strategy-events.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/outreach.html"
+  to = "/pages/outreach.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/media-marketing.html"
+  to = "/pages/media-marketing.html"
+  status = 301
+  force = true

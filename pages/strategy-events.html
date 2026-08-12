@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media and Marketing - Ashoka Data Society</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Strategy and Events - Ashoka Data Society</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap');
     </style>
@@ -12,7 +12,7 @@
         @media (max-width: 600px) {
             .graph-wrap svg { display: none; }
             .graph-wrap::after {
-                content: '2 Members \00B7 1 Department \00B7 est. 2025';
+                content: '3 Members \00B7 1 Department \00B7 est. 2025';
                 display: block;
                 font-family: 'Bricolage Grotesque', sans-serif;
                 font-size: 0.75rem;
@@ -26,12 +26,12 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">
-            <img src="media/logo.png" alt="ADS Logo">
+        <a href="../index.html" class="logo">
+            <img src="../media/logo.png" alt="ADS Logo">
             Ashoka Data Society
         </a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -44,18 +44,18 @@
 
             <div class="axis-label">
                 <span class="axis-tick">&#9587;</span>
-                <span class="axis-text">DEPT.04 / MEDIA &amp; MARKETING</span>
+                <span class="axis-text">DEPT.01 / STRATEGY &amp; EVENTS</span>
                 <span class="axis-rule"></span>
             </div>
 
-            <h1 class="page-title">Media and <em>Marketing</em></h1>
-            <p class="page-subtitle">
-                We run ADS's brand — visual content, social media, and getting our message to the right people.
+            <h1 class="page-title">Strategy and <em>Events</em></h1>
+<p class="page-subtitle">
+                We run ADS's events — from speaker sessions to community hangouts — and shape where the society goes next.
             </p>
 
             <div class="meta-row">
                 <div class="meta-item">
-                    <span class="meta-number">2</span>
+                    <span class="meta-number">3</span>
                     <span class="meta-label">Members</span>
                 </div>
                 <div class="meta-divider"></div>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="graph-wrap">
-          <div class="cap">// Media &amp; Marketing · highlighted department</div>
+          <div class="cap">// Strategy &amp; Events · highlighted department</div>
           <svg viewBox="0 0 1531.2 340" id="graph"></svg>
         </div>
 
@@ -126,7 +126,7 @@ orgData.forEach((group, i) => {
   cursor += bw + DEPT_GAP;
 });
 
-const highlightDept = 'd4';
+const highlightDept = 'd1';
 const highlightMembers = members.filter(m => m.edges[0] === highlightDept).map(m => m.id);
 
 const all = [root, ...depts, ...members];
@@ -227,29 +227,29 @@ svg.querySelectorAll('.node-dot.dept').forEach(dot => {
         <div class="data-row-grid single-col">
             <div class="data-row member-row">
                 <div class="member-photo">
-                    <img src="media/team/Prisha.JPG" alt="Prisha Adhikari" onerror="this.parentNode.classList.add('fallback');this.remove()">
-                    <span class="member-initials">PA</span>
+                    <img src="../media/team/Megha.JPG" alt="Megha Mudakkayil" onerror="this.parentNode.classList.add('fallback');this.remove()">
+                    <span class="member-initials">MM</span>
                 </div>
                 <div class="member-info">
                     <span class="data-tag">Director</span>
-                    <h3 class="data-name">Prisha Adhikari</h3>
-                    <span class="data-role">Media and Marketing</span>
+                    <h3 class="data-name">Megha Mudakkayil</h3>
+                    <span class="data-role">Strategy and Events</span>
                     <p class="data-desc">
-                        Prisha leads the media strategy, overseeing content creation, branding, and visual design to maintain a cohesive and engaging ADS identity.
+                        Megha leads event strategy and execution, bringing creative ideas to life through carefully planned workshops and speaker sessions that engage the student community.
                     </p>
                 </div>
             </div>
             <div class="data-row member-row">
                 <div class="member-photo">
-                    <img src="media/team/Ishani.JPG" alt="Ishani Dhingra" onerror="this.parentNode.classList.add('fallback');this.remove()">
-                    <span class="member-initials">ID</span>
+                    <img src="../media/team/Ahaana.JPG" alt="Ahaana Bose" onerror="this.parentNode.classList.add('fallback');this.remove()">
+                    <span class="member-initials">AB</span>
                 </div>
                 <div class="member-info">
-                    <span class="data-tag">Director</span>
-                    <h3 class="data-name">Ishani Dhingra</h3>
-                    <span class="data-role">Media and Marketing</span>
+                    <span class="data-tag">Deputy Director</span>
+                    <h3 class="data-name">Ahaana Bose</h3>
+                    <span class="data-role">Strategy and Events</span>
                     <p class="data-desc">
-                        Ishani manages marketing campaigns and social media presence, creating compelling content that showcases ADS's activities and impact.
+                        Deputy Director, Events — making data less intimidating and a lot more exciting through creative events, collaborations, and community.
                     </p>
                 </div>
             </div>
