@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "dev": "npx serve .",
-    "build": "mkdir -p build && cp -r *.html *.json css media pages build/",
     "start": "npx serve ."
   },
   "devDependencies": {

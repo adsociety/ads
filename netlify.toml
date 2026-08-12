@@ -1,3 +1,9 @@
+# Publish the repo root directly — this is a static site with no build
+# step, and index.html, pages/, css/, media/ already live at their final
+# paths. No build command needed.
+[build]
+  publish = "."
+
 # Redirects to preserve pre-cleanup URLs after moving page HTML files
 # into pages/. index.html stays at the root, so it needs no redirect.
 
