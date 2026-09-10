@@ -84,6 +84,7 @@ const orgData = [
   { dept: 'Outreach',  members: ['Kynaa', 'Aadi'] },
   { dept: 'Research',  members: ['Shashwat', 'Sreenandana'] },
   { dept: 'Marketing', members: ['Prisha', 'Ishani'] },
+  { dept: 'Finance',   members: ['Harshita', 'Gireesha', 'Person 1', 'Person 2'] },
   { dept: 'Leaders',   members: ['Devyanee', 'Saanvi', 'Kaashvi'] },
 ];
 
@@ -206,7 +207,7 @@ svg.querySelectorAll('.node-dot').forEach(dot => {
   });
 });
 
-const deptLinks = {d1:'strategy-events.html', d2:'outreach.html', d3:'research-insights.html', d4:'media-marketing.html', r0:'about.html'};
+const deptLinks = {d1:'strategy-events.html', d2:'outreach.html', d3:'research-insights.html', d4:'media-marketing.html', d5:'finance.html', r0:'about.html'};
 svg.querySelectorAll('.node-dot.dept').forEach(dot => {
   const url = deptLinks[dot.dataset.node];
   if (url) {
