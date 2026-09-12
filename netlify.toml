@@ -2,6 +2,7 @@
 # step, and index.html, pages/, css/, media/ already live at their final
 # paths. No build command needed.
 [build]
+  command = ""
   publish = "."
 
 # Redirects to preserve pre-cleanup URLs after moving page HTML files

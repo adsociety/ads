@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "npx serve .",
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "build": "echo 'static site - no build step required'"
   },
   "devDependencies": {
     "serve": "^14.2.0"
