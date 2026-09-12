@@ -79,18 +79,19 @@ const orgData = [
   { dept: 'Outreach',  members: ['Kynaa', 'Aadi'] },
   { dept: 'Research',  members: ['Shashwat', 'Sreenandana'] },
   { dept: 'Marketing', members: ['Prisha', 'Ishani'] },
-  { dept: 'Finance',   members: ['Harshita', 'Gireesha', 'Person 1', 'Person 2'] },
+  { dept: 'Finance',   members: ['Harshita', 'Sujagi', 'Gireesha', 'Naisha'] },
   { dept: 'Leaders',   members: ['Devyanee', 'Saanvi', 'Kaashvi'] },
 ];
 
 const CHAR_W    = 9.2;
 const LABEL_PAD = 42;
-const SIDE_PAD  = 80;
+const SIDE_PAD  = 120;
 const DEPT_GAP  = 60;
-const ROOT_Y    = 72;
-const DEPT_Y    = 224;
-const MEMBER_Y  = 372;
-const SVG_H     = 464;
+const ROOT_Y    = 86;
+const DEPT_Y    = 269;
+const MEMBER_Y  = 446;
+const SVG_H     = 556;
+const ZOOM      = 1.1;
 
 function slotW(name) {
   return Math.max(name.length * CHAR_W + LABEL_PAD * 2, 90);
@@ -102,7 +103,9 @@ const deptWidths = orgData.map(d =>
 
 const totalW = deptWidths.reduce((a, b) => a + b, 0) + DEPT_GAP * (orgData.length - 1) + SIDE_PAD * 2;
 
-svg.setAttribute('viewBox', `0 0 ${totalW} ${SVG_H}`);
+const vw = totalW / ZOOM;
+const vh = SVG_H / ZOOM;
+svg.setAttribute('viewBox', `${(totalW - vw) / 2} ${(SVG_H - vh) / 2} ${vw} ${vh}`);
 
 const root = { id:'r0', x: totalW / 2, y: ROOT_Y, label:'ADS' };
 const depts = [];
@@ -175,7 +178,7 @@ depts.forEach(d => {
 
 members.forEach(m => {
   h += `<circle class="node-dot" data-node="${m.id}" cx="${m.x}" cy="${MEMBER_Y}" r="5"/>`;
-  h += `<text class="node-label" x="${m.x}" y="${MEMBER_Y + 24}" text-anchor="middle">${m.label}</text>`;
+  h += `<text class="node-label" x="${m.x}" y="${MEMBER_Y + 34}" text-anchor="middle">${m.label}</text>`;
 });
 
 svg.innerHTML = h;
