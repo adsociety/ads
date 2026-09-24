@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/events</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/research</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/about</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/strategy-events</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/outreach</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/research-insights</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/media-marketing</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/research1</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/research2</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/research3</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://ashokadatasociety.netlify.app/pages/finance</loc>
+       <lastmod>2026-09-24T09:03:44+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+</urlset>
